@@ -1,0 +1,6 @@
+{
+  "name": "ChefLogic | Kitchen Inventory & Menu Engineering Intelligence",
+  "description": "The intelligent culinary platform for restaurant managers to eliminate food waste, automate inventory costing, and engineer high-margin menus. Start your 3-month free trial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
