@@ -24,7 +24,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          Please read this Master User Agreement (“Agreement”) carefully prior to accessing or using the ChefLogic culinary platform, hosted at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio</strong>. By activating an account or enrolling in the 3-Month Free Trial, you agree to be bound by these commercial terms.
+          Please read this Master User Agreement (“Agreement”) carefully prior to accessing or using the ChefLogic culinary platform, hosted at <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong>. By activating an account or enrolling in the 3-Month Free Trial, you agree to be bound by these commercial terms.
         </p>
 
         {/* Highlighted Trial Box */}
@@ -48,7 +48,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               1. Platform Services & License Grant
             </h3>
             <p className="mb-2">
-              ChefLogic Systems Inc. (“ChefLogic”, “we”, “us”) grants your culinary organization a non-exclusive, non-transferable, revocable commercial license to access the web application at <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio</span> solely for internal hospitality inventory tracking, recipe formulation, supplier invoice analysis, and menu engineering.
+              ChefLogic Systems Inc. (“ChefLogic”, “we”, “us”) grants your culinary organization a non-exclusive, non-transferable, revocable commercial license to access the web application at <span className="font-mono text-[#ede8df]">https://cheflogic.supritamone.com/</span> solely for internal hospitality inventory tracking, recipe formulation, supplier invoice analysis, and menu engineering.
             </p>
             <p>
               You agree not to reverse engineer, decompile, scrape, or resell the underlying algorithmic weighting mechanisms, portion matrices, or platform APIs.

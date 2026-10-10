@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageView } from '../types';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Lock } from 'lucide-react';
 import { ChefLogicLogo } from './ChefLogicLogo';
 
 interface FooterProps {
@@ -29,12 +29,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
             <div className="mt-4 text-xs font-mono text-[#c5a059] flex items-center gap-1.5">
               <span>Production URL:</span>
               <a
-                href="https://cheflogic.ai.studio"
+                href="https://cheflogic.supritamone.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline text-[#ede8df] flex items-center gap-1"
               >
-                https://cheflogic.ai.studio
+                https://cheflogic.supritamone.com/
                 <ArrowUpRight className="w-3 h-3 text-[#c5a059]" />
               </a>
             </div>
@@ -177,7 +177,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
               Copyright
             </button>
             <span aria-hidden="true">·</span>
-            <span>https://cheflogic.ai.studio</span>
+            <button
+              onClick={() => onNavigate('admin')}
+              className="hover:text-[#c5a059] cursor-pointer flex items-center gap-1 opacity-70 hover:opacity-100"
+              title="Restricted Owner Credentials Console"
+            >
+              <Lock className="w-3 h-3" />
+              <span>Admin Console</span>
+            </button>
+            <span aria-hidden="true">·</span>
+            <span>https://cheflogic.supritamone.com/</span>
           </div>
         </div>
 

@@ -9,7 +9,7 @@ interface InteractiveKitchenEngineProps {
 }
 
 export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> = ({ onOpenTrialModal }) => {
-  const [dishImg, setDishImg] = useState<string>(RECIPE_DISH_IMG);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   // Selected ingredients state
   const [selectedIds, setSelectedIds] = useState<string[]>([
     'ing-1', // Salmon
@@ -38,6 +38,11 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
   // Real-time calculated inventory value
   const totalStockAtRisk = selectedIngredients.reduce((acc, curr) => acc + curr.unitCost * 3.5, 0);
 
+  // Active dish image resolution
+  const currentDishImage = failedImages[activeRecipe.id]
+    ? (activeRecipe.fallbackImage || '/images/recipe_dish.jpg')
+    : (activeRecipe.image || activeRecipe.fallbackImage || '/images/recipe_dish.jpg');
+
   return (
     <section id="engine" className="py-24 bg-[#0e1012] border-b border-[#1f2226]">
       <div className="max-w-7xl mx-auto px-6">
@@ -51,7 +56,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
               <span>Live Engine Demonstration</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-culinary text-[#ede8df] leading-tight">
-              See how cheflogic.ai.studio turns surplus stock into margin.
+              See how cheflogic.supritamone.com turns surplus stock into margin.
             </h2>
           </div>
           <p className="text-sm text-[#a7a29a] max-w-md leading-relaxed">
@@ -185,14 +190,13 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
             {/* Image Preview of Gourmet Plating */}
             <div className="mt-5 relative rounded overflow-hidden border border-[#25282c] h-52 bg-[#0c0d0e]">
               <img
-                src={dishImg}
-                alt="ChefLogic formulated king salmon with chanterelle emulsion on dark slate plate"
-                className="w-full h-full object-cover"
+                key={activeRecipe.id}
+                src={currentDishImage}
+                alt={activeRecipe.title}
+                className="w-full h-full object-cover transition-opacity duration-300"
                 referrerPolicy="no-referrer"
                 onError={() => {
-                  if (dishImg !== '/images/recipe_dish.jpg') {
-                    setDishImg('/images/recipe_dish.jpg');
-                  }
+                  setFailedImages((prev) => ({ ...prev, [activeRecipe.id]: true }));
                 }}
               />
               <div className="absolute bottom-3 left-3 bg-[#0c0d0e]/90 backdrop-blur-md px-3 py-1.5 rounded border border-[#2d3137] text-[11px] font-mono-num text-[#ede8df]">
@@ -244,7 +248,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
             {/* Direct CTA */}
             <div className="mt-6 pt-5 border-t border-[#25282c] flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-xs text-[#88837a]">
-                Ready to sync your walk-in cooler on <strong className="text-[#ede8df]">cheflogic.ai.studio</strong>?
+                Ready to sync your walk-in cooler on <strong className="text-[#ede8df]">cheflogic.supritamone.com</strong>?
               </span>
               <button
                 onClick={onOpenTrialModal}

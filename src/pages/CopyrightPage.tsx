@@ -24,7 +24,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          This document delineates the ownership rights, trademark protection, and copyright policies governing the ChefLogic digital ecosystem and web portal at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio</strong>.
+          This document delineates the ownership rights, trademark protection, and copyright policies governing the ChefLogic digital ecosystem and web portal at <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong>.
         </p>
 
         <div className="space-y-10 mt-12 text-xs sm:text-sm text-[#a7a29a] leading-relaxed">
@@ -34,7 +34,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               1. Platform Copyright & Proprietary Code
             </h3>
             <p className="mb-2">
-              All software architecture, user interface graphics, proprietary database schemas, algorithm workflows, and editorial documentation comprising ChefLogic (including the frontend website and the web app hosted at https://cheflogic.ai.studio) are protected by copyright law and international treaties.
+              All software architecture, user interface graphics, proprietary database schemas, algorithm workflows, and editorial documentation comprising ChefLogic (including the frontend website and the web app hosted at https://cheflogic.supritamone.com/) are protected by copyright law and international treaties.
             </p>
             <p>
               © {new Date().getFullYear()} ChefLogic Systems Inc. All rights reserved. Unauthorized reproduction, scraping, reverse engineering, or redistribution of the software is strictly prohibited.
@@ -68,7 +68,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               4. DMCA / Notice and Takedown Procedure
             </h3>
             <p className="mb-2">
-              If you believe in good faith that any materials accessible on or from https://cheflogic.ai.studio infringe your copyright, you may submit a formal notification pursuant to the Digital Millennium Copyright Act (17 U.S.C. § 512(c)(3)) to our designated Copyright Agent:
+              If you believe in good faith that any materials accessible on or from https://cheflogic.supritamone.com/ infringe your copyright, you may submit a formal notification pursuant to the Digital Millennium Copyright Act (17 U.S.C. § 512(c)(3)) to our designated Copyright Agent:
             </p>
             <div className="p-4 bg-[#0c0d0e] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
               <div>Attn: Copyright Agent / Legal Directorate</div>
@@ -83,7 +83,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               5. Permitted Editorial Quotations & Press Usage
             </h3>
             <p>
-              Culinary journals, hospitality analysts, and journalists are permitted to reference ChefLogic statistics, research reports, and industry food waste indices provided that clear attribution is rendered to <strong>ChefLogic (https://cheflogic.ai.studio)</strong>.
+              Culinary journals, hospitality analysts, and journalists are permitted to reference ChefLogic statistics, research reports, and industry food waste indices provided that clear attribution is rendered to <strong>ChefLogic (https://cheflogic.supritamone.com/)</strong>.
             </p>
           </div>
 

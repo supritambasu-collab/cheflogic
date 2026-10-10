@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal, onLoginClick }) =>
         <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
           <span>Culinary Intelligence Platform</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
-          <span>Powered by cheflogic.ai.studio</span>
+          <span>Powered by cheflogic.supritamone.com</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
           <span>90-Day Complimentary Access</span>
         </div>
@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal, onLoginClick }) =>
             onClick={onLoginClick}
             className="px-6 py-4 text-sm font-medium text-[#ede8df] hover:text-white bg-[#141618] hover:bg-[#1c1f23] border border-[#2d3137] rounded transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Login to cheflogic.ai.studio</span>
+            <span>Login to cheflogic.supritamone.com</span>
             <ChevronRight className="w-4 h-4 text-[#88837a]" />
           </button>
         </div>

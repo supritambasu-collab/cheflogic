@@ -10,6 +10,7 @@ import { TermsPage } from './pages/TermsPage';
 import { CopyrightPage } from './pages/CopyrightPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { LoginPage } from './pages/LoginPage';
+import { AdminDashboard } from './pages/AdminDashboard';
 import { Sparkles, ArrowRight, X } from 'lucide-react';
 
 export default function App() {
@@ -21,7 +22,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['about', 'contact', 'terms', 'copyright', 'privacy', 'login'].includes(hash)) {
+      if (['about', 'contact', 'terms', 'copyright', 'privacy', 'login', 'admin'].includes(hash)) {
         setCurrentView(hash as PageView);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '' || ['engine', 'matrix', 'calculator'].includes(hash)) {
@@ -57,12 +58,12 @@ export default function App() {
               <span>
                 <strong className="text-[#ede8df] font-medium">90-Day VIP Hospitality Trial:</strong> Zero upfront fee for restaurant operators to explore{' '}
                 <a
-                  href="https://cheflogic.ai.studio"
+                  href="https://cheflogic.supritamone.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-[#c5a059] hover:underline"
                 >
-                  https://cheflogic.ai.studio
+                  https://cheflogic.supritamone.com/
                 </a>
               </span>
             </div>
@@ -122,6 +123,9 @@ export default function App() {
         )}
         {currentView === 'privacy' && (
           <PrivacyPage onOpenTrialModal={() => setIsTrialModalOpen(true)} />
+        )}
+        {currentView === 'admin' && (
+          <AdminDashboard onNavigate={handleNavigate} />
         )}
       </div>
 

@@ -1,4 +1,4 @@
-export type PageView = 'home' | 'about' | 'contact' | 'terms' | 'copyright' | 'privacy' | 'login';
+export type PageView = 'home' | 'about' | 'contact' | 'terms' | 'copyright' | 'privacy' | 'login' | 'admin';
 
 export interface Ingredient {
   id: string;
@@ -23,6 +23,8 @@ export interface SuggestedRecipe {
   marginScore: 'Star' | 'Plowhorse' | 'Puzzle' | 'Dog';
   wasteDivertedKg: number;
   description: string;
+  image?: string;
+  fallbackImage?: string;
 }
 
 export interface MenuItemMatrix {

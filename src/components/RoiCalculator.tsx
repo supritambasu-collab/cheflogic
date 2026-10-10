@@ -34,7 +34,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenTrialModal }
             Calculate your kitchen's annual profit recovery.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-            Every point of food cost saved flows directly to restaurant net EBITDA. Adjust the parameters below to project what automated inventory management and recipe suggestions on <strong className="text-[#ede8df] font-mono">cheflogic.ai.studio</strong> return to your bottom line.
+            Every point of food cost saved flows directly to restaurant net EBITDA. Adjust the parameters below to project what automated inventory management and recipe suggestions on <strong className="text-[#ede8df] font-mono">cheflogic.supritamone.com</strong> return to your bottom line.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenTrialModal }
 
             <div className="mt-8 pt-6 border-t border-[#25282c] flex items-center gap-3 text-xs text-[#88837a]">
               <ShieldCheck className="w-4 h-4 text-[#c5a059] shrink-0" />
-              <span>Calculated based on actual benchmark data across 340+ restaurants utilizing cheflogic.ai.studio.</span>
+              <span>Calculated based on actual benchmark data across 340+ restaurants utilizing cheflogic.supritamone.com.</span>
             </div>
           </div>
 
@@ -192,7 +192,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenTrialModal }
               </button>
               <div className="mt-3 text-center">
                 <span className="text-[11px] text-[#6b6760]">
-                  No payment method required · Full access to https://cheflogic.ai.studio for 90 days
+                  No payment method required · Full access to https://cheflogic.supritamone.com/ for 90 days
                 </span>
               </div>
             </div>

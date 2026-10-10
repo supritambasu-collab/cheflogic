@@ -1,4 +1,5 @@
 import { Ingredient, MenuItemMatrix, SuggestedRecipe, Testimonial } from '../types';
+import { SALMON_DISH_IMG, RISOTTO_DISH_IMG, DUCK_DISH_IMG } from '../assets/images';
 
 export const INGREDIENTS_DATA: Ingredient[] = [
   { id: 'ing-1', name: 'Ora King Salmon Fillet', category: 'protein', unitCost: 18.5, unit: 'lb', shelfLifeDays: 2, riskOfWaste: 'high' },
@@ -24,7 +25,9 @@ export const SUGGESTED_RECIPES_DATA: SuggestedRecipe[] = [
     foodCostPct: 25.8,
     marginScore: 'Star',
     wasteDivertedKg: 4.5,
-    description: 'Utilizes high-risk expiring salmon loins and delicate wild mushrooms into an elevated fine dining signature dish with premium 74.2% gross margin.'
+    description: 'Utilizes high-risk expiring salmon loins and delicate wild mushrooms into an elevated fine dining signature dish with premium 74.2% gross margin.',
+    image: SALMON_DISH_IMG,
+    fallbackImage: '/images/recipe_dish.jpg'
   },
   {
     id: 'rec-2',
@@ -38,7 +41,9 @@ export const SUGGESTED_RECIPES_DATA: SuggestedRecipe[] = [
     foodCostPct: 23.4,
     marginScore: 'Star',
     wasteDivertedKg: 2.8,
-    description: 'High profitability course designed to deplete open crème and volatile truffle stock while keeping total plate food cost below 24%.'
+    description: 'High profitability course designed to deplete open crème and volatile truffle stock while keeping total plate food cost below 24%.',
+    image: RISOTTO_DISH_IMG,
+    fallbackImage: '/images/risotto_dish.jpg'
   },
   {
     id: 'rec-3',
@@ -52,7 +57,9 @@ export const SUGGESTED_RECIPES_DATA: SuggestedRecipe[] = [
     foodCostPct: 28.2,
     marginScore: 'Star',
     wasteDivertedKg: 3.6,
-    description: 'Calculated portion yield maximizes center-of-plate protein economics and pairs perfectly with surplus root vegetables.'
+    description: 'Calculated portion yield maximizes center-of-plate protein economics and pairs perfectly with surplus root vegetables.',
+    image: DUCK_DISH_IMG,
+    fallbackImage: '/images/duck_dish.jpg'
   }
 ];
 
@@ -150,12 +157,12 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const FAQS_DATA = [
   {
-    question: 'What is ChefLogic and how does it connect to https://cheflogic.ai.studio?',
-    answer: 'ChefLogic is the dedicated culinary intelligence platform designed specifically for restaurant executive chefs, culinary directors, and F&B managers. The production application at https://cheflogic.ai.studio manages live kitchen inventory, continuously calculates real-time plate costs, automatically suggests dishes to deplete perishable stock before it spoils, and maps your menu against profitability matrices.'
+    question: 'What is ChefLogic and how does it connect to https://cheflogic.supritamone.com/?',
+    answer: 'ChefLogic is the dedicated culinary intelligence platform designed specifically for restaurant executive chefs, culinary directors, and F&B managers. The production application at https://cheflogic.supritamone.com/ manages live kitchen inventory, continuously calculates real-time plate costs, automatically suggests dishes to deplete perishable stock before it spoils, and maps your menu against profitability matrices.'
   },
   {
     question: 'How do I access the 3-Month Free Trial?',
-    answer: 'Clicking any "Start 3-Month Free Trial" or "Login to ChefLogic" link on this site connects you directly to https://cheflogic.ai.studio with complimentary 90-day enterprise access automatically pre-configured. No credit card is required to begin, and your kitchen onboarding specialist is assigned within 24 hours.'
+    answer: 'Clicking any "Start 3-Month Free Trial" or "Login to ChefLogic" link on this site connects you directly to https://cheflogic.supritamone.com/ with complimentary 90-day enterprise access automatically pre-configured. No credit card is required to begin, and your kitchen onboarding specialist is assigned within 24 hours.'
   },
   {
     question: 'How does ChefLogic generate recipes from surplus walk-in stock?',

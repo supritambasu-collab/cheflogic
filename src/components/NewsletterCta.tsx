@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, Download, ArrowRight, ShieldCheck, BookOpen } from 'lucide-react';
+import { triggerPlaybookPdfDownload } from '../utils/generatePdf';
+import { saveCapturedLead } from '../utils/adminStore';
 
 export const NewsletterCta: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,8 +18,17 @@ export const NewsletterCta: React.FC = () => {
     setErrorMsg('');
     setStatus('loading');
 
+    // Save lead to local storage / admin store
+    saveCapturedLead({
+      type: 'newsletter',
+      email: email.trim(),
+      restaurantName: restaurantName.trim()
+    });
+
     setTimeout(() => {
       setStatus('success');
+      // Trigger genuine PDF download immediately upon subscription
+      triggerPlaybookPdfDownload();
     }, 600);
   };
 
@@ -70,17 +81,14 @@ export const NewsletterCta: React.FC = () => {
                   <p className="text-xs text-[#a7a29a] leading-relaxed mb-6">
                     A confirmation email and your instant download link for the <strong className="text-[#ede8df]">2026 Margin Playbook</strong> have been dispatched to <span className="font-mono text-[#c5a059]">{email}</span>.
                   </p>
-                  <a
-                    href="#download"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Download initiated: ChefLogic_2026_Culinary_Margin_Playbook.pdf");
-                    }}
-                    className="inline-flex items-center gap-2 py-2.5 px-5 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all"
+                  <button
+                    type="button"
+                    onClick={() => triggerPlaybookPdfDownload()}
+                    className="inline-flex items-center gap-2 py-2.5 px-5 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.98] rounded transition-all cursor-pointer shadow-md"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    <span>Download PDF Guidebook</span>
-                  </a>
+                    <span>Download PDF Guidebook (Instant)</span>
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
