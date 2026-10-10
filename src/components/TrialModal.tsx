@@ -39,8 +39,28 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-9 h-9 rounded bg-[#c5a059]/15 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059]">
-            <ChefHat className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#181b1f] to-[#0c0d0e] border border-[#c5a059]/40 flex items-center justify-center p-1.5 shrink-0 shadow-sm">
+            <svg viewBox="0 0 40 40" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="modalGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f5e2ad" />
+                  <stop offset="50%" stopColor="#c5a059" />
+                  <stop offset="100%" stopColor="#9a7428" />
+                </linearGradient>
+              </defs>
+              <rect x="10" y="29" width="20" height="3.5" rx="1" fill="url(#modalGold)" />
+              <path
+                d="M12 27 C10 22, 6 21, 8 15 C10 10, 16 11, 18 16 C19 10, 21 10, 22 16 C24 11, 30 10, 32 15 C34 21, 30 22, 28 27 Z"
+                stroke="url(#modalGold)"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <line x1="20" y1="16" x2="20" y2="27" stroke="url(#modalGold)" strokeWidth="1.4" strokeLinecap="round" />
+              <path d="M15 19 C16 22, 16 24, 17 27" stroke="url(#modalGold)" strokeWidth="1.1" strokeLinecap="round" />
+              <path d="M25 19 C24 22, 24 24, 23 27" stroke="url(#modalGold)" strokeWidth="1.1" strokeLinecap="round" />
+              <polygon points="20,7 22,10 20,13 18,10" fill="url(#modalGold)" />
+            </svg>
           </div>
           <div>
             <span className="text-xs uppercase tracking-widest text-[#c5a059] font-medium">VIP Hospitality Access</span>

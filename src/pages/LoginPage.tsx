@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
-import { ChefHat, ArrowRight, Eye, EyeOff, ShieldCheck, CheckCircle2, ExternalLink, Lock, Mail, KeyRound, Sparkles, RefreshCw } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, ShieldCheck, CheckCircle2, ExternalLink, Lock, Mail, KeyRound, Sparkles, RefreshCw } from 'lucide-react';
+import { ChefLogicLogo } from '../components/ChefLogicLogo';
 
 interface LoginPageProps {
   onNavigate: (view: PageView) => void;
@@ -80,13 +81,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
         <div className="text-center mb-8">
           <button
             onClick={() => onNavigate('home')}
-            className="inline-flex items-center gap-2 text-3xl font-serif-culinary text-[#ede8df] hover:text-[#c5a059] transition-colors cursor-pointer mb-2"
+            className="cursor-pointer mb-3 transition-opacity hover:opacity-90 inline-block"
+            aria-label="ChefLogic Home"
           >
-            <ChefHat className="w-7 h-7 text-[#c5a059]" />
-            <span>ChefLogic</span>
+            <ChefLogicLogo size="lg" showSubtitle />
           </button>
           
-          <h1 className="text-2xl sm:text-3xl font-serif-culinary text-[#ede8df] mt-2">
+          <h1 className="text-2xl sm:text-3xl font-serif-culinary text-[#ede8df] mt-3">
             {authMethod === 'login' ? 'Sign in to your kitchen' : 'Reset Account Password'}
           </h1>
           <p className="text-xs text-[#a7a29a] mt-1.5 max-w-xs mx-auto">

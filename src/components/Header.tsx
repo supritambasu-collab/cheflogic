@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageView } from '../types';
+import { ChefLogicLogo } from './ChefLogicLogo';
 
 interface HeaderProps {
   currentView: PageView;
@@ -14,9 +15,10 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
         {/* Zone 1: Single text element wordmark */}
         <button
           onClick={() => onNavigate('home')}
-          className="text-2xl font-serif-culinary tracking-wide text-[#ede8df] hover:text-[#c5a059] transition-colors cursor-pointer text-left font-medium"
+          className="cursor-pointer text-left transition-opacity hover:opacity-90"
+          aria-label="ChefLogic Home"
         >
-          ChefLogic
+          <ChefLogicLogo size="sm" />
         </button>
 
         {/* Zone 2: 4-6 clean text navigation links */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageView } from '../types';
-import { ArrowUpRight, ChefHat } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { ChefLogicLogo } from './ChefLogicLogo';
 
 interface FooterProps {
   onNavigate: (view: PageView) => void;
@@ -17,9 +18,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
           <div className="md:col-span-4">
             <button
               onClick={() => onNavigate('home')}
-              className="text-2xl font-serif-culinary text-[#ede8df] hover:text-[#c5a059] transition-colors cursor-pointer text-left block mb-3"
+              className="cursor-pointer text-left block mb-4 transition-opacity hover:opacity-90"
+              aria-label="ChefLogic Home"
             >
-              ChefLogic
+              <ChefLogicLogo size="md" showSubtitle />
             </button>
             <p className="text-xs text-[#88837a] leading-relaxed max-w-sm">
               The hospitality intelligence engine that empowers culinary leaders to eliminate food waste, automate recipe yield costing, and engineer high-margin menus.
