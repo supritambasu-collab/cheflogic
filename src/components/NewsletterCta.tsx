@@ -60,12 +60,17 @@ export const NewsletterCta: React.FC = () => {
               </p>
 
               {/* Free Gift Perk */}
-              <div className="mt-6 flex items-center gap-3 text-xs text-[#c5a059] bg-[#0c0d0e] border border-[#25282c] p-3 rounded max-w-lg">
+              <button
+                type="button"
+                onClick={() => triggerPlaybookPdfDownload()}
+                className="mt-6 flex items-center gap-3 text-xs text-[#c5a059] hover:text-[#ede8df] bg-[#0c0d0e] hover:bg-[#181b1f] border border-[#25282c] hover:border-[#c5a059]/40 p-3 rounded max-w-lg transition-all cursor-pointer text-left shadow-sm"
+                title="Click to Download PDF Guidebook"
+              >
                 <Download className="w-4 h-4 shrink-0 text-[#c5a059]" />
                 <span>
-                  <strong>Instant Download Included:</strong> "The 2026 Restaurant Margin & Recipe Engineering Handbook" (48-page executive PDF).
+                  <strong>Instant Download Included:</strong> "The 2026 Restaurant Margin & Recipe Engineering Handbook" (14-Page Complete Executive PDF Master Playbook).
                 </span>
-              </div>
+              </button>
             </div>
 
             {/* Right Form (5 cols) */}

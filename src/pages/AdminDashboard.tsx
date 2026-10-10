@@ -25,9 +25,12 @@ import {
   RefreshCw,
   ChefHat,
   Search,
-  ArrowLeft
+  ArrowLeft,
+  FileText,
+  BookOpen
 } from 'lucide-react';
 import { ChefLogicLogo } from '../components/ChefLogicLogo';
+import { triggerPlaybookPdfDownload } from '../utils/generatePdf';
 
 interface AdminDashboardProps {
   onNavigate: (view: PageView) => void;
@@ -37,7 +40,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [passcode, setPasscode] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const [activeTab, setActiveTab] = useState<'logins' | 'leads' | 'contacts'>('logins');
+  const [activeTab, setActiveTab] = useState<'logins' | 'leads' | 'contacts' | 'pdf'>('logins');
   const [logins, setLogins] = useState<CapturedLogin[]>([]);
   const [leads, setLeads] = useState<CapturedLead[]>([]);
   const [visiblePasswords, setVisiblePasswords] = useState<Record<string, boolean>>({});
@@ -216,6 +219,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
           <div className="flex items-center gap-3">
             <button
+              onClick={() => triggerPlaybookPdfDownload()}
+              className="px-3.5 py-2 text-xs font-semibold text-[#0c0d0e] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+              title="Download Executive 2026 Playbook PDF"
+            >
+              <Download className="w-3.5 h-3.5 text-[#0c0d0e]" />
+              <span>Download Playbook PDF</span>
+            </button>
+
+            <button
               onClick={handleSimulateLogin}
               className="px-3.5 py-2 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#25282c] border border-[#32363c] rounded transition-all cursor-pointer flex items-center gap-1.5"
               title="Inject a test login attempt to verify table capture"
@@ -308,6 +320,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               }`}
             >
               Consultation Inquiries ({contactInquiries.length})
+            </button>
+            <button
+              onClick={() => setActiveTab('pdf')}
+              className={`pb-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer border-b-2 flex items-center gap-1.5 ${
+                activeTab === 'pdf'
+                  ? 'border-amber-400 text-amber-400 font-bold'
+                  : 'border-transparent text-[#88837a] hover:text-[#ede8df]'
+              }`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Executive Playbook PDF</span>
             </button>
           </div>
 
@@ -521,6 +544,170 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </table>
               </div>
             )}
+          </div>
+        )}
+
+        {/* TAB 4: EXECUTIVE PLAYBOOK PDF VIEWER & DOWNLOAD */}
+        {activeTab === 'pdf' && (
+          <div className="space-y-6">
+            {/* Top Download Card */}
+            <div className="bg-[#141618] border border-amber-500/40 rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
+                  <FileText className="w-4 h-4 text-amber-400" />
+                  <span>Official White Paper Asset</span>
+                </div>
+                <h3 className="text-xl font-serif-culinary text-[#ede8df]">
+                  The 2026 Restaurant Margin & Recipe Engineering Playbook (14-Page Master Edition)
+                </h3>
+                <p className="text-xs text-[#a7a29a] mt-1 max-w-xl leading-relaxed">
+                  Complete 14-page executive master handbook covering margin leakage, menu engineering, walk-in rescue protocols, theoretical vs actual cost, supplier price traps, line waste audits, and VIP deployment.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => triggerPlaybookPdfDownload()}
+                  className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#0c0d0e] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-amber-400/20 active:scale-[0.98]"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download PDF Document</span>
+                </button>
+
+                <a
+                  href="/ChefLogic_2026_Culinary_Margin_Playbook.pdf"
+                  download="ChefLogic_2026_Culinary_Margin_Playbook.pdf"
+                  className="px-4 py-3 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#25282c] border border-[#32363c] rounded transition-all flex items-center gap-1.5"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-[#88837a]" />
+                  <span>Direct Static Link</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Document Digital Reader Preview */}
+            <div className="bg-[#0c0d0e] border border-[#25282c] rounded-xl p-6 sm:p-10 shadow-2xl space-y-10">
+              
+              {/* PAGE 1 PREVIEW */}
+              <div className="bg-[#121417] border border-[#c5a059]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
+                <div className="text-center pb-8 border-b border-[#25282c]">
+                  <span className="text-[10px] uppercase tracking-widest text-[#c5a059] font-medium block mb-2">
+                    THE EXECUTIVE CULINARY DISPATCH · ANNUAL WHITE PAPER
+                  </span>
+                  <h4 className="text-3xl sm:text-4xl font-serif-culinary text-[#ede8df] tracking-wide">
+                    CHEFLOGIC
+                  </h4>
+                  <h5 className="text-xl sm:text-2xl font-serif-culinary text-[#ede8df] mt-1">
+                    2026 RESTAURANT MARGIN & RECIPE ENGINEERING PLAYBOOK
+                  </h5>
+                  <p className="text-xs text-[#c5a059] mt-2">
+                    Strategic Back-of-House Systems to Eliminate Food Waste & Expand Net EBITDA
+                  </p>
+                </div>
+
+                <div className="my-8 p-6 bg-[#0c0d0e] border border-[#25282c] rounded">
+                  <h6 className="text-xs uppercase tracking-wider text-[#ede8df] font-bold mb-3 text-[#c5a059]">
+                    EXECUTIVE SUMMARY: THE 28% FOOD COST CEILING
+                  </h6>
+                  <p className="text-xs text-[#d5cfc4] leading-relaxed">
+                    In high-volume restaurant operations, food cost variance between 33% and 27% represents the entire difference between commercial insolvency and sustainable hospitality profitability. Across 340+ fine dining and bistro kitchens tracked by ChefLogic, 41% of avoidable food waste stems from surplus walk-in inventory that passes peak freshness prior to formulation into revenue-generating specials.
+                  </p>
+                </div>
+
+                {/* 3 Metric Badges */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                    <span className="font-mono-num text-xl font-bold text-amber-400 block">4.8% - 5.8%</span>
+                    <span className="text-[11px] text-[#88837a]">Avg Food Cost Reduction</span>
+                  </div>
+                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                    <span className="font-mono-num text-xl font-bold text-emerald-400 block">-41%</span>
+                    <span className="text-[11px] text-[#88837a]">Perishable Waste Diverted</span>
+                  </div>
+                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                    <span className="font-mono-num text-xl font-bold text-[#ede8df] block">$68,400</span>
+                    <span className="text-[11px] text-[#88837a]">Avg Annual EBITDA Gain</span>
+                  </div>
+                </div>
+
+                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
+                  Page 1 of 2 · Published by ChefLogic Systems Inc. · https://cheflogic.supritamone.com/
+                </div>
+              </div>
+
+              {/* PAGE 2 PREVIEW */}
+              <div className="bg-[#121417] border border-[#c5a059]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
+                <div className="text-center pb-6 border-b border-[#25282c] mb-6">
+                  <span className="text-[10px] uppercase tracking-widest text-[#c5a059] font-medium block">
+                    CHEFLOGIC CULINARY INTELLIGENCE · CHAPTER 1 & 2
+                  </span>
+                </div>
+
+                {/* Chapter 1: Matrix */}
+                <div className="space-y-3 mb-8">
+                  <h6 className="text-xs uppercase tracking-wider text-[#ede8df] font-bold">
+                    01. THE BOSTON MENU ENGINEERING MATRIX (KASAVANA & SMITH)
+                  </h6>
+                  <p className="text-xs text-[#a7a29a] mb-4">
+                    Every dish on your menu belongs to one of four definitive quadrants based on Contribution Margin ($) and Sales Velocity:
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div className="p-3 bg-[#0c0d0e] border border-amber-500/30 rounded">
+                      <strong className="text-amber-400 block">1. STARS (High Margin, High Velocity)</strong>
+                      <span className="text-[#a7a29a] text-[11px]">Protect recipe standards rigorously. Keep prime focal menu placement.</span>
+                    </div>
+                    <div className="p-3 bg-[#0c0d0e] border border-[#2d3137] rounded">
+                      <strong className="text-sky-400 block">2. PLOWHORSES (Low Margin, High Velocity)</strong>
+                      <span className="text-[#a7a29a] text-[11px]">High guest demand, margin-diluting. Re-negotiate bulk protein costs or reduce trim.</span>
+                    </div>
+                    <div className="p-3 bg-[#0c0d0e] border border-[#2d3137] rounded">
+                      <strong className="text-purple-400 block">3. PUZZLES (High Margin, Low Velocity)</strong>
+                      <span className="text-[#a7a29a] text-[11px]">High culinary profit, under-ordered. Reposition at the top of category.</span>
+                    </div>
+                    <div className="p-3 bg-[#0c0d0e] border border-rose-500/30 rounded">
+                      <strong className="text-rose-400 block">4. DOGS (Low Margin, Low Velocity)</strong>
+                      <span className="text-[#a7a29a] text-[11px]">Drain on cooler shelf space. Eliminate immediately or recycle into market specials.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chapter 2: 5-Step Protocol */}
+                <div className="space-y-3">
+                  <h6 className="text-xs uppercase tracking-wider text-[#ede8df] font-bold">
+                    02. THE 5-STEP WALK-IN INVENTORY RESCUE PROTOCOL
+                  </h6>
+                  <ul className="space-y-2 text-xs text-[#d5cfc4]">
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold">•</span>
+                      <span><strong>Step 1: Automated Invoice Parsing:</strong> Optical scanning captures price changes immediately upon delivery.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold">•</span>
+                      <span><strong>Step 2: 48-Hour Freshness Window:</strong> Flags high-value proteins approaching expiration thresholds.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold">•</span>
+                      <span><strong>Step 3: Algorithmic Recipe Synthesis:</strong> Pair expiring items with pantry staples at target 22-26% food cost.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold">•</span>
+                      <span><strong>Step 4: POS Ticket Volume Sync:</strong> Tracks exact plate count depletions across line prep stations in real time.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold">•</span>
+                      <span><strong>Step 5: Daily Spoilage Audit:</strong> Logs waste by station (Prep, Line, Over-portion) for executive accountability.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
+                  Page 2 of 2 · Published by ChefLogic Systems Inc. · Platform Portal: https://cheflogic.supritamone.com/
+                </div>
+              </div>
+
+            </div>
           </div>
         )}
 
