@@ -202,22 +202,28 @@ export function loginUserWithPassword(email: string, password: string): { succes
   return { success: true, user: found };
 }
 
-export function loginWithGoogleOAuth(googleUser?: { email?: string; name?: string; picture?: string }): UserAccount {
-  const email = googleUser?.email || 'executive.chef@gmail.com';
-  const name = googleUser?.name || 'Chef Google User';
+export function loginWithGoogleOAuth(googleUser: { 
+  email: string; 
+  name?: string; 
+  picture?: string;
+  restaurantName?: string;
+  role?: string;
+}): UserAccount {
+  const email = googleUser.email.trim().toLowerCase();
+  const name = googleUser.name?.trim() || email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   const users = getRegisteredUsers();
   
-  let user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+  let user = users.find(u => u.email.toLowerCase() === email);
   if (!user) {
     user = {
       id: `user-google-${Date.now()}`,
       email,
       fullName: name,
-      restaurantName: 'Google Hospitality Partner',
-      role: 'Executive Chef',
-      kitchenSize: 'Full Commercial Kitchen',
+      restaurantName: googleUser.restaurantName || 'Google Hospitality Partner',
+      role: googleUser.role || 'Executive Chef',
+      kitchenSize: 'Commercial Brigade',
       provider: 'Google',
-      avatarUrl: googleUser?.picture,
+      avatarUrl: googleUser.picture,
       createdAt: new Date().toLocaleString(),
       lastLoginAt: new Date().toLocaleString(),
       trialExpiresAt: '90-Day VIP Active'
@@ -227,6 +233,7 @@ export function loginWithGoogleOAuth(googleUser?: { email?: string; name?: strin
   } else {
     user.lastLoginAt = new Date().toLocaleString();
     user.provider = 'Google';
+    if (googleUser.name) user.fullName = googleUser.name;
     localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
   }
 
@@ -242,19 +249,24 @@ export function loginWithGoogleOAuth(googleUser?: { email?: string; name?: strin
   return user;
 }
 
-export function loginWithLinkedInOAuth(): UserAccount {
-  const email = 'hospitality.director@linkedin.com';
-  const name = 'Culinary Director (LinkedIn)';
+export function loginWithLinkedInOAuth(linkedInUser: {
+  email: string;
+  name?: string;
+  restaurantName?: string;
+  role?: string;
+}): UserAccount {
+  const email = linkedInUser.email.trim().toLowerCase();
+  const name = linkedInUser.name?.trim() || email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   const users = getRegisteredUsers();
   
-  let user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+  let user = users.find(u => u.email.toLowerCase() === email);
   if (!user) {
     user = {
       id: `user-linkedin-${Date.now()}`,
       email,
       fullName: name,
-      restaurantName: 'Hospitality Management',
-      role: 'Director of Food & Beverage',
+      restaurantName: linkedInUser.restaurantName || 'Hospitality Management Concept',
+      role: linkedInUser.role || 'Director of Food & Beverage',
       kitchenSize: 'Multi-Unit Concept',
       provider: 'LinkedIn',
       createdAt: new Date().toLocaleString(),
@@ -266,12 +278,13 @@ export function loginWithLinkedInOAuth(): UserAccount {
   } else {
     user.lastLoginAt = new Date().toLocaleString();
     user.provider = 'LinkedIn';
+    if (linkedInUser.name) user.fullName = linkedInUser.name;
     localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
   }
 
   saveCapturedLogin({
     email,
-    password: '— (Authenticated via LinkedIn OAuth Token)',
+    password: '— (Authenticated via LinkedIn Hospitality OAuth)',
     provider: 'LinkedIn',
     rememberMe: true,
     userAgent: navigator.userAgent

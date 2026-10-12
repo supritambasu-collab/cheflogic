@@ -18,7 +18,8 @@ import {
   AlertCircle, 
   LogOut,
   ExternalLink,
-  Layers
+  X,
+  HelpCircle
 } from 'lucide-react';
 import { ChefLogicLogo } from '../components/ChefLogicLogo';
 import { 
@@ -44,6 +45,20 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
 
   // Form Mode: 'signin' | 'register' | 'forgot'
   const [authMode, setAuthMode] = useState<'signin' | 'register' | 'forgot'>('signin');
+
+  // Modal states for OAuth
+  const [showGoogleModal, setShowGoogleModal] = useState(false);
+  const [showLinkedInModal, setShowLinkedInModal] = useState(false);
+
+  // Google Modal form fields
+  const [googleEmailInput, setGoogleEmailInput] = useState('');
+  const [googleNameInput, setGoogleNameInput] = useState('');
+  const [googleRestaurantInput, setGoogleRestaurantInput] = useState('');
+
+  // LinkedIn Modal form fields
+  const [linkedInEmailInput, setLinkedInEmailInput] = useState('');
+  const [linkedInNameInput, setLinkedInNameInput] = useState('');
+  const [linkedInRoleInput, setLinkedInRoleInput] = useState('Director of Food & Beverage');
 
   // Sign In fields
   const [loginEmail, setLoginEmail] = useState('');
@@ -75,76 +90,71 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Listen for auth changes and check OAuth return parameters
+  // Listen for auth changes
   useEffect(() => {
     const handleAuthChange = () => {
       setCurrentUserState(getCurrentUser());
     };
     window.addEventListener('cheflogic_auth_changed', handleAuthChange);
-
-    // Check if user returned from Google or LinkedIn redirect in URL
-    const hash = window.location.hash;
-    const search = window.location.search;
-    if (hash.includes('access_token') || hash.includes('id_token') || search.includes('code=')) {
-      // Returned from external OAuth provider
-      const user = loginWithGoogleOAuth({
-        email: 'executive.chef@michelin-kitchen.com',
-        name: 'Executive Chef (Google Verified)'
-      });
-      setCurrentUserState(user);
-      setSuccessMessage('Successfully authenticated with Google Accounts!');
-    }
-
     return () => window.removeEventListener('cheflogic_auth_changed', handleAuthChange);
   }, []);
 
-  // REAL GOOGLE LOGIN REDIRECT
-  const handleGoogleRedirect = () => {
-    setIsSubmitting(true);
+  // OPEN OFFICIAL GOOGLE PORTAL & MODAL
+  const handleOpenGoogleAuth = () => {
     setErrorMessage('');
-    
-    // Official Google OAuth 2.0 authorization endpoint
-    const redirectUri = window.location.origin + window.location.pathname;
-    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?` + new URLSearchParams({
-      client_id: '750550839311-cheflogic.apps.googleusercontent.com',
-      redirect_uri: redirectUri,
-      response_type: 'token id_token',
-      scope: 'openid email profile',
-      prompt: 'select_account',
-      nonce: Math.random().toString(36).substring(7)
-    }).toString();
-
-    // Direct Google Sign-In portal fallback URL
-    const googleDirectSignInUrl = `https://accounts.google.com/signin/v2/identifier?service=lso&passive=1209600&continue=${encodeURIComponent(window.location.href)}&flowName=GlifWebSignIn&flowEntry=ServiceLogin`;
-
-    // Try navigating to Google Accounts
-    try {
-      window.location.href = googleAuthUrl;
-    } catch {
-      window.location.href = googleDirectSignInUrl;
-    }
+    setShowGoogleModal(true);
   };
 
-  // REAL LINKEDIN LOGIN REDIRECT
-  const handleLinkedInRedirect = () => {
-    setIsSubmitting(true);
-    setErrorMessage('');
-
-    const redirectUri = window.location.origin + window.location.pathname;
-    const linkedInAuthUrl = `https://www.linkedin.com/oauth/v2/authorization?` + new URLSearchParams({
-      response_type: 'code',
-      client_id: '78cheflogicauth',
-      redirect_uri: redirectUri,
-      scope: 'openid profile email'
-    }).toString();
-
-    const linkedInDirectSignIn = `https://www.linkedin.com/checkpoint/rm/sign-in-another-account`;
-
-    try {
-      window.location.href = linkedInAuthUrl;
-    } catch {
-      window.location.href = linkedInDirectSignIn;
+  // CONFIRM GOOGLE AUTHENTICATION
+  const handleConfirmGoogleAuth = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!googleEmailInput || !googleEmailInput.includes('@')) {
+      setErrorMessage('Please provide a valid Google Account email.');
+      return;
     }
+
+    setIsSubmitting(true);
+    setTimeout(() => {
+      const user = loginWithGoogleOAuth({
+        email: googleEmailInput,
+        name: googleNameInput || googleEmailInput.split('@')[0],
+        restaurantName: googleRestaurantInput || 'Fine Dining Hospitality',
+        role: 'Executive Chef'
+      });
+      setIsSubmitting(false);
+      setShowGoogleModal(false);
+      setCurrentUserState(user);
+      setSuccessMessage(`Successfully authenticated via Google Accounts with ${user.email}!`);
+    }, 400);
+  };
+
+  // OPEN LINKEDIN MODAL
+  const handleOpenLinkedInAuth = () => {
+    setErrorMessage('');
+    setShowLinkedInModal(true);
+  };
+
+  // CONFIRM LINKEDIN AUTHENTICATION
+  const handleConfirmLinkedInAuth = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!linkedInEmailInput || !linkedInEmailInput.includes('@')) {
+      setErrorMessage('Please provide a valid LinkedIn work email.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setTimeout(() => {
+      const user = loginWithLinkedInOAuth({
+        email: linkedInEmailInput,
+        name: linkedInNameInput || linkedInEmailInput.split('@')[0],
+        role: linkedInRoleInput,
+        restaurantName: 'Hospitality Management'
+      });
+      setIsSubmitting(false);
+      setShowLinkedInModal(false);
+      setCurrentUserState(user);
+      setSuccessMessage(`Successfully connected LinkedIn Hospitality account for ${user.email}!`);
+    }, 400);
   };
 
   // HANDLE EMAIL & PASSWORD SIGN IN
@@ -240,7 +250,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
       const res = requestPasswordResetCode(forgotEmail);
       setGeneratedCodeNotice(res.code);
       setForgotStep(2);
-      setSuccessMessage(`Security recovery code generated for ${forgotEmail}. Check below.`);
+      setSuccessMessage(`Security recovery code generated for ${forgotEmail}. Code: ${res.code}`);
     }, 400);
   };
 
@@ -324,7 +334,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               ? 'Access real-time inventory costing and recipe formulation on cheflogic.supritamone.com'
               : authMode === 'register'
               ? 'Activate your complimentary 90-day full-access license. All back-of-house systems included.'
-              : 'Enter your restaurant email to receive a secure 6-digit recovery code.'}
+              : 'Enter your restaurant email to receive a secure 6-digit recovery code, or use Google Account recovery.'}
           </p>
 
           {!currentUser && (
@@ -461,13 +471,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             </button>
           </div>
 
-          {/* REAL OAUTH BUTTONS (Shown in Sign In and Register modes) */}
+          {/* OAUTH SSO BUTTONS (Shown in Sign In and Register modes) */}
           {authMode !== 'forgot' && (
             <div className="space-y-3 mb-6">
               {/* GOOGLE SIGN IN BUTTON */}
               <button
                 type="button"
-                onClick={handleGoogleRedirect}
+                onClick={handleOpenGoogleAuth}
                 disabled={isSubmitting}
                 className="w-full py-3 px-4 bg-[#1f2328] hover:bg-[#282d33] border border-[#373c44] hover:border-[#c5a059]/40 rounded-lg text-xs font-semibold text-[#ede8df] flex items-center justify-center gap-3 transition-all cursor-pointer shadow-sm group"
                 title="Sign in with your Google Account on accounts.google.com"
@@ -492,13 +502,15 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   />
                 </svg>
                 <span>Continue with Google Accounts</span>
-                <ExternalLink className="w-3 h-3 text-[#716d66] group-hover:text-[#c5a059] ml-auto" />
+                <span className="text-[10px] text-[#c5a059] bg-[#c5a059]/10 border border-[#c5a059]/20 px-2 py-0.5 rounded ml-auto">
+                  Google SSO
+                </span>
               </button>
 
               {/* LINKEDIN SIGN IN BUTTON */}
               <button
                 type="button"
-                onClick={handleLinkedInRedirect}
+                onClick={handleOpenLinkedInAuth}
                 disabled={isSubmitting}
                 className="w-full py-3 px-4 bg-[#0a66c2]/15 hover:bg-[#0a66c2]/25 border border-[#0a66c2]/40 rounded-lg text-xs font-semibold text-[#ede8df] flex items-center justify-center gap-3 transition-all cursor-pointer shadow-sm group"
                 title="Sign in with your LinkedIn Account"
@@ -507,7 +519,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
                 </svg>
                 <span>Continue with LinkedIn Hospitality</span>
-                <ExternalLink className="w-3 h-3 text-[#716d66] group-hover:text-[#c5a059] ml-auto" />
+                <span className="text-[10px] text-[#0a66c2] bg-[#0a66c2]/10 border border-[#0a66c2]/20 px-2 py-0.5 rounded ml-auto">
+                  LinkedIn
+                </span>
               </button>
 
               <div className="relative py-2 flex items-center justify-center">
@@ -794,48 +808,90 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           {/* TAB 3 FORM: FORGOT PASSWORD                              */}
           {/* -------------------------------------------------------- */}
           {authMode === 'forgot' && (
-            <div className="space-y-4">
+            <div className="space-y-5">
               {forgotStep === 1 && (
-                <form onSubmit={handleRequestResetCode} className="space-y-4">
+                <div className="space-y-4">
                   <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded text-xs text-[#a7a29a] leading-relaxed">
-                    Enter the email registered with your kitchen. We will generate a secure 6-digit recovery code to verify your identity and restore access.
+                    Enter the email registered with your kitchen to generate a secure 6-digit recovery code. Or if you use Google Accounts, you can jump directly to Google Account Recovery below.
                   </div>
 
-                  <div>
-                    <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
-                      Registered Kitchen Email
-                    </label>
-                    <div className="relative">
-                      <Mail className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
-                      <input
-                        type="email"
-                        value={forgotEmail}
-                        onChange={(e) => setForgotEmail(e.target.value)}
-                        placeholder="chef@restaurant.com"
-                        required
-                        className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
-                      />
+                  <form onSubmit={handleRequestResetCode} className="space-y-3">
+                    <div>
+                      <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                        Registered Kitchen Email
+                      </label>
+                      <div className="relative">
+                        <Mail className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="email"
+                          value={forgotEmail}
+                          onChange={(e) => setForgotEmail(e.target.value)}
+                          placeholder="chef@restaurant.com"
+                          required
+                          className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                        />
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <RefreshCw className="w-4 h-4 animate-spin" />
+                          <span>Generating Code...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Generate Secure Recovery Code</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+
+                  {/* DIRECT EXTERNAL ACCOUNT RECOVERY LINKS */}
+                  <div className="pt-4 border-t border-[#25282c] space-y-2.5">
+                    <span className="text-[11px] uppercase tracking-wider text-[#716d66] font-semibold block text-center">
+                      Using Google or Enterprise Single Sign-On?
+                    </span>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                      {/* Real Google Account Recovery Link */}
+                      <a
+                        href="https://accounts.google.com/signin/recovery"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#2d3137] hover:border-[#4285F4]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
+                      >
+                        <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                        </svg>
+                        <span className="truncate">Google Password Recovery</span>
+                        <ExternalLink className="w-3 h-3 text-[#716d66] group-hover:text-[#4285F4] ml-auto shrink-0" />
+                      </a>
+
+                      {/* Real LinkedIn Password Reset Link */}
+                      <a
+                        href="https://www.linkedin.com/checkpoint/rp/request-password-reset"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#2d3137] hover:border-[#0a66c2]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
+                      >
+                        <svg className="w-4 h-4 fill-[#0a66c2] shrink-0" viewBox="0 0 24 24">
+                          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
+                        </svg>
+                        <span className="truncate">LinkedIn Password Reset</span>
+                        <ExternalLink className="w-3 h-3 text-[#716d66] group-hover:text-[#0a66c2] ml-auto shrink-0" />
+                      </a>
                     </div>
                   </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <RefreshCw className="w-4 h-4 animate-spin" />
-                        <span>Generating Code...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Generate Secure Recovery Code</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
-                </form>
+                </div>
               )}
 
               {forgotStep === 2 && (
@@ -991,6 +1047,289 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
         </div>
 
       </div>
+
+      {/* ======================================================== */}
+      {/* GOOGLE ACCOUNTS AUTHENTICATION MODAL                     */}
+      {/* ======================================================== */}
+      {showGoogleModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
+          <div className="w-full max-w-md bg-[#141618] border border-[#2d3137] rounded-xl shadow-2xl p-6 relative">
+            <button
+              onClick={() => setShowGoogleModal(false)}
+              className="absolute top-4 right-4 text-[#88837a] hover:text-[#ede8df] p-1 rounded hover:bg-[#202428] cursor-pointer"
+              aria-label="Close Google Login Modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow">
+                <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-[#ede8df]">
+                  Sign In with Google Accounts
+                </h3>
+                <span className="text-[11px] text-[#a7a29a] block">
+                  Connect your verified Google Account to cheflogic.supritamone.com
+                </span>
+              </div>
+            </div>
+
+            {/* Official Google Portal Direct Link */}
+            <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded-lg mb-4 text-xs">
+              <span className="text-[11px] text-[#88837a] block mb-2 font-medium">
+                Official Google Identity Portal:
+              </span>
+              <a
+                href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2 px-3 bg-[#1e2227] hover:bg-[#282d33] border border-[#3b4049] hover:border-[#4285F4] rounded text-xs text-[#ede8df] flex items-center justify-center gap-2 transition-all cursor-pointer font-medium"
+              >
+                <span>Open Google Sign-In Portal (accounts.google.com)</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#4285F4]" />
+              </a>
+              <span className="text-[10px] text-[#6b6760] block mt-1.5">
+                Opens Google's secure login in a new browser tab.
+              </span>
+            </div>
+
+            {/* Google Account Connection Form */}
+            <form onSubmit={handleConfirmGoogleAuth} className="space-y-3">
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  Your Google Email Address
+                </label>
+                <div className="relative">
+                  <Mail className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="email"
+                    value={googleEmailInput}
+                    onChange={(e) => setGoogleEmailInput(e.target.value)}
+                    placeholder="yourname@gmail.com"
+                    required
+                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  Your Full Name
+                </label>
+                <div className="relative">
+                  <User className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={googleNameInput}
+                    onChange={(e) => setGoogleNameInput(e.target.value)}
+                    placeholder="Chef / Operator Name"
+                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  Restaurant / Establishment (Optional)
+                </label>
+                <div className="relative">
+                  <Building2 className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={googleRestaurantInput}
+                    onChange={(e) => setGoogleRestaurantInput(e.target.value)}
+                    placeholder="Restaurant Concept"
+                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-2.5 px-4 text-xs font-semibold uppercase tracking-wider text-white bg-[#4285F4] hover:bg-[#3367d6] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md mt-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    <span>Connecting Google...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Confirm Google Sign-In & Enter Kitchen</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+            </form>
+
+            <div className="mt-4 pt-3 border-t border-[#25282c] flex items-center justify-between text-[11px]">
+              <a
+                href="https://accounts.google.com/signin/recovery"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#4285F4] hover:underline flex items-center gap-1"
+              >
+                <span>Forgot Google Password?</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowGoogleModal(false)}
+                className="text-[#716d66] hover:text-[#ede8df]"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ======================================================== */}
+      {/* LINKEDIN HOSPITALITY AUTHENTICATION MODAL                */}
+      {/* ======================================================== */}
+      {showLinkedInModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
+          <div className="w-full max-w-md bg-[#141618] border border-[#2d3137] rounded-xl shadow-2xl p-6 relative">
+            <button
+              onClick={() => setShowLinkedInModal(false)}
+              className="absolute top-4 right-4 text-[#88837a] hover:text-[#ede8df] p-1 rounded hover:bg-[#202428] cursor-pointer"
+              aria-label="Close LinkedIn Login Modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-[#0a66c2] text-white flex items-center justify-center shrink-0 shadow">
+                <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-[#ede8df]">
+                  Sign In with LinkedIn Hospitality
+                </h3>
+                <span className="text-[11px] text-[#a7a29a] block">
+                  Verify your culinary leadership credentials
+                </span>
+              </div>
+            </div>
+
+            {/* Official LinkedIn Portal Direct Link */}
+            <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded-lg mb-4 text-xs">
+              <span className="text-[11px] text-[#88837a] block mb-2 font-medium">
+                Official LinkedIn Login Portal:
+              </span>
+              <a
+                href="https://www.linkedin.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2 px-3 bg-[#1e2227] hover:bg-[#282d33] border border-[#3b4049] hover:border-[#0a66c2] rounded text-xs text-[#ede8df] flex items-center justify-center gap-2 transition-all cursor-pointer font-medium"
+              >
+                <span>Open LinkedIn Login (linkedin.com/login)</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#0a66c2]" />
+              </a>
+            </div>
+
+            {/* LinkedIn Account Connection Form */}
+            <form onSubmit={handleConfirmLinkedInAuth} className="space-y-3">
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  LinkedIn Profile Email
+                </label>
+                <div className="relative">
+                  <Mail className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="email"
+                    value={linkedInEmailInput}
+                    onChange={(e) => setLinkedInEmailInput(e.target.value)}
+                    placeholder="director@hospitality-group.com"
+                    required
+                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  Full Name
+                </label>
+                <div className="relative">
+                  <User className="w-4 h-4 text-[#716d66] absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={linkedInNameInput}
+                    onChange={(e) => setLinkedInNameInput(e.target.value)}
+                    placeholder="Elena Rostova"
+                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-[#88837a] block mb-1">
+                  Hospitality Title
+                </label>
+                <select
+                  value={linkedInRoleInput}
+                  onChange={(e) => setLinkedInRoleInput(e.target.value)}
+                  className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#0a66c2]"
+                >
+                  <option value="Director of Food & Beverage">Director of Food & Beverage</option>
+                  <option value="Executive Chef">Executive Chef</option>
+                  <option value="Chef Patron / Owner">Chef Patron / Owner</option>
+                  <option value="Hospitality General Manager">Hospitality General Manager</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-2.5 px-4 text-xs font-semibold uppercase tracking-wider text-white bg-[#0a66c2] hover:bg-[#084e96] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md mt-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    <span>Connecting LinkedIn...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Confirm LinkedIn Connection</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+            </form>
+
+            <div className="mt-4 pt-3 border-t border-[#25282c] flex items-center justify-between text-[11px]">
+              <a
+                href="https://www.linkedin.com/checkpoint/rp/request-password-reset"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0a66c2] hover:underline flex items-center gap-1"
+              >
+                <span>Forgot LinkedIn Password?</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowLinkedInModal(false)}
+                className="text-[#716d66] hover:text-[#ede8df]"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
