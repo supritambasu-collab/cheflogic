@@ -29,12 +29,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
             <div className="mt-4 text-xs font-mono text-[#c5a059] flex items-center gap-1.5">
               <span>Production URL:</span>
               <a
-                href="https://cheflogic.supritamone.com/"
+                href="https://cheflogic.ai.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline text-[#ede8df] flex items-center gap-1"
               >
-                https://cheflogic.supritamone.com/
+                https://cheflogic.ai.studio/
                 <ArrowUpRight className="w-3 h-3 text-[#c5a059]" />
               </a>
             </div>
@@ -186,7 +186,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
               <span>Admin Console</span>
             </button>
             <span aria-hidden="true">·</span>
-            <span>https://cheflogic.supritamone.com/</span>
+            <span>https://cheflogic.ai.studio/</span>
           </div>
         </div>
 

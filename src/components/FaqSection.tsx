@@ -25,7 +25,7 @@ export const FaqSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-            Everything you need to know about the ChefLogic system, our 3-month free trial, and deploying on <strong className="text-[#ede8df] font-mono">cheflogic.supritamone.com</strong>.
+            Everything you need to know about the ChefLogic system, our 3-month free trial, and deploying on <strong className="text-[#ede8df] font-mono">cheflogic.ai.studio</strong>.
           </p>
         </div>
 
@@ -67,12 +67,12 @@ export const FaqSection: React.FC = () => {
         <div className="mt-12 text-center text-xs text-[#88837a]">
           Have a bespoke technical or POS architecture question?{' '}
           <a
-            href="https://cheflogic.supritamone.com/"
+            href="https://cheflogic.ai.studio/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#c5a059] hover:underline inline-flex items-center gap-1 font-medium"
           >
-            <span>Visit the Live Platform at cheflogic.supritamone.com</span>
+            <span>Visit the Live Platform at cheflogic.ai.studio</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>

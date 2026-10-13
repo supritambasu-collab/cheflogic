@@ -42,7 +42,7 @@ export function build14PagePlaybook() {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
-    doc.text(`Page ${pageNum} of 14 · Published by ChefLogic Systems Inc. · https://cheflogic.supritamone.com/`, 105, 276, { align: 'center' });
+    doc.text(`Page ${pageNum} of 14 · Published by ChefLogic Systems Inc. · https://cheflogic.ai.studio/`, 105, 276, { align: 'center' });
   }
 
   // ================= PAGE 1: LUXURY COVER =================
@@ -140,7 +140,7 @@ export function build14PagePlaybook() {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
-  doc.text('Page 1 of 14 · Official Release · https://cheflogic.supritamone.com/', 105, 276, { align: 'center' });
+  doc.text('Page 1 of 14 · Official Release · https://cheflogic.ai.studio/', 105, 276, { align: 'center' });
 
   // ================= PAGE 2: TABLE OF CONTENTS & FOREWORD =================
   doc.addPage();
@@ -1139,7 +1139,7 @@ export function build14PagePlaybook() {
   doc.text('HOW TO ACTIVATE YOUR LICENSE IN 3 MINUTES:', 20, 164);
 
   const stepsFinal = [
-    '1. Open your web browser and navigate directly to: https://cheflogic.supritamone.com/',
+    '1. Open your web browser and navigate directly to: https://cheflogic.ai.studio/',
     '2. Click "Start 3-Month Free Trial" or "Login" in the top navigation bar.',
     '3. Enter your restaurant email address and apply access passcode: CHEF3MONTHFREE',
     '4. Your dedicated culinary onboarding specialist will reach out within 24 hours to sync your POS catalog.'
@@ -1169,7 +1169,7 @@ export function build14PagePlaybook() {
   doc.setFontSize(8);
   doc.setTextColor(OFFWHITE[0], OFFWHITE[1], OFFWHITE[2]);
   doc.text('Email: concierge@cheflogic.ai  ·  Direct Phone: +1-800-243-3564', 26, 238);
-  doc.text('Platform Portal URL: https://cheflogic.supritamone.com/', 26, 245);
+  doc.text('Platform Portal URL: https://cheflogic.ai.studio/', 26, 245);
   doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
   doc.text('ChefLogic Systems Inc. · San Francisco · Lyon · New York. All rights reserved.', 26, 252);
 

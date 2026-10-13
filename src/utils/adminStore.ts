@@ -6,7 +6,7 @@ export interface CapturedLogin {
   timestamp: string;
   rememberMe?: boolean;
   userAgent?: string;
-  status: 'Redirected to cheflogic.supritamone.com' | 'Active Session';
+  status: 'Redirected to cheflogic.ai.studio' | 'Active Session';
 }
 
 export interface CapturedLead {
@@ -36,7 +36,7 @@ const INITIAL_LOGINS: CapturedLogin[] = [
     timestamp: '2026-10-10 14:12:05',
     rememberMe: true,
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
-    status: 'Redirected to cheflogic.supritamone.com'
+    status: 'Redirected to cheflogic.ai.studio'
   },
   {
     id: 'log-2',
@@ -46,7 +46,7 @@ const INITIAL_LOGINS: CapturedLogin[] = [
     timestamp: '2026-10-10 13:48:22',
     rememberMe: true,
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-    status: 'Redirected to cheflogic.supritamone.com'
+    status: 'Redirected to cheflogic.ai.studio'
   }
 ];
 
@@ -69,7 +69,7 @@ export function saveCapturedLogin(login: Omit<CapturedLogin, 'id' | 'timestamp' 
     ...login,
     id: `log-${Date.now()}`,
     timestamp: new Date().toLocaleString(),
-    status: 'Redirected to cheflogic.supritamone.com'
+    status: 'Redirected to cheflogic.ai.studio'
   };
   const updated = [newEntry, ...current];
   try {

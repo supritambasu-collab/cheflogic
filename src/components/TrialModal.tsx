@@ -18,7 +18,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleLaunch = () => {
-    window.open('https://cheflogic.supritamone.com/', '_blank', 'noopener,noreferrer');
+    window.open('https://cheflogic.ai.studio/', '_blank', 'noopener,noreferrer');
     onClose();
   };
 
@@ -70,7 +70,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
 
         <p className="text-sm text-[#a7a29a] mt-3 leading-relaxed">
           Welcome to the ChefLogic culinary workspace. Your kitchen is granted 90 days of complete, unrestricted access to the intelligence engine at{' '}
-          <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong>.
+          <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         {/* Access Pass Code Box */}
@@ -119,7 +119,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
             onClick={handleLaunch}
             className="w-full py-3 px-5 text-sm font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[#c5a059]/10"
           >
-            <span>Proceed to cheflogic.supritamone.com</span>
+            <span>Proceed to cheflogic.ai.studio</span>
             <ExternalLink className="w-4 h-4" />
           </button>
           <button
@@ -132,7 +132,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
 
         <div className="mt-4 text-center">
           <span className="text-[11px] text-[#6b6760]">
-            Direct portal destination: <span className="font-mono text-[#a7a29a]">https://cheflogic.supritamone.com/</span>
+            Direct portal destination: <span className="font-mono text-[#a7a29a]">https://cheflogic.ai.studio/</span>
           </span>
         </div>
       </div>

@@ -58,12 +58,12 @@ export default function App() {
               <span>
                 <strong className="text-[#ede8df] font-medium">90-Day VIP Hospitality Trial:</strong> Zero upfront fee for restaurant operators to explore{' '}
                 <a
-                  href="https://cheflogic.supritamone.com/"
+                  href="https://cheflogic.ai.studio/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-[#c5a059] hover:underline"
                 >
-                  https://cheflogic.supritamone.com/
+                  https://cheflogic.ai.studio/
                 </a>
               </span>
             </div>

@@ -53,7 +53,7 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
             Stop guessing which dishes drive profit. Engineer your menu with precision.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-            ChefLogic at <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
+            ChefLogic at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
             {/* Connect to Full Platform */}
             <div className="mt-7 pt-5 border-t border-[#25282c]">
               <p className="text-xs text-[#88837a] mb-3">
-                Run this analysis on your entire menu catalog with live POS integration on cheflogic.supritamone.com.
+                Run this analysis on your entire menu catalog with live POS integration on cheflogic.ai.studio.
               </p>
               <button
                 onClick={onOpenTrialModal}

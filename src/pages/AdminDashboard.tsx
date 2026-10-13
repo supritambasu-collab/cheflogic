@@ -433,7 +433,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                             {entry.timestamp}
                           </td>
                           <td className="py-3.5 px-4 text-[11px] font-mono text-[#c5a059]">
-                            https://cheflogic.supritamone.com/
+                            https://cheflogic.ai.studio/
                           </td>
                           <td className="py-3.5 px-4 text-right">
                             <button
@@ -632,7 +632,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </div>
 
                 <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
-                  Page 1 of 2 · Published by ChefLogic Systems Inc. · https://cheflogic.supritamone.com/
+                  Page 1 of 2 · Published by ChefLogic Systems Inc. · https://cheflogic.ai.studio/
                 </div>
               </div>
 
@@ -703,7 +703,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </div>
 
                 <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
-                  Page 2 of 2 · Published by ChefLogic Systems Inc. · Platform Portal: https://cheflogic.supritamone.com/
+                  Page 2 of 2 · Published by ChefLogic Systems Inc. · Platform Portal: https://cheflogic.ai.studio/
                 </div>
               </div>
 
@@ -719,7 +719,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               How to access this Owner Dashboard in the future:
             </span>
             <p>
-              1. Type <strong className="text-[#c5a059] font-mono">#admin</strong> in your browser address bar anytime (e.g. <span className="font-mono text-[#ede8df]">https://cheflogic.supritamone.com/#admin</span> or your current app URL + <span className="font-mono text-[#ede8df]">#admin</span>).
+              1. Type <strong className="text-[#c5a059] font-mono">#admin</strong> in your browser address bar anytime (e.g. <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/#admin</span> or your current app URL + <span className="font-mono text-[#ede8df]">#admin</span>).
             </p>
             <p>
               2. Or click the discrete <strong className="text-[#c5a059]">"Owner Admin Console"</strong> link located in the footer or on the Login screen.

@@ -157,12 +157,12 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const FAQS_DATA = [
   {
-    question: 'What is ChefLogic and how does it connect to https://cheflogic.supritamone.com/?',
-    answer: 'ChefLogic is the dedicated culinary intelligence platform designed specifically for restaurant executive chefs, culinary directors, and F&B managers. The production application at https://cheflogic.supritamone.com/ manages live kitchen inventory, continuously calculates real-time plate costs, automatically suggests dishes to deplete perishable stock before it spoils, and maps your menu against profitability matrices.'
+    question: 'What is ChefLogic and how does it connect to https://cheflogic.ai.studio/?',
+    answer: 'ChefLogic is the dedicated culinary intelligence platform designed specifically for restaurant executive chefs, culinary directors, and F&B managers. The production application at https://cheflogic.ai.studio/ manages live kitchen inventory, continuously calculates real-time plate costs, automatically suggests dishes to deplete perishable stock before it spoils, and maps your menu against profitability matrices.'
   },
   {
     question: 'How do I access the 3-Month Free Trial?',
-    answer: 'Clicking any "Start 3-Month Free Trial" or "Login to ChefLogic" link on this site connects you directly to https://cheflogic.supritamone.com/ with complimentary 90-day enterprise access automatically pre-configured. No credit card is required to begin, and your kitchen onboarding specialist is assigned within 24 hours.'
+    answer: 'Clicking any "Start 3-Month Free Trial" or "Login to ChefLogic" link on this site connects you directly to https://cheflogic.ai.studio/ with complimentary 90-day enterprise access automatically pre-configured. No credit card is required to begin, and your kitchen onboarding specialist is assigned within 24 hours.'
   },
   {
     question: 'How does ChefLogic generate recipes from surplus walk-in stock?',

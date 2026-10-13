@@ -24,7 +24,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          At ChefLogic Systems Inc., we are committed to safeguarding the privacy and commercial confidentiality of restaurant operators, culinary professionals, and enterprise hospitality teams accessing our platform via <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong>.
+          At ChefLogic Systems Inc., we are committed to safeguarding the privacy and commercial confidentiality of restaurant operators, culinary professionals, and enterprise hospitality teams accessing our platform via <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         {/* High-Level Pledge Box */}
@@ -84,7 +84,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
               2. How We Utilize Your Culinary Data
             </h3>
             <p className="mb-2">
-              Your kitchen data is processed exclusively to deliver the functionality of <span className="font-mono text-[#ede8df]">https://cheflogic.supritamone.com/</span>:
+              Your kitchen data is processed exclusively to deliver the functionality of <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/</span>:
             </p>
             <ul className="list-disc list-inside space-y-1 pl-2 text-[#d5cfc4]">
               <li>Calculating real-time recipe plate costs and portion yields.</li>
@@ -113,7 +113,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
               4. Cookies & Web Tracking
             </h3>
             <p>
-              We utilize essential authentication cookies necessary to maintain secure sessions on <span className="font-mono text-[#ede8df]">https://cheflogic.supritamone.com/</span>. We do not deploy third-party advertising tracking cookies, cross-site pixels, or intrusive behavioral trackers.
+              We utilize essential authentication cookies necessary to maintain secure sessions on <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/</span>. We do not deploy third-party advertising tracking cookies, cross-site pixels, or intrusive behavioral trackers.
             </p>
           </div>
 

@@ -56,7 +56,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
               <span>Live Engine Demonstration</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-culinary text-[#ede8df] leading-tight">
-              See how cheflogic.supritamone.com turns surplus stock into margin.
+              See how cheflogic.ai.studio turns surplus stock into margin.
             </h2>
           </div>
           <p className="text-sm text-[#a7a29a] max-w-md leading-relaxed">
@@ -248,7 +248,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
             {/* Direct CTA */}
             <div className="mt-6 pt-5 border-t border-[#25282c] flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-xs text-[#88837a]">
-                Ready to sync your walk-in cooler on <strong className="text-[#ede8df]">cheflogic.supritamone.com</strong>?
+                Ready to sync your walk-in cooler on <strong className="text-[#ede8df]">cheflogic.ai.studio</strong>?
               </span>
               <button
                 onClick={onOpenTrialModal}

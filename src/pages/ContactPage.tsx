@@ -61,7 +61,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-[#a7a29a] font-normal leading-relaxed max-w-3xl">
-          Whether you operate a 40-seat neighborhood bistro or a multi-unit hospitality group, our hospitality concierges are ready to guide your kitchen onboarding for <strong className="text-[#ede8df] font-mono">https://cheflogic.supritamone.com/</strong>.
+          Whether you operate a 40-seat neighborhood bistro or a multi-unit hospitality group, our hospitality concierges are ready to guide your kitchen onboarding for <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -111,12 +111,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                 You do not need to wait for a scheduled sales call to explore ChefLogic. The live workspace is available right now:
               </p>
               <a
-                href="https://cheflogic.supritamone.com/"
+                href="https://cheflogic.ai.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#c5a059] hover:underline"
               >
-                <span>Launch cheflogic.supritamone.com in New Tab</span>
+                <span>Launch cheflogic.ai.studio in New Tab</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>

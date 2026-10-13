@@ -47,14 +47,14 @@ export const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ onOpenTrialM
             <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-3">
               <span>Core Architecture</span>
               <span aria-hidden="true" className="text-[#4e4941]">·</span>
-              <span>Inside cheflogic.supritamone.com</span>
+              <span>Inside cheflogic.ai.studio</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-culinary text-[#ede8df] leading-tight">
               A complete operating system built for working restaurant kitchens.
             </h2>
           </div>
           <p className="text-sm text-[#a7a29a] max-w-md leading-relaxed">
-            Every feature in <strong className="text-[#ede8df] font-mono">cheflogic.supritamone.com</strong> was architected alongside Michelin-starred executive chefs and commercial F&B directors.
+            Every feature in <strong className="text-[#ede8df] font-mono">cheflogic.ai.studio</strong> was architected alongside Michelin-starred executive chefs and commercial F&B directors.
           </p>
         </div>
 

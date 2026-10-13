@@ -331,7 +331,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             {currentUser
               ? `Authenticated as ${currentUser.fullName} (${currentUser.role}). Real-time inventory and plate costing active.`
               : authMode === 'signin' 
-              ? 'Access real-time inventory costing and recipe formulation on cheflogic.supritamone.com'
+              ? 'Access real-time inventory costing and recipe formulation on cheflogic.ai.studio'
               : authMode === 'register'
               ? 'Activate your complimentary 90-day full-access license. All back-of-house systems included.'
               : 'Enter your restaurant email to receive a secure 6-digit recovery code, or use Google Account recovery.'}
@@ -1076,7 +1076,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   Sign In with Google Accounts
                 </h3>
                 <span className="text-[11px] text-[#a7a29a] block">
-                  Connect your verified Google Account to cheflogic.supritamone.com
+                  Connect your verified Google Account to cheflogic.ai.studio
                 </span>
               </div>
             </div>
