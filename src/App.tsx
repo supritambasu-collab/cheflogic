@@ -54,27 +54,35 @@ export default function App() {
         <div className="bg-[#141618] border-b border-[#25282c] px-4 py-2 text-xs text-[#a7a29a] relative z-50">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 mx-auto sm:mx-0">
-              <span className="w-2 h-2 rounded-full bg-[#c5a059] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>
-                <strong className="text-[#ede8df] font-medium">90-Day VIP Hospitality Trial:</strong> Zero upfront fee for restaurant operators to explore{' '}
-                <a
-                  href="https://cheflogic.ai.studio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-[#c5a059] hover:underline"
-                >
-                  https://cheflogic.ai.studio/
-                </a>
+                <strong className="text-[#ede8df] font-medium">0-Waste Kitchen Math Engine:</strong>{' '}
+                <span className="text-[#c5a059] font-medium">Turn surplus stock into high-margin specials.</span>{' '}
+                100% free tool · Zero sign-up wall required.
               </span>
             </div>
 
             <div className="hidden sm:flex items-center gap-4">
+              <a
+                href="#engine"
+                onClick={(e) => {
+                  if (currentView !== 'home') {
+                    e.preventDefault();
+                    handleNavigate('home');
+                    setTimeout(() => {
+                      document.getElementById('engine')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }
+                }}
+                className="text-xs font-semibold uppercase tracking-wider text-emerald-400 hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
+              >
+                <span>Try Simulator Live ↓</span>
+              </a>
               <button
                 onClick={() => setIsTrialModalOpen(true)}
-                className="text-xs font-semibold uppercase tracking-wider text-[#c5a059] hover:text-[#ede8df] transition-colors flex items-center gap-1 cursor-pointer"
+                className="text-xs font-medium text-[#a7a29a] hover:text-[#ede8df] transition-colors cursor-pointer"
               >
-                <span>Claim Trial</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>90-Day Free Pass</span>
               </button>
               <button
                 onClick={() => setShowTopBanner(false)}

@@ -52,9 +52,10 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
                 }, 100);
               }
             }}
-            className="hover:text-[#ede8df] transition-colors"
+            className="hover:text-[#ede8df] transition-colors flex items-center gap-1.5"
           >
-            Kitchen Engine
+            <span>Kitchen Engine</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-mono-num font-semibold">Free</span>
           </a>
           <a
             href="#matrix"

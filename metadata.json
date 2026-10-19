@@ -1,6 +1,6 @@
 {
   "name": "ChefLogic | Kitchen Inventory & Menu Engineering Intelligence",
-  "description": "The intelligent culinary platform for restaurant managers to eliminate food waste, automate inventory costing, and engineer high-margin menus. Start your 3-month free trial.",
+  "description": "Turn expiring walk-in food into high-margin $38 restaurant specials before it hits the dumpster. 100% free interactive culinary math engine with zero sign-up wall.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
