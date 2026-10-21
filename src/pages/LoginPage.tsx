@@ -301,9 +301,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
   };
 
   return (
-    <div className="min-h-[85vh] py-16 sm:py-24 bg-[#0c0d0e] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+    <div className="min-h-[85vh] py-16 sm:py-24 bg-[#101524] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5a059]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-xl relative z-10">
         
@@ -338,8 +338,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           </p>
 
           {!currentUser && (
-            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#141618] border border-[#c5a059]/30 text-[11px] text-[#c5a059]">
-              <Sparkles className="w-3.5 h-3.5 text-[#c5a059]" />
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#1A2238] border border-[#D4AF37]/30 text-[11px] text-[#D4AF37]">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>90-Day VIP Hospitality Trial automatically applied</span>
             </div>
           )}
@@ -364,17 +364,17 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
         {/* VIEW A: LOGGED IN SESSION CARD                           */}
         {/* ======================================================== */}
         {currentUser ? (
-          <div className="bg-[#141618] border border-emerald-500/30 rounded-xl p-6 sm:p-8 shadow-2xl space-y-6">
-            <div className="flex items-center justify-between pb-5 border-b border-[#25282c]">
+          <div className="bg-[#1A2238] border border-emerald-500/30 rounded-xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div className="flex items-center justify-between pb-5 border-b border-[#273352]">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c5a059] to-[#9a7428] text-[#0c0d0e] font-serif-culinary text-xl font-bold flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#9a7428] text-[#101524] font-serif-culinary text-xl font-bold flex items-center justify-center shadow-md">
                   {currentUser.fullName.charAt(0)}
                 </div>
                 <div>
                   <h3 className="text-lg font-serif-culinary text-[#ede8df]">
                     {currentUser.fullName}
                   </h3>
-                  <span className="text-xs text-[#c5a059] block">
+                  <span className="text-xs text-[#D4AF37] block">
                     {currentUser.role} · {currentUser.restaurantName}
                   </span>
                 </div>
@@ -388,19 +388,19 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
 
             {/* Account Details Grid */}
             <div className="grid grid-cols-2 gap-4 text-xs">
-              <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                 <span className="text-[10px] uppercase text-[#88837a] block">Registered Email</span>
                 <span className="font-mono text-[#ede8df] text-[11px] truncate block mt-0.5">{currentUser.email}</span>
               </div>
-              <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                 <span className="text-[10px] uppercase text-[#88837a] block">Kitchen Scale</span>
                 <span className="text-[#ede8df] text-[11px] truncate block mt-0.5">{currentUser.kitchenSize}</span>
               </div>
-              <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                 <span className="text-[10px] uppercase text-[#88837a] block">Auth Method</span>
-                <span className="text-[#c5a059] text-[11px] font-medium block mt-0.5">{currentUser.provider}</span>
+                <span className="text-[#D4AF37] text-[11px] font-medium block mt-0.5">{currentUser.provider}</span>
               </div>
-              <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                 <span className="text-[10px] uppercase text-[#88837a] block">VIP Passcode Status</span>
                 <span className="text-emerald-400 font-mono text-[11px] block mt-0.5">CHEF3MONTHFREE (Active)</span>
               </div>
@@ -411,7 +411,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               <button
                 type="button"
                 onClick={() => onNavigate('home')}
-                className="w-full sm:flex-1 py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
+                className="w-full sm:flex-1 py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
               >
                 <span>Launch Back-of-House Simulator</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -432,16 +432,16 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
         /* ======================================================== */
         /* VIEW B: MAIN AUTH CARD (SIGN IN / REGISTER / FORGOT)      */
         /* ======================================================== */
-        <div className="bg-[#141618] border border-[#25282c] rounded-xl p-6 sm:p-8 shadow-2xl relative">
+        <div className="bg-[#1A2238] border border-[#273352] rounded-xl p-6 sm:p-8 shadow-2xl relative">
 
           {/* Mode Switcher Tabs */}
-          <div className="grid grid-cols-3 gap-1 p-1 bg-[#0c0d0e] border border-[#25282c] rounded-lg mb-6 text-xs">
+          <div className="grid grid-cols-3 gap-1 p-1 bg-[#101524] border border-[#273352] rounded-lg mb-6 text-xs">
             <button
               type="button"
               onClick={() => { setAuthMode('signin'); setErrorMessage(''); setSuccessMessage(''); }}
               className={`py-2 px-3 rounded font-medium transition-all cursor-pointer ${
                 authMode === 'signin'
-                  ? 'bg-[#c5a059] text-[#0c0d0e] font-semibold shadow-sm'
+                  ? 'bg-[#D4AF37] text-[#101524] font-semibold shadow-sm'
                   : 'text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -452,7 +452,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               onClick={() => { setAuthMode('register'); setErrorMessage(''); setSuccessMessage(''); }}
               className={`py-2 px-3 rounded font-medium transition-all cursor-pointer ${
                 authMode === 'register'
-                  ? 'bg-[#c5a059] text-[#0c0d0e] font-semibold shadow-sm'
+                  ? 'bg-[#D4AF37] text-[#101524] font-semibold shadow-sm'
                   : 'text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -463,7 +463,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               onClick={() => { setAuthMode('forgot'); setErrorMessage(''); setSuccessMessage(''); setForgotStep(1); }}
               className={`py-2 px-3 rounded font-medium transition-all cursor-pointer ${
                 authMode === 'forgot'
-                  ? 'bg-[#c5a059] text-[#0c0d0e] font-semibold shadow-sm'
+                  ? 'bg-[#D4AF37] text-[#101524] font-semibold shadow-sm'
                   : 'text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -479,7 +479,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                 type="button"
                 onClick={handleOpenGoogleAuth}
                 disabled={isSubmitting}
-                className="w-full py-3 px-4 bg-[#1f2328] hover:bg-[#282d33] border border-[#373c44] hover:border-[#c5a059]/40 rounded-lg text-xs font-semibold text-[#ede8df] flex items-center justify-center gap-3 transition-all cursor-pointer shadow-sm group"
+                className="w-full py-3 px-4 bg-[#1f2328] hover:bg-[#282d33] border border-[#373c44] hover:border-[#D4AF37]/40 rounded-lg text-xs font-semibold text-[#ede8df] flex items-center justify-center gap-3 transition-all cursor-pointer shadow-sm group"
                 title="Sign in with your Google Account on accounts.google.com"
               >
                 {/* Official Google G Logo */}
@@ -502,7 +502,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   />
                 </svg>
                 <span>Continue with Google Accounts</span>
-                <span className="text-[10px] text-[#c5a059] bg-[#c5a059]/10 border border-[#c5a059]/20 px-2 py-0.5 rounded ml-auto">
+                <span className="text-[10px] text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/20 px-2 py-0.5 rounded ml-auto">
                   Google SSO
                 </span>
               </button>
@@ -525,8 +525,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               </button>
 
               <div className="relative py-2 flex items-center justify-center">
-                <div className="border-t border-[#25282c] w-full" />
-                <span className="bg-[#141618] px-3 text-[10px] uppercase tracking-wider text-[#716d66] absolute">
+                <div className="border-t border-[#273352] w-full" />
+                <span className="bg-[#1A2238] px-3 text-[10px] uppercase tracking-wider text-[#716d66] absolute">
                   or continue with kitchen email
                 </span>
               </div>
@@ -550,7 +550,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     onChange={(e) => setLoginEmail(e.target.value)}
                     placeholder="chef@restaurant.com"
                     required
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
@@ -563,7 +563,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <button
                     type="button"
                     onClick={() => { setAuthMode('forgot'); setForgotEmail(loginEmail); setForgotStep(1); }}
-                    className="text-[11px] text-[#c5a059] hover:underline cursor-pointer"
+                    className="text-[11px] text-[#D4AF37] hover:underline cursor-pointer"
                   >
                     Forgot Password?
                   </button>
@@ -576,7 +576,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     onChange={(e) => setLoginPassword(e.target.value)}
                     placeholder="••••••••••••"
                     required
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                   />
                   <button
                     type="button"
@@ -594,7 +594,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="rounded border-[#2d3137] bg-[#0c0d0e] text-[#c5a059] focus:ring-0"
+                    className="rounded border-[#273352] bg-[#101524] text-[#D4AF37] focus:ring-0"
                   />
                   <span>Keep me signed in</span>
                 </label>
@@ -603,7 +603,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-[#c5a059]/10"
+                className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-[#D4AF37]/10"
               >
                 {isSubmitting ? (
                   <>
@@ -619,7 +619,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               </button>
 
               {/* Quick Demo Pre-fill Helper */}
-              <div className="pt-4 border-t border-[#25282c] text-center">
+              <div className="pt-4 border-t border-[#273352] text-center">
                 <span className="text-[11px] text-[#716d66] block mb-2">
                   Need to test fast? Click a pre-configured kitchen profile:
                 </span>
@@ -627,14 +627,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <button
                     type="button"
                     onClick={() => fillDemoAccount('marcus.vance@lateliermoderne.com', 'ChefMaster#2026')}
-                    className="px-2.5 py-1 bg-[#1a1d20] hover:bg-[#25282c] border border-[#2d3137] rounded text-[#a7a29a] hover:text-[#c5a059] cursor-pointer"
+                    className="px-2.5 py-1 bg-[#1a1d20] hover:bg-[#273352] border border-[#273352] rounded text-[#a7a29a] hover:text-[#D4AF37] cursor-pointer"
                   >
                     Chef Marcus Vance (Exec Chef)
                   </button>
                   <button
                     type="button"
                     onClick={() => fillDemoAccount('elena.rostova@aureliagroup.com', 'AureliaSecure2026!')}
-                    className="px-2.5 py-1 bg-[#1a1d20] hover:bg-[#25282c] border border-[#2d3137] rounded text-[#a7a29a] hover:text-[#c5a059] cursor-pointer"
+                    className="px-2.5 py-1 bg-[#1a1d20] hover:bg-[#273352] border border-[#273352] rounded text-[#a7a29a] hover:text-[#D4AF37] cursor-pointer"
                   >
                     Elena Rostova (F&B Director)
                   </button>
@@ -661,7 +661,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                       onChange={(e) => setRegFullName(e.target.value)}
                       placeholder="Chef Marcus Vance"
                       required
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -678,7 +678,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                       onChange={(e) => setRegRestaurantName(e.target.value)}
                       placeholder="L’Atelier Moderne"
                       required
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -692,7 +692,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <select
                     value={regRole}
                     onChange={(e) => setRegRole(e.target.value)}
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                   >
                     <option value="Executive Chef">Executive Chef</option>
                     <option value="Chef Patron / Owner">Chef Patron / Owner</option>
@@ -709,7 +709,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <select
                     value={regKitchenSize}
                     onChange={(e) => setRegKitchenSize(e.target.value)}
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                   >
                     <option value="Independent Restaurant (1 Kitchen)">Independent (1 Kitchen)</option>
                     <option value="Multi-Unit Concept (2-4 Kitchens)">Multi-Unit (2-4 Kitchens)</option>
@@ -731,7 +731,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     onChange={(e) => setRegEmail(e.target.value)}
                     placeholder="chef@restaurant.com"
                     required
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
@@ -749,7 +749,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                       onChange={(e) => setRegPassword(e.target.value)}
                       placeholder="Min. 6 characters"
                       required
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                     />
                     <button
                       type="button"
@@ -773,13 +773,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                       onChange={(e) => setRegConfirmPassword(e.target.value)}
                       placeholder="Re-enter password"
                       required
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded text-[11px] text-[#a7a29a] flex items-center gap-2">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded text-[11px] text-[#a7a29a] flex items-center gap-2">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>90-Day Enterprise License pre-authorized. No credit card required.</span>
               </div>
@@ -787,7 +787,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-[#c5a059]/10"
+                className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-[#D4AF37]/10"
               >
                 {isSubmitting ? (
                   <>
@@ -811,7 +811,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             <div className="space-y-5">
               {forgotStep === 1 && (
                 <div className="space-y-4">
-                  <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded text-xs text-[#a7a29a] leading-relaxed">
+                  <div className="p-3 bg-[#101524] border border-[#273352] rounded text-xs text-[#a7a29a] leading-relaxed">
                     Enter the email registered with your kitchen to generate a secure 6-digit recovery code. Or if you use Google Accounts, you can jump directly to Google Account Recovery below.
                   </div>
 
@@ -828,7 +828,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                           onChange={(e) => setForgotEmail(e.target.value)}
                           placeholder="chef@restaurant.com"
                           required
-                          className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#c5a059]"
+                          className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#D4AF37]"
                         />
                       </div>
                     </div>
@@ -836,7 +836,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
+                      className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
                     >
                       {isSubmitting ? (
                         <>
@@ -853,7 +853,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   </form>
 
                   {/* DIRECT EXTERNAL ACCOUNT RECOVERY LINKS */}
-                  <div className="pt-4 border-t border-[#25282c] space-y-2.5">
+                  <div className="pt-4 border-t border-[#273352] space-y-2.5">
                     <span className="text-[11px] uppercase tracking-wider text-[#716d66] font-semibold block text-center">
                       Using Google or Enterprise Single Sign-On?
                     </span>
@@ -864,7 +864,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                         href="https://accounts.google.com/signin/recovery"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#2d3137] hover:border-[#4285F4]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
+                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#273352] hover:border-[#4285F4]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
                       >
                         <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
                           <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -881,7 +881,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                         href="https://www.linkedin.com/checkpoint/rp/request-password-reset"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#2d3137] hover:border-[#0a66c2]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
+                        className="p-3 bg-[#181b1f] hover:bg-[#202429] border border-[#273352] hover:border-[#0a66c2]/60 rounded text-[#ede8df] flex items-center gap-2 transition-all group"
                       >
                         <svg className="w-4 h-4 fill-[#0a66c2] shrink-0" viewBox="0 0 24 24">
                           <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
@@ -924,7 +924,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                         onChange={(e) => setResetCode(e.target.value)}
                         placeholder="e.g. 489201"
                         required
-                        className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] font-mono tracking-widest focus:outline-none focus:border-[#c5a059]"
+                        className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] font-mono tracking-widest focus:outline-none focus:border-[#D4AF37]"
                       />
                     </div>
                   </div>
@@ -942,7 +942,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                           onChange={(e) => setNewPassword(e.target.value)}
                           placeholder="Min 6 characters"
                           required
-                          className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                          className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-10 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                         />
                         <button
                           type="button"
@@ -966,7 +966,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                           onChange={(e) => setConfirmNewPassword(e.target.value)}
                           placeholder="Re-enter password"
                           required
-                          className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                          className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                         />
                       </div>
                     </div>
@@ -975,7 +975,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
+                    className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
                   >
                     {isSubmitting ? (
                       <>
@@ -1006,7 +1006,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                   <button
                     type="button"
                     onClick={() => { setAuthMode('signin'); setLoginEmail(forgotEmail); setLoginPassword(newPassword); }}
-                    className="py-2.5 px-6 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer inline-flex items-center gap-2"
+                    className="py-2.5 px-6 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer inline-flex items-center gap-2"
                   >
                     <span>Proceed to Sign In</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -1017,7 +1017,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           )}
 
           {/* Card Footer Info */}
-          <div className="mt-6 pt-5 border-t border-[#25282c] text-center space-y-3">
+          <div className="mt-6 pt-5 border-t border-[#273352] text-center space-y-3">
             <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#605c56]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#88837a]" />
               <span>256-Bit SSL Encrypted Hospitality Session</span>
@@ -1038,7 +1038,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           <span>·</span>
           <button
             onClick={() => onNavigate('admin')}
-            className="hover:text-[#c5a059] transition-colors cursor-pointer flex items-center gap-1 opacity-60 hover:opacity-100"
+            className="hover:text-[#D4AF37] transition-colors cursor-pointer flex items-center gap-1 opacity-60 hover:opacity-100"
             title="Restricted Owner Credentials Console"
           >
             <Lock className="w-3 h-3" />
@@ -1053,7 +1053,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
       {/* ======================================================== */}
       {showGoogleModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="w-full max-w-md bg-[#141618] border border-[#2d3137] rounded-xl shadow-2xl p-6 relative">
+          <div className="w-full max-w-md bg-[#1A2238] border border-[#273352] rounded-xl shadow-2xl p-6 relative">
             <button
               onClick={() => setShowGoogleModal(false)}
               className="absolute top-4 right-4 text-[#88837a] hover:text-[#ede8df] p-1 rounded hover:bg-[#202428] cursor-pointer"
@@ -1082,7 +1082,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             </div>
 
             {/* Official Google Portal Direct Link */}
-            <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded-lg mb-4 text-xs">
+            <div className="p-3 bg-[#101524] border border-[#273352] rounded-lg mb-4 text-xs">
               <span className="text-[11px] text-[#88837a] block mb-2 font-medium">
                 Official Google Identity Portal:
               </span>
@@ -1114,7 +1114,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     onChange={(e) => setGoogleEmailInput(e.target.value)}
                     placeholder="yourname@gmail.com"
                     required
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
                   />
                 </div>
               </div>
@@ -1130,7 +1130,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     value={googleNameInput}
                     onChange={(e) => setGoogleNameInput(e.target.value)}
                     placeholder="Chef / Operator Name"
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
                   />
                 </div>
               </div>
@@ -1146,7 +1146,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     value={googleRestaurantInput}
                     onChange={(e) => setGoogleRestaurantInput(e.target.value)}
                     placeholder="Restaurant Concept"
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#4285F4]"
                   />
                 </div>
               </div>
@@ -1170,7 +1170,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               </button>
             </form>
 
-            <div className="mt-4 pt-3 border-t border-[#25282c] flex items-center justify-between text-[11px]">
+            <div className="mt-4 pt-3 border-t border-[#273352] flex items-center justify-between text-[11px]">
               <a
                 href="https://accounts.google.com/signin/recovery"
                 target="_blank"
@@ -1197,7 +1197,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
       {/* ======================================================== */}
       {showLinkedInModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="w-full max-w-md bg-[#141618] border border-[#2d3137] rounded-xl shadow-2xl p-6 relative">
+          <div className="w-full max-w-md bg-[#1A2238] border border-[#273352] rounded-xl shadow-2xl p-6 relative">
             <button
               onClick={() => setShowLinkedInModal(false)}
               className="absolute top-4 right-4 text-[#88837a] hover:text-[#ede8df] p-1 rounded hover:bg-[#202428] cursor-pointer"
@@ -1223,7 +1223,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             </div>
 
             {/* Official LinkedIn Portal Direct Link */}
-            <div className="p-3 bg-[#0c0d0e] border border-[#25282c] rounded-lg mb-4 text-xs">
+            <div className="p-3 bg-[#101524] border border-[#273352] rounded-lg mb-4 text-xs">
               <span className="text-[11px] text-[#88837a] block mb-2 font-medium">
                 Official LinkedIn Login Portal:
               </span>
@@ -1252,7 +1252,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     onChange={(e) => setLinkedInEmailInput(e.target.value)}
                     placeholder="director@hospitality-group.com"
                     required
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
                   />
                 </div>
               </div>
@@ -1268,7 +1268,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                     value={linkedInNameInput}
                     onChange={(e) => setLinkedInNameInput(e.target.value)}
                     placeholder="Elena Rostova"
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2 text-xs text-[#ede8df] placeholder:text-[#55514b] focus:outline-none focus:border-[#0a66c2]"
                   />
                 </div>
               </div>
@@ -1280,7 +1280,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
                 <select
                   value={linkedInRoleInput}
                   onChange={(e) => setLinkedInRoleInput(e.target.value)}
-                  className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#0a66c2]"
+                  className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#0a66c2]"
                 >
                   <option value="Director of Food & Beverage">Director of Food & Beverage</option>
                   <option value="Executive Chef">Executive Chef</option>
@@ -1308,7 +1308,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
               </button>
             </form>
 
-            <div className="mt-4 pt-3 border-t border-[#25282c] flex items-center justify-between text-[11px]">
+            <div className="mt-4 pt-3 border-t border-[#273352] flex items-center justify-between text-[11px]">
               <a
                 href="https://www.linkedin.com/checkpoint/rp/request-password-reset"
                 target="_blank"

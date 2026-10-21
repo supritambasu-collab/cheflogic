@@ -9,11 +9,11 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
   const [teamImg, setTeamImg] = useState<string>(CULINARY_TEAM_IMG);
   return (
-    <div className="py-16 sm:py-24 bg-[#0c0d0e]">
+    <div className="py-16 sm:py-24 bg-[#101524]">
       <div className="max-w-5xl mx-auto px-6">
         
         {/* Editorial Breadcrumb / Subtitle */}
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
+        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <span>Our Story & Mission</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
           <span>Founded by Chefs, Engineered for Margins</span>
@@ -29,7 +29,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
         </p>
 
         {/* Feature Image: Culinary Team Story */}
-        <div className="my-12 rounded-lg overflow-hidden border border-[#25282c] shadow-2xl bg-[#141618]">
+        <div className="my-12 rounded-lg overflow-hidden border border-[#273352] shadow-2xl bg-[#1A2238]">
           <div className="aspect-[16/9] w-full relative">
             <img
               src={teamImg}
@@ -42,7 +42,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
                 }
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d0e] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101524] via-transparent to-transparent" />
             <div className="absolute bottom-4 left-6 right-6 text-xs text-[#a7a29a]">
               ChefLogic test kitchen & culinary data laboratory · San Francisco & Lyon
             </div>
@@ -78,8 +78,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
 
           {/* Mission Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-            <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
-              <div className="w-9 h-9 rounded bg-[#c5a059]/15 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+            <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
+              <div className="w-9 h-9 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-4">
                 <Leaf className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-serif-culinary text-[#ede8df] mb-2">
@@ -90,8 +90,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
               </p>
             </div>
 
-            <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
-              <div className="w-9 h-9 rounded bg-[#c5a059]/15 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+            <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
+              <div className="w-9 h-9 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-4">
                 <Target className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-serif-culinary text-[#ede8df] mb-2">
@@ -102,8 +102,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
               </p>
             </div>
 
-            <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
-              <div className="w-9 h-9 rounded bg-[#c5a059]/15 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] mb-4">
+            <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
+              <div className="w-9 h-9 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-4">
                 <ChefHat className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-serif-culinary text-[#ede8df] mb-2">
@@ -122,19 +122,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
             </h2>
             <ul className="space-y-4 text-sm text-[#a7a29a]">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#c5a059] mt-2 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
                 <div>
                   <strong className="text-[#ede8df]">Culinary Honor:</strong> We treat ingredients with reverent respect. A farmer spent months cultivating that heirloom vegetable or raising that livestock; wasting it is an avoidable failure.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#c5a059] mt-2 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
                 <div>
                   <strong className="text-[#ede8df]">Recipe Sovereignty:</strong> Your recipes belong solely to your culinary team. ChefLogic never shares proprietary ratios, secret sauces, or internal cost cards with third parties.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#c5a059] mt-2 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
                 <div>
                   <strong className="text-[#ede8df]">Transparent Economics:</strong> No hidden processing fees, no locked vendor agreements. We build software that pays for itself ten times over within the first fortnight.
                 </div>
@@ -143,7 +143,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
           </div>
 
           {/* Call to action block */}
-          <div className="mt-12 p-8 bg-[#141618] border border-[#c5a059]/30 rounded-lg text-center">
+          <div className="mt-12 p-8 bg-[#1A2238] border border-[#D4AF37]/30 rounded-lg text-center">
             <h3 className="text-2xl font-serif-culinary text-[#ede8df] mb-2">
               Ready to bring intelligent economics to your brigade?
             </h3>
@@ -152,7 +152,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
             </p>
             <button
               onClick={onOpenTrialModal}
-              className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer inline-flex items-center gap-2"
+              className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer inline-flex items-center gap-2"
             >
               <span>Begin 3-Month Free Trial</span>
               <ArrowRight className="w-4 h-4" />

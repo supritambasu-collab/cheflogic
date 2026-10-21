@@ -26,13 +26,13 @@ export const ChefLogicLogo: React.FC<ChefLogicLogoProps> = ({
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
       {/* Precision Emblem Mark */}
-      <div className={`relative ${iconDimensions} rounded-lg bg-gradient-to-br from-[#181b1f] to-[#0c0d0e] border border-[#c5a059]/40 flex items-center justify-center p-1.5 shadow-sm shrink-0 transition-transform hover:scale-105`}>
+      <div className={`relative ${iconDimensions} rounded-lg bg-gradient-to-br from-[#0F382C] via-[#1A2238] to-[#101524] border border-[#D4AF37]/50 flex items-center justify-center p-1.5 shadow-md shrink-0 transition-transform hover:scale-105`}>
         <svg viewBox="0 0 40 40" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="logoInnerGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f5e2ad" />
-              <stop offset="50%" stopColor="#c5a059" />
-              <stop offset="100%" stopColor="#9a7428" />
+              <stop offset="0%" stopColor="#F5E08C" />
+              <stop offset="50%" stopColor="#D4AF37" />
+              <stop offset="100%" stopColor="#94741B" />
             </linearGradient>
           </defs>
 
@@ -60,11 +60,11 @@ export const ChefLogicLogo: React.FC<ChefLogicLogoProps> = ({
 
       {/* Typographic Lockup */}
       <div className="flex flex-col text-left">
-        <span className={`font-serif-culinary tracking-wide text-[#ede8df] leading-none ${textStyles}`}>
-          Chef<span className="text-[#c5a059] font-medium">Logic</span>
+        <span className={`font-serif-culinary tracking-wide text-white leading-none ${textStyles}`}>
+          Chef<span className="text-[#D4AF37] font-medium">Logic</span>
         </span>
         {showSubtitle && (
-          <span className="text-[9px] uppercase tracking-[0.25em] text-[#c5a059] font-semibold mt-1">
+          <span className="text-[9px] uppercase tracking-[0.25em] text-[#D4AF37] font-semibold mt-1">
             Culinary Intelligence
           </span>
         )}

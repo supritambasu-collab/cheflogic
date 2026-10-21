@@ -23,15 +23,15 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-lg bg-[#141618] border border-[#2d3137] rounded-lg p-6 sm:p-8 text-[#ede8df] shadow-2xl"
+        className="relative w-full max-w-lg bg-[#1A2238] border border-[#D4AF37]/40 rounded-lg p-6 sm:p-8 text-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-[#88837a] hover:text-[#ede8df] transition-colors p-1 cursor-pointer"
+          className="absolute top-5 right-5 text-[#94a3b8] hover:text-white transition-colors p-1 cursor-pointer"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
@@ -39,13 +39,13 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#181b1f] to-[#0c0d0e] border border-[#c5a059]/40 flex items-center justify-center p-1.5 shrink-0 shadow-sm">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0F382C] via-[#1A2238] to-[#101524] border border-[#D4AF37]/50 flex items-center justify-center p-1.5 shrink-0 shadow-md">
             <svg viewBox="0 0 40 40" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="modalGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#f5e2ad" />
-                  <stop offset="50%" stopColor="#c5a059" />
-                  <stop offset="100%" stopColor="#9a7428" />
+                  <stop offset="0%" stopColor="#F5E08C" />
+                  <stop offset="50%" stopColor="#D4AF37" />
+                  <stop offset="100%" stopColor="#94741B" />
                 </linearGradient>
               </defs>
               <rect x="10" y="29" width="20" height="3.5" rx="1" fill="url(#modalGold)" />
@@ -63,34 +63,34 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
             </svg>
           </div>
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#c5a059] font-medium">VIP Hospitality Access</span>
-            <h3 className="text-2xl font-serif-culinary text-[#ede8df]">Activate 3-Month Free Trial</h3>
+            <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold">VIP Hospitality Access</span>
+            <h3 className="text-2xl font-serif-culinary text-white">Activate 3-Month Free Trial</h3>
           </div>
         </div>
 
-        <p className="text-sm text-[#a7a29a] mt-3 leading-relaxed">
+        <p className="text-sm text-[#cbd5e1] mt-3 leading-relaxed">
           Welcome to the ChefLogic culinary workspace. Your kitchen is granted 90 days of complete, unrestricted access to the intelligence engine at{' '}
-          <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
+          <strong className="text-white font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         {/* Access Pass Code Box */}
-        <div className="my-6 p-4 bg-[#0c0d0e] border border-[#25282c] rounded flex items-center justify-between">
+        <div className="my-6 p-4 bg-[#101524] border border-[#273352] rounded flex items-center justify-between">
           <div>
-            <span className="text-[11px] uppercase tracking-wider text-[#88837a] block">Exclusive Trial Passcode</span>
-            <span className="font-mono text-base font-semibold text-[#c5a059] tracking-wider">CHEF3MONTHFREE</span>
+            <span className="text-[11px] uppercase tracking-wider text-[#94a3b8] block">Exclusive Trial Passcode</span>
+            <span className="font-mono text-base font-bold text-[#D4AF37] tracking-wider">CHEF3MONTHFREE</span>
           </div>
           <button
             onClick={handleCopyCode}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#25282c] border border-[#32363c] rounded transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-[#1A2238] hover:bg-[#222B45] border border-[#273352] hover:border-[#D4AF37] rounded transition-all cursor-pointer"
           >
             {copied ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Copied</span>
+                <span className="text-emerald-400 font-semibold">Copied</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5 text-[#88837a]" />
+                <Copy className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Copy Pass</span>
               </>
             )}
@@ -98,17 +98,17 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* What is Included */}
-        <div className="space-y-2.5 mb-7 text-xs text-[#b8b3aa]">
+        <div className="space-y-2.5 mb-7 text-xs text-[#cbd5e1]">
           <div className="flex items-start gap-2.5">
-            <ShieldCheck className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
             <span>Zero upfront credit card required · Instant access for executive chefs and culinary managers</span>
           </div>
           <div className="flex items-start gap-2.5">
-            <Sparkles className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
-            <span>Real-time walk-in inventory tracking & dynamic surplus recipe engine</span>
+            <Sparkles className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+            <span>Commercial recipe costing engine & multi-authority food regulatory matrix</span>
           </div>
           <div className="flex items-start gap-2.5">
-            <Check className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
+            <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
             <span>Full Menu Engineering Boston Matrix analysis & POS sync</span>
           </div>
         </div>
@@ -117,22 +117,22 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <button
             onClick={handleLaunch}
-            className="w-full py-3 px-5 text-sm font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[#c5a059]/10"
+            className="w-full py-3 px-5 text-sm font-bold uppercase tracking-wider text-[#1A2238] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[#D4AF37]/20"
           >
             <span>Proceed to cheflogic.ai.studio</span>
             <ExternalLink className="w-4 h-4" />
           </button>
           <button
             onClick={onClose}
-            className="w-full sm:w-auto py-3 px-4 text-xs font-medium text-[#88837a] hover:text-[#ede8df] transition-colors cursor-pointer text-center"
+            className="w-full sm:w-auto py-3 px-4 text-xs font-medium text-[#94a3b8] hover:text-white transition-colors cursor-pointer text-center"
           >
             Stay on Overview
           </button>
         </div>
 
         <div className="mt-4 text-center">
-          <span className="text-[11px] text-[#6b6760]">
-            Direct portal destination: <span className="font-mono text-[#a7a29a]">https://cheflogic.ai.studio/</span>
+          <span className="text-[11px] text-[#64748b]">
+            Direct portal destination: <span className="font-mono text-[#D4AF37]">https://cheflogic.ai.studio/</span>
           </span>
         </div>
       </div>

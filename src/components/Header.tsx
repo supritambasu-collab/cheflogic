@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
     return () => window.removeEventListener('cheflogic_auth_changed', handleAuthChange);
   }, []);
   return (
-    <header className="sticky top-0 z-50 bg-[#0c0d0e]/95 backdrop-blur-md border-b border-[#25282c]">
+    <header className="sticky top-0 z-50 bg-[#1A2238]/95 backdrop-blur-md border-b border-[#D4AF37]/20 shadow-lg shadow-black/20">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Zone 1: Single text element wordmark */}
         <button
@@ -31,31 +31,31 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
           <ChefLogicLogo size="sm" />
         </button>
 
-        {/* Zone 2: 4-6 clean text navigation links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#a7a29a]">
+        {/* Zone 2: Clean text navigation links */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#94a3b8]">
           <button
             onClick={() => onNavigate('home')}
-            className={`transition-colors cursor-pointer hover:text-[#ede8df] ${
-              currentView === 'home' ? 'text-[#c5a059]' : ''
+            className={`transition-colors cursor-pointer hover:text-white ${
+              currentView === 'home' ? 'text-[#D4AF37]' : ''
             }`}
           >
             Overview
           </button>
           <a
-            href="#engine"
+            href="#commercial-studio"
             onClick={(e) => {
               if (currentView !== 'home') {
                 e.preventDefault();
                 onNavigate('home');
                 setTimeout(() => {
-                  document.getElementById('engine')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('commercial-studio')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
               }
             }}
-            className="hover:text-[#ede8df] transition-colors flex items-center gap-1.5"
+            className="hover:text-white transition-colors flex items-center gap-1.5"
           >
-            <span>Kitchen Engine</span>
-            <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-mono-num font-semibold">Free</span>
+            <span>Recipe Studio</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#0F382C] border border-[#1a5c48] text-emerald-300 font-mono-num font-semibold">Live Pro</span>
           </a>
           <a
             href="#matrix"
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
                 }, 100);
               }
             }}
-            className="hover:text-[#ede8df] transition-colors"
+            className="hover:text-white transition-colors"
           >
             Menu Matrix
           </a>
@@ -83,22 +83,22 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
                 }, 100);
               }
             }}
-            className="hover:text-[#ede8df] transition-colors"
+            className="hover:text-white transition-colors"
           >
             ROI Calculator
           </a>
           <button
             onClick={() => onNavigate('about')}
-            className={`transition-colors cursor-pointer hover:text-[#ede8df] ${
-              currentView === 'about' ? 'text-[#c5a059]' : ''
+            className={`transition-colors cursor-pointer hover:text-white ${
+              currentView === 'about' ? 'text-[#D4AF37]' : ''
             }`}
           >
             Our Mission
           </button>
           <button
             onClick={() => onNavigate('contact')}
-            className={`transition-colors cursor-pointer hover:text-[#ede8df] ${
-              currentView === 'contact' ? 'text-[#c5a059]' : ''
+            className={`transition-colors cursor-pointer hover:text-white ${
+              currentView === 'contact' ? 'text-[#D4AF37]' : ''
             }`}
           >
             Contact
@@ -111,13 +111,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
             <button
               type="button"
               onClick={() => onNavigate('login')}
-              className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#16181b] border border-[#c5a059]/40 hover:border-[#c5a059] transition-all cursor-pointer shadow-sm"
+              className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#101524] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all cursor-pointer shadow-sm"
               title={`${currentUser.fullName} (${currentUser.restaurantName})`}
             >
-              <div className="w-5 h-5 rounded-full bg-[#c5a059] text-[#0c0d0e] font-serif-culinary font-bold text-[11px] flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#D4AF37] text-[#1A2238] font-serif-culinary font-bold text-[11px] flex items-center justify-center">
                 {currentUser.fullName.charAt(0)}
               </div>
-              <span className="text-xs text-[#ede8df] font-medium hidden sm:inline">
+              <span className="text-xs text-white font-medium hidden sm:inline">
                 {currentUser.fullName.split(' ')[0]}
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -126,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
             <button
               onClick={() => onNavigate('login')}
               className={`hidden sm:inline-flex text-xs uppercase tracking-widest px-3 py-2 transition-colors whitespace-nowrap cursor-pointer ${
-                currentView === 'login' ? 'text-[#c5a059] font-semibold' : 'text-[#d5cfc4] hover:text-[#ede8df]'
+                currentView === 'login' ? 'text-[#D4AF37] font-semibold' : 'text-[#cbd5e1] hover:text-white'
               }`}
             >
               Login
@@ -135,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
 
           <button
             onClick={onOpenTrialModal}
-            className="px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.98] rounded transition-all whitespace-nowrap shadow-sm cursor-pointer"
+            className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#1A2238] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.98] rounded transition-all whitespace-nowrap shadow-md shadow-[#D4AF37]/20 cursor-pointer"
           >
             Start 3-Month Free Trial
           </button>

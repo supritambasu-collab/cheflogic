@@ -7,11 +7,11 @@ interface TermsPageProps {
 
 export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
   return (
-    <div className="py-16 sm:py-24 bg-[#0c0d0e]">
+    <div className="py-16 sm:py-24 bg-[#101524]">
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Breadcrumb / Editorial Kicker */}
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
+        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <FileText className="w-4 h-4" />
           <span>Legal Agreement</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
@@ -28,8 +28,8 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
         </p>
 
         {/* Highlighted Trial Box */}
-        <div className="my-10 p-6 bg-[#141618] border border-[#c5a059]/40 rounded-lg">
-          <div className="flex items-center gap-2 mb-2 text-[#c5a059]">
+        <div className="my-10 p-6 bg-[#1A2238] border border-[#D4AF37]/40 rounded-lg">
+          <div className="flex items-center gap-2 mb-2 text-[#D4AF37]">
             <ShieldCheck className="w-5 h-5" />
             <h3 className="text-base font-semibold uppercase tracking-wider">
               Special Stipulation: 3-Month Free Trial Terms
@@ -130,7 +130,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
           </span>
           <button
             onClick={onOpenTrialModal}
-            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
+            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
           >
             <span>Agree & Activate 3-Month Trial</span>
             <ArrowRight className="w-4 h-4" />

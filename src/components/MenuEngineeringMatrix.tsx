@@ -39,21 +39,21 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
   };
 
   return (
-    <section id="matrix" className="py-24 bg-[#0c0d0e] border-b border-[#1f2226]">
+    <section id="matrix" className="py-24 bg-[#101524] border-b border-[#273352]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-3">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-3">
             <span>Hospitality Economics</span>
-            <span aria-hidden="true" className="text-[#4e4941]">·</span>
+            <span aria-hidden="true" className="text-[#64748b]">·</span>
             <span>Boston Matrix Algorithmic Audit</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-culinary text-[#ede8df] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-culinary text-white leading-tight">
             Stop guessing which dishes drive profit. Engineer your menu with precision.
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-            ChefLogic at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
+          <p className="mt-4 text-sm sm:text-base text-[#cbd5e1] leading-relaxed">
+            ChefLogic at <strong className="text-white font-mono">https://cheflogic.ai.studio/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Visual Matrix Interactive Board (7 cols) */}
-          <div className="lg:col-span-7 bg-[#141618] border border-[#25282c] rounded-lg p-6">
-            <div className="flex items-center justify-between pb-4 border-b border-[#25282c] mb-6">
-              <span className="text-xs uppercase tracking-wider text-[#a7a29a] font-medium">
+          <div className="lg:col-span-7 bg-[#1A2238] border border-[#273352] rounded-lg p-6 shadow-xl">
+            <div className="flex items-center justify-between pb-4 border-b border-[#273352] mb-6">
+              <span className="text-xs uppercase tracking-wider text-[#94a3b8] font-medium">
                 Live Kitchen Menu Map (Click any dish to inspect)
               </span>
-              <span className="text-xs font-mono-num text-[#c5a059]">
+              <span className="text-xs font-mono-num text-[#D4AF37] font-semibold">
                 Continuous POS Sync
               </span>
             </div>
@@ -81,8 +81,8 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
                     onClick={() => setSelectedItemId(item.id)}
                     className={`p-4 sm:p-5 rounded-lg border text-left transition-all cursor-pointer relative flex flex-col justify-between min-h-[170px] ${
                       isSelected
-                        ? 'bg-[#1b1f24] border-[#c5a059] shadow-lg shadow-[#c5a059]/5'
-                        : 'bg-[#0f1113] border-[#22252a] hover:border-[#383c44]'
+                        ? 'bg-[#0F382C] border-[#D4AF37] shadow-lg shadow-[#D4AF37]/15'
+                        : 'bg-[#101524] border-[#273352] hover:border-[#D4AF37]/50'
                     }`}
                   >
                     <div>
@@ -91,18 +91,18 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
                           {getQuadrantIcon(item.quadrant)}
                           <span>{item.quadrant}</span>
                         </span>
-                        <span className="font-mono-num text-xs text-[#88837a]">
+                        <span className="font-mono-num text-xs text-[#94a3b8]">
                           ${item.currentPrice.toFixed(2)}
                         </span>
                       </div>
-                      <h4 className="text-sm sm:text-base font-serif-culinary text-[#ede8df] leading-snug line-clamp-2 mt-2">
+                      <h4 className="text-sm sm:text-base font-serif-culinary text-white leading-snug line-clamp-2 mt-2">
                         {item.name}
                       </h4>
                     </div>
 
-                    <div className="pt-3 border-t border-[#22252a] mt-3 flex items-center justify-between text-[11px] font-mono-num text-[#88837a]">
-                      <span>FC: <strong className="text-[#ede8df]">{item.foodCostPct}%</strong></span>
-                      <span>Vol: <strong className="text-[#ede8df]">{item.salesVolume}</strong></span>
+                    <div className="pt-3 border-t border-[#273352] mt-3 flex items-center justify-between text-[11px] font-mono-num text-[#94a3b8]">
+                      <span>FC: <strong className="text-white">{item.foodCostPct}%</strong></span>
+                      <span>Vol: <strong className="text-white">{item.salesVolume}</strong></span>
                     </div>
                   </button>
                 );
@@ -110,14 +110,14 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
             </div>
 
             {/* Matrix Axis Explanations */}
-            <div className="mt-6 pt-4 border-t border-[#22252a] flex flex-wrap items-center justify-between gap-2 text-xs text-[#88837a]">
+            <div className="mt-6 pt-4 border-t border-[#273352] flex flex-wrap items-center justify-between gap-2 text-xs text-[#94a3b8]">
               <span>Vertical Axis: <strong>Contribution Margin ($)</strong></span>
               <span>Horizontal Axis: <strong>Sales Velocity (Covers)</strong></span>
             </div>
           </div>
 
           {/* Right Column: Deep Strategic Breakdown for Selected Dish (5 cols) */}
-          <div className="lg:col-span-5 bg-[#141618] border border-[#25282c] rounded-lg p-6 sm:p-7">
+          <div className="lg:col-span-5 bg-[#1A2238] border border-[#273352] rounded-lg p-6 sm:p-7 shadow-xl">
             <div className="flex items-center gap-2 mb-3">
               <span className={`text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded border ${getQuadrantBadge(selectedItem.quadrant)} flex items-center gap-1.5`}>
                 {getQuadrantIcon(selectedItem.quadrant)}
@@ -125,53 +125,53 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
               </span>
             </div>
 
-            <h3 className="text-2xl font-serif-culinary text-[#ede8df] leading-snug">
+            <h3 className="text-2xl font-serif-culinary text-white leading-snug">
               {selectedItem.name}
             </h3>
 
             {/* Numbers Table */}
             <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
-              <div className="p-3 bg-[#0c0d0e] border border-[#202327] rounded">
-                <span className="text-[#88837a] block text-[11px] uppercase">Current Food Cost</span>
-                <span className="font-mono-num text-lg font-bold text-[#ede8df]">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
+                <span className="text-[#94a3b8] block text-[11px] uppercase">Current Food Cost</span>
+                <span className="font-mono-num text-lg font-bold text-white">
                   {selectedItem.foodCostPct}%
                 </span>
               </div>
-              <div className="p-3 bg-[#0c0d0e] border border-[#202327] rounded">
-                <span className="text-[#88837a] block text-[11px] uppercase">Menu Plate Price</span>
-                <span className="font-mono-num text-lg font-bold text-[#ede8df]">
+              <div className="p-3 bg-[#101524] border border-[#273352] rounded">
+                <span className="text-[#94a3b8] block text-[11px] uppercase">Menu Plate Price</span>
+                <span className="font-mono-num text-lg font-bold text-[#D4AF37]">
                   ${selectedItem.currentPrice.toFixed(2)}
                 </span>
               </div>
             </div>
 
             {/* ChefLogic Prescriptive Recommendation */}
-            <div className="mt-5 p-4 bg-[#0c0d0e] border border-[#25282c] rounded">
-              <span className="text-xs uppercase tracking-wider text-[#c5a059] font-semibold block mb-1.5">
+            <div className="mt-5 p-4 bg-[#0F382C] border border-[#1a5c48] rounded shadow-sm">
+              <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1.5">
                 ChefLogic Prescriptive Directive:
               </span>
-              <p className="text-xs text-[#d5cfc4] leading-relaxed">
+              <p className="text-xs text-[#cbd5e1] leading-relaxed">
                 {selectedItem.recommendedAction}
               </p>
             </div>
 
             {/* Quantified Financial Impact */}
-            <div className="mt-4 p-3 bg-emerald-950/20 border border-emerald-900/30 rounded flex items-center gap-3">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="mt-4 p-3 bg-[#0F382C]/70 border border-[#D4AF37]/40 rounded flex items-center gap-3">
+              <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
               <div className="text-xs">
-                <span className="text-emerald-400 font-medium block">Projected Bottom-Line Impact:</span>
-                <span className="text-[#d5cfc4] font-mono-num">{selectedItem.impactMetric}</span>
+                <span className="text-emerald-300 font-medium block">Projected Bottom-Line Impact:</span>
+                <span className="text-white font-mono-num font-bold">{selectedItem.impactMetric}</span>
               </div>
             </div>
 
             {/* Connect to Full Platform */}
-            <div className="mt-7 pt-5 border-t border-[#25282c]">
-              <p className="text-xs text-[#88837a] mb-3">
+            <div className="mt-7 pt-5 border-t border-[#273352]">
+              <p className="text-xs text-[#94a3b8] mb-3">
                 Run this analysis on your entire menu catalog with live POS integration on cheflogic.ai.studio.
               </p>
               <button
                 onClick={onOpenTrialModal}
-                className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider text-[#1A2238] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md"
               >
                 <span>Audit Your Menu in 3-Month Trial</span>
                 <ArrowUpRight className="w-4 h-4" />

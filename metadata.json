@@ -1,6 +1,6 @@
 {
   "name": "ChefLogic | Kitchen Inventory & Menu Engineering Intelligence",
-  "description": "Turn expiring walk-in food into high-margin $38 restaurant specials before it hits the dumpster. 100% free interactive culinary math engine with zero sign-up wall.",
+  "description": "Commercial recipe costing down to the gram, live food cost % & VAT, 14 statutory allergens matrix, and certified FDA, EU, GCC, and FSSAI nutrition labeling in seconds.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

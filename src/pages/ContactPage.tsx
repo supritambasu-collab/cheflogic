@@ -45,11 +45,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
   };
 
   return (
-    <div className="py-16 sm:py-24 bg-[#0c0d0e]">
+    <div className="py-16 sm:py-24 bg-[#101524]">
       <div className="max-w-5xl mx-auto px-6">
         
         {/* Breadcrumb / Editorial Kicker */}
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
+        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <span>Concierge & Support</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
           <span>ChefLogic Operations Desk</span>
@@ -68,24 +68,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
           
           {/* Left Column: Direct Info & Trust (5 cols) */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
-              <span className="text-xs uppercase tracking-wider text-[#c5a059] font-semibold block mb-4">
+            <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
+              <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold block mb-4">
                 Hospitality Concierge Desk
               </span>
               
               <div className="space-y-4 text-xs text-[#a7a29a]">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
+                  <Mail className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-[#ede8df] font-medium block">Direct Email</span>
-                    <a href="mailto:concierge@cheflogic.ai" className="hover:underline text-[#c5a059]">
+                    <a href="mailto:concierge@cheflogic.ai" className="hover:underline text-[#D4AF37]">
                       concierge@cheflogic.ai
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
+                  <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-[#ede8df] font-medium block">Kitchen Emergency Hotline</span>
                     <span className="font-mono-num">+1 (800) 243-3564</span>
@@ -94,7 +94,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-[#ede8df] font-medium block">Culinary Labs & Offices</span>
                     <span>San Francisco, CA & Lyon, France</span>
@@ -103,7 +103,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
               </div>
             </div>
 
-            <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
+            <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
               <span className="text-xs uppercase tracking-wider text-[#ede8df] font-semibold block mb-3">
                 Immediate Platform Access
               </span>
@@ -114,7 +114,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                 href="https://cheflogic.ai.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#c5a059] hover:underline"
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#D4AF37] hover:underline"
               >
                 <span>Launch cheflogic.ai.studio in New Tab</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -122,13 +122,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
             </div>
 
             <div className="flex items-center gap-3 text-xs text-[#716d66]">
-              <Clock className="w-4 h-4 text-[#c5a059]" />
+              <Clock className="w-4 h-4 text-[#D4AF37]" />
               <span>Average concierge response time under 15 minutes during service hours.</span>
             </div>
           </div>
 
           {/* Right Column: Contact & Booking Form (7 cols) */}
-          <div className="lg:col-span-7 bg-[#141618] border border-[#25282c] rounded-lg p-6 sm:p-8">
+          <div className="lg:col-span-7 bg-[#1A2238] border border-[#273352] rounded-lg p-6 sm:p-8">
             {submitted ? (
               <div className="py-12 text-center animate-in fade-in">
                 <div className="w-14 h-14 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4">
@@ -140,7 +140,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                 <p className="text-sm text-[#a7a29a] max-w-md mx-auto leading-relaxed mb-6">
                   Thank you, <strong className="text-[#ede8df]">{formData.fullName}</strong>. A designated culinary account director has been assigned to <strong className="text-[#ede8df]">{formData.restaurantName || 'your restaurant'}</strong>.
                 </p>
-                <div className="p-4 bg-[#0c0d0e] border border-[#25282c] rounded max-w-sm mx-auto text-xs text-[#c5a059] mb-6">
+                <div className="p-4 bg-[#101524] border border-[#273352] rounded max-w-sm mx-auto text-xs text-[#D4AF37] mb-6">
                   Meanwhile, your 3-Month Free Trial pass code is: <strong className="font-mono text-white">CHEF3MONTHFREE</strong>
                 </div>
                 <button
@@ -170,7 +170,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="Chef Thomas Keller"
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -184,7 +184,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="thomas@restaurant.com"
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+1 (555) 019-2834"
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -213,7 +213,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                       value={formData.restaurantName}
                       onChange={(e) => setFormData({ ...formData, restaurantName: e.target.value })}
                       placeholder="The French Laundry"
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                     <select
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                     >
                       <option>Executive Chef</option>
                       <option>Director of Food & Beverage</option>
@@ -244,7 +244,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                     <select
                       value={formData.locations}
                       onChange={(e) => setFormData({ ...formData, locations: e.target.value })}
-                      className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                      className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                     >
                       <option>1 Kitchen (Independent)</option>
                       <option>2 - 4 Kitchens (Expanding)</option>
@@ -261,7 +261,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                   <select
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                   >
                     <option>3-Month Free Trial Onboarding</option>
                     <option>Food Cost Margin Reduction (Target 24-28%)</option>
@@ -280,14 +280,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your current inventory process, POS system (Toast, Square, etc.), or specific cost challenges..."
-                    className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#c5a059]"
+                    className="w-full bg-[#101524] border border-[#273352] rounded px-3 py-2 text-xs text-[#ede8df] placeholder-[#57534e] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md shadow-[#c5a059]/10"
+                  className="w-full py-3.5 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md shadow-[#D4AF37]/10"
                 >
                   <span>{loading ? 'Transmitting Inquiries...' : 'Request Consultation & 3-Month Trial'}</span>
                   <ArrowRight className="w-4 h-4" />

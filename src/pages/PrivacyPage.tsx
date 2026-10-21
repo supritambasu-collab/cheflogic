@@ -7,11 +7,11 @@ interface PrivacyPageProps {
 
 export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) => {
   return (
-    <div className="py-16 sm:py-24 bg-[#0c0d0e]">
+    <div className="py-16 sm:py-24 bg-[#101524]">
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Breadcrumb / Editorial Kicker */}
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
+        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <Lock className="w-4 h-4" />
           <span>Privacy & Security Governance</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
@@ -28,9 +28,9 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
         </p>
 
         {/* High-Level Pledge Box */}
-        <div className="my-10 p-6 bg-[#141618] border border-[#25282c] rounded-lg grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="my-10 p-6 bg-[#1A2238] border border-[#273352] rounded-lg grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="flex items-start gap-3">
-            <EyeOff className="w-5 h-5 text-[#c5a059] shrink-0 mt-0.5" />
+            <EyeOff className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-semibold text-[#ede8df] block mb-1">Zero Data Selling</span>
               <span className="text-xs text-[#88837a] leading-relaxed">
@@ -40,7 +40,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
           </div>
 
           <div className="flex items-start gap-3">
-            <Database className="w-5 h-5 text-[#c5a059] shrink-0 mt-0.5" />
+            <Database className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-semibold text-[#ede8df] block mb-1">Isolated Tenancy</span>
               <span className="text-xs text-[#88837a] leading-relaxed">
@@ -50,7 +50,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
           </div>
 
           <div className="flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-[#c5a059] shrink-0 mt-0.5" />
+            <ShieldCheck className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
             <div>
               <span className="text-xs font-semibold text-[#ede8df] block mb-1">End-to-End Encryption</span>
               <span className="text-xs text-[#88837a] leading-relaxed">
@@ -124,7 +124,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
             <p className="mb-2">
               For any questions regarding privacy governance, data processing agreements (DPAs), or exercising privacy rights, contact our Data Protection Office:
             </p>
-            <div className="p-4 bg-[#0c0d0e] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
+            <div className="p-4 bg-[#101524] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
               <div>Attn: Data Protection Officer</div>
               <div>ChefLogic Systems Inc.</div>
               <div>Email: privacy@cheflogic.ai</div>
@@ -141,7 +141,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
           </span>
           <button
             onClick={onOpenTrialModal}
-            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
+            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
           >
             <span>Activate 3-Month Trial</span>
             <ArrowRight className="w-4 h-4" />

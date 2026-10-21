@@ -120,14 +120,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
   // PASSCODE LOCK SCREEN
   if (!isAuthenticated) {
     return (
-      <div className="min-h-[85vh] py-20 px-6 bg-[#0c0d0e] flex items-center justify-center">
-        <div className="w-full max-w-md bg-[#141618] border border-[#25282c] rounded-xl p-8 shadow-2xl relative">
+      <div className="min-h-[85vh] py-20 px-6 bg-[#101524] flex items-center justify-center">
+        <div className="w-full max-w-md bg-[#1A2238] border border-[#273352] rounded-xl p-8 shadow-2xl relative">
           
           <div className="text-center mb-6">
-            <div className="w-12 h-12 rounded-full bg-[#1b1f24] border border-[#c5a059]/40 text-[#c5a059] flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#1b1f24] border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center mx-auto mb-4">
               <Lock className="w-6 h-6" />
             </div>
-            <span className="text-[11px] uppercase tracking-widest text-[#c5a059] font-medium block">
+            <span className="text-[11px] uppercase tracking-widest text-[#D4AF37] font-medium block">
               Restricted Access Console
             </span>
             <h1 className="text-2xl font-serif-culinary text-[#ede8df] mt-1">
@@ -150,7 +150,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                   value={passcode}
                   onChange={(e) => setPasscode(e.target.value)}
                   placeholder="Enter master code (e.g. chefadmin2026)"
-                  className="w-full bg-[#0c0d0e] border border-[#2d3137] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059]"
+                  className="w-full bg-[#101524] border border-[#273352] rounded pl-9 pr-3 py-2.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
             </div>
@@ -161,7 +161,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
             <button
               type="submit"
-              className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3 px-4 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg"
             >
               <ShieldCheck className="w-4 h-4" />
               <span>Unlock Admin Dashboard</span>
@@ -169,14 +169,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
           </form>
 
           {/* Quick Owner Access Helper */}
-          <div className="mt-6 pt-5 border-t border-[#25282c] text-center">
+          <div className="mt-6 pt-5 border-t border-[#273352] text-center">
             <span className="text-[11px] text-[#6b6760] block mb-2">
               Default master passkey: <strong className="text-[#a7a29a] font-mono">chefadmin2026</strong>
             </span>
             <button
               type="button"
               onClick={handleQuickUnlock}
-              className="text-xs text-[#c5a059] hover:underline cursor-pointer font-medium"
+              className="text-xs text-[#D4AF37] hover:underline cursor-pointer font-medium"
             >
               1-Click Instant Owner Unlock →
             </button>
@@ -198,14 +198,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
   // AUTHENTICATED DASHBOARD
   return (
-    <div className="min-h-screen py-10 bg-[#0c0d0e] text-[#ede8df] px-4 sm:px-8">
+    <div className="min-h-screen py-10 bg-[#101524] text-[#ede8df] px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Top Header Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#25282c] gap-4 mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#273352] gap-4 mb-8">
           <div className="flex items-center gap-4">
             <ChefLogicLogo size="md" showSubtitle />
-            <div className="h-8 w-px bg-[#25282c] hidden sm:block" />
+            <div className="h-8 w-px bg-[#273352] hidden sm:block" />
             <div>
               <span className="text-[11px] uppercase tracking-wider text-emerald-400 font-mono flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -220,16 +220,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
           <div className="flex items-center gap-3">
             <button
               onClick={() => triggerPlaybookPdfDownload()}
-              className="px-3.5 py-2 text-xs font-semibold text-[#0c0d0e] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+              className="px-3.5 py-2 text-xs font-semibold text-[#101524] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
               title="Download Executive 2026 Playbook PDF"
             >
-              <Download className="w-3.5 h-3.5 text-[#0c0d0e]" />
+              <Download className="w-3.5 h-3.5 text-[#101524]" />
               <span>Download Playbook PDF</span>
             </button>
 
             <button
               onClick={handleSimulateLogin}
-              className="px-3.5 py-2 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#25282c] border border-[#32363c] rounded transition-all cursor-pointer flex items-center gap-1.5"
+              className="px-3.5 py-2 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#273352] border border-[#32363c] rounded transition-all cursor-pointer flex items-center gap-1.5"
               title="Inject a test login attempt to verify table capture"
             >
               <span>+ Test Sample Login</span>
@@ -237,7 +237,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
             <button
               onClick={exportLoginsToCsv}
-              className="px-3.5 py-2 text-xs font-semibold text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+              className="px-3.5 py-2 text-xs font-semibold text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Export CSV</span>
@@ -255,15 +255,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
         {/* High-Level Stat Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 bg-[#141618] border border-[#25282c] rounded-lg">
+          <div className="p-4 bg-[#1A2238] border border-[#273352] rounded-lg">
             <span className="text-[11px] uppercase tracking-wider text-[#88837a] block">Captured Logins</span>
             <span className="font-mono-num text-2xl font-bold text-[#ede8df] mt-1 block">
               {logins.length}
             </span>
-            <span className="text-[11px] text-[#c5a059] mt-0.5 block">Stored in Local Store</span>
+            <span className="text-[11px] text-[#D4AF37] mt-0.5 block">Stored in Local Store</span>
           </div>
 
-          <div className="p-4 bg-[#141618] border border-[#25282c] rounded-lg">
+          <div className="p-4 bg-[#1A2238] border border-[#273352] rounded-lg">
             <span className="text-[11px] uppercase tracking-wider text-[#88837a] block">Email & Password Auth</span>
             <span className="font-mono-num text-2xl font-bold text-emerald-400 mt-1 block">
               {logins.filter(l => l.provider === 'Email & Password').length}
@@ -271,7 +271,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
             <span className="text-[11px] text-[#716d66] mt-0.5 block">Visible credentials below</span>
           </div>
 
-          <div className="p-4 bg-[#141618] border border-[#25282c] rounded-lg">
+          <div className="p-4 bg-[#1A2238] border border-[#273352] rounded-lg">
             <span className="text-[11px] uppercase tracking-wider text-[#88837a] block">Newsletter Subscribers</span>
             <span className="font-mono-num text-2xl font-bold text-[#ede8df] mt-1 block">
               {newsletterLeads.length}
@@ -279,9 +279,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
             <span className="text-[11px] text-[#716d66] mt-0.5 block">Playbook downloads</span>
           </div>
 
-          <div className="p-4 bg-[#141618] border border-[#25282c] rounded-lg">
+          <div className="p-4 bg-[#1A2238] border border-[#273352] rounded-lg">
             <span className="text-[11px] uppercase tracking-wider text-[#88837a] block">Kitchen Inquiries</span>
-            <span className="font-mono-num text-2xl font-bold text-[#c5a059] mt-1 block">
+            <span className="font-mono-num text-2xl font-bold text-[#D4AF37] mt-1 block">
               {contactInquiries.length}
             </span>
             <span className="text-[11px] text-[#716d66] mt-0.5 block">Full audit requests</span>
@@ -289,13 +289,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex items-center justify-between border-b border-[#25282c] mb-6">
+        <div className="flex items-center justify-between border-b border-[#273352] mb-6">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveTab('logins')}
               className={`pb-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                 activeTab === 'logins'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#D4AF37] text-[#D4AF37]'
                   : 'border-transparent text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -305,7 +305,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               onClick={() => setActiveTab('leads')}
               className={`pb-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                 activeTab === 'leads'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#D4AF37] text-[#D4AF37]'
                   : 'border-transparent text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -315,7 +315,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               onClick={() => setActiveTab('contacts')}
               className={`pb-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                 activeTab === 'contacts'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#D4AF37] text-[#D4AF37]'
                   : 'border-transparent text-[#88837a] hover:text-[#ede8df]'
               }`}
             >
@@ -343,7 +343,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Filter by email or provider..."
-                  className="bg-[#141618] border border-[#2d3137] rounded pl-8 pr-3 py-1.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#c5a059] w-56"
+                  className="bg-[#1A2238] border border-[#273352] rounded pl-8 pr-3 py-1.5 text-xs text-[#ede8df] focus:outline-none focus:border-[#D4AF37] w-56"
                 />
               </div>
             </div>
@@ -352,8 +352,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
         {/* TAB 1: CAPTURED LOGINS & PASSWORDS */}
         {activeTab === 'logins' && (
-          <div className="bg-[#141618] border border-[#25282c] rounded-xl overflow-hidden shadow-2xl">
-            <div className="p-4 border-b border-[#25282c] flex items-center justify-between bg-[#111315]">
+          <div className="bg-[#1A2238] border border-[#273352] rounded-xl overflow-hidden shadow-2xl">
+            <div className="p-4 border-b border-[#273352] flex items-center justify-between bg-[#111315]">
               <span className="text-xs uppercase tracking-wider text-[#a7a29a] font-semibold">
                 Captured Login Credentials ({filteredLogins.length} Entries)
               </span>
@@ -374,7 +374,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="border-b border-[#25282c] bg-[#0c0d0e] text-[#88837a] uppercase text-[10px] tracking-wider">
+                    <tr className="border-b border-[#273352] bg-[#101524] text-[#88837a] uppercase text-[10px] tracking-wider">
                       <th className="py-3 px-4">User / Email</th>
                       <th className="py-3 px-4">Captured Password</th>
                       <th className="py-3 px-4">Auth Method</th>
@@ -394,7 +394,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                           <td className="py-3.5 px-4 font-mono">
                             {entry.password ? (
                               <div className="flex items-center gap-2">
-                                <span className={`px-2 py-1 rounded bg-[#0c0d0e] border border-[#25282c] ${isRevealed ? 'text-amber-300 font-bold' : 'text-[#88837a]'}`}>
+                                <span className={`px-2 py-1 rounded bg-[#101524] border border-[#273352] ${isRevealed ? 'text-amber-300 font-bold' : 'text-[#88837a]'}`}>
                                   {isRevealed ? entry.password : '••••••••••••'}
                                 </span>
                                 <button
@@ -432,13 +432,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                           <td className="py-3.5 px-4 text-[#88837a] font-mono-num text-[11px]">
                             {entry.timestamp}
                           </td>
-                          <td className="py-3.5 px-4 text-[11px] font-mono text-[#c5a059]">
+                          <td className="py-3.5 px-4 text-[11px] font-mono text-[#D4AF37]">
                             https://cheflogic.ai.studio/
                           </td>
                           <td className="py-3.5 px-4 text-right">
                             <button
                               onClick={() => copyToClipboard(`${entry.email} | ${entry.password}`, `all-${entry.id}`)}
-                              className="text-[11px] text-[#a7a29a] hover:text-[#c5a059] cursor-pointer"
+                              className="text-[11px] text-[#a7a29a] hover:text-[#D4AF37] cursor-pointer"
                             >
                               {copiedId === `all-${entry.id}` ? 'Copied' : 'Copy All'}
                             </button>
@@ -455,8 +455,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
         {/* TAB 2: NEWSLETTER SUBSCRIBERS */}
         {activeTab === 'leads' && (
-          <div className="bg-[#141618] border border-[#25282c] rounded-xl overflow-hidden shadow-2xl">
-            <div className="p-4 border-b border-[#25282c] bg-[#111315]">
+          <div className="bg-[#1A2238] border border-[#273352] rounded-xl overflow-hidden shadow-2xl">
+            <div className="p-4 border-b border-[#273352] bg-[#111315]">
               <span className="text-xs uppercase tracking-wider text-[#a7a29a] font-semibold">
                 Subscribed Restaurant Executives ({newsletterLeads.length})
               </span>
@@ -470,7 +470,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="border-b border-[#25282c] bg-[#0c0d0e] text-[#88837a] uppercase text-[10px] tracking-wider">
+                    <tr className="border-b border-[#273352] bg-[#101524] text-[#88837a] uppercase text-[10px] tracking-wider">
                       <th className="py-3 px-4">Email</th>
                       <th className="py-3 px-4">Restaurant Concept</th>
                       <th className="py-3 px-4">Subscribed At</th>
@@ -495,8 +495,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
         {/* TAB 3: CONTACT CONSULTATION LEADS */}
         {activeTab === 'contacts' && (
-          <div className="bg-[#141618] border border-[#25282c] rounded-xl overflow-hidden shadow-2xl">
-            <div className="p-4 border-b border-[#25282c] bg-[#111315]">
+          <div className="bg-[#1A2238] border border-[#273352] rounded-xl overflow-hidden shadow-2xl">
+            <div className="p-4 border-b border-[#273352] bg-[#111315]">
               <span className="text-xs uppercase tracking-wider text-[#a7a29a] font-semibold">
                 Kitchen Consultation Requests ({contactInquiries.length})
               </span>
@@ -510,7 +510,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="border-b border-[#25282c] bg-[#0c0d0e] text-[#88837a] uppercase text-[10px] tracking-wider">
+                    <tr className="border-b border-[#273352] bg-[#101524] text-[#88837a] uppercase text-[10px] tracking-wider">
                       <th className="py-3 px-4">Contact</th>
                       <th className="py-3 px-4">Concept / Role</th>
                       <th className="py-3 px-4">Scope & Focus</th>
@@ -523,7 +523,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                       <tr key={inq.id} className="hover:bg-[#181b1f] transition-colors">
                         <td className="py-3.5 px-4">
                           <span className="font-semibold block text-[#ede8df]">{inq.name}</span>
-                          <span className="text-[11px] font-mono text-[#c5a059] block">{inq.email}</span>
+                          <span className="text-[11px] font-mono text-[#D4AF37] block">{inq.email}</span>
                           {inq.phone && <span className="text-[11px] text-[#88837a]">{inq.phone}</span>}
                         </td>
                         <td className="py-3.5 px-4">
@@ -551,7 +551,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
         {activeTab === 'pdf' && (
           <div className="space-y-6">
             {/* Top Download Card */}
-            <div className="bg-[#141618] border border-amber-500/40 rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
+            <div className="bg-[#1A2238] border border-amber-500/40 rounded-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">
                   <FileText className="w-4 h-4 text-amber-400" />
@@ -569,7 +569,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 <button
                   type="button"
                   onClick={() => triggerPlaybookPdfDownload()}
-                  className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#0c0d0e] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-amber-400/20 active:scale-[0.98]"
+                  className="px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#101524] bg-amber-400 hover:bg-amber-300 rounded transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-amber-400/20 active:scale-[0.98]"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download PDF Document</span>
@@ -578,7 +578,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 <a
                   href="/ChefLogic_2026_Culinary_Margin_Playbook.pdf"
                   download="ChefLogic_2026_Culinary_Margin_Playbook.pdf"
-                  className="px-4 py-3 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#25282c] border border-[#32363c] rounded transition-all flex items-center gap-1.5"
+                  className="px-4 py-3 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#273352] border border-[#32363c] rounded transition-all flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-[#88837a]" />
                   <span>Direct Static Link</span>
@@ -587,12 +587,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
             </div>
 
             {/* Document Digital Reader Preview */}
-            <div className="bg-[#0c0d0e] border border-[#25282c] rounded-xl p-6 sm:p-10 shadow-2xl space-y-10">
+            <div className="bg-[#101524] border border-[#273352] rounded-xl p-6 sm:p-10 shadow-2xl space-y-10">
               
               {/* PAGE 1 PREVIEW */}
-              <div className="bg-[#121417] border border-[#c5a059]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
-                <div className="text-center pb-8 border-b border-[#25282c]">
-                  <span className="text-[10px] uppercase tracking-widest text-[#c5a059] font-medium block mb-2">
+              <div className="bg-[#121417] border border-[#D4AF37]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
+                <div className="text-center pb-8 border-b border-[#273352]">
+                  <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-medium block mb-2">
                     THE EXECUTIVE CULINARY DISPATCH · ANNUAL WHITE PAPER
                   </span>
                   <h4 className="text-3xl sm:text-4xl font-serif-culinary text-[#ede8df] tracking-wide">
@@ -601,13 +601,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                   <h5 className="text-xl sm:text-2xl font-serif-culinary text-[#ede8df] mt-1">
                     2026 RESTAURANT MARGIN & RECIPE ENGINEERING PLAYBOOK
                   </h5>
-                  <p className="text-xs text-[#c5a059] mt-2">
+                  <p className="text-xs text-[#D4AF37] mt-2">
                     Strategic Back-of-House Systems to Eliminate Food Waste & Expand Net EBITDA
                   </p>
                 </div>
 
-                <div className="my-8 p-6 bg-[#0c0d0e] border border-[#25282c] rounded">
-                  <h6 className="text-xs uppercase tracking-wider text-[#ede8df] font-bold mb-3 text-[#c5a059]">
+                <div className="my-8 p-6 bg-[#101524] border border-[#273352] rounded">
+                  <h6 className="text-xs uppercase tracking-wider text-[#ede8df] font-bold mb-3 text-[#D4AF37]">
                     EXECUTIVE SUMMARY: THE 28% FOOD COST CEILING
                   </h6>
                   <p className="text-xs text-[#d5cfc4] leading-relaxed">
@@ -617,29 +617,29 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
 
                 {/* 3 Metric Badges */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                  <div className="p-4 bg-[#181b1f] border border-[#273352] rounded">
                     <span className="font-mono-num text-xl font-bold text-amber-400 block">4.8% - 5.8%</span>
                     <span className="text-[11px] text-[#88837a]">Avg Food Cost Reduction</span>
                   </div>
-                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                  <div className="p-4 bg-[#181b1f] border border-[#273352] rounded">
                     <span className="font-mono-num text-xl font-bold text-emerald-400 block">-41%</span>
                     <span className="text-[11px] text-[#88837a]">Perishable Waste Diverted</span>
                   </div>
-                  <div className="p-4 bg-[#181b1f] border border-[#2d3137] rounded">
+                  <div className="p-4 bg-[#181b1f] border border-[#273352] rounded">
                     <span className="font-mono-num text-xl font-bold text-[#ede8df] block">$68,400</span>
                     <span className="text-[11px] text-[#88837a]">Avg Annual EBITDA Gain</span>
                   </div>
                 </div>
 
-                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
+                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#273352] pt-4">
                   Page 1 of 2 · Published by ChefLogic Systems Inc. · https://cheflogic.ai.studio/
                 </div>
               </div>
 
               {/* PAGE 2 PREVIEW */}
-              <div className="bg-[#121417] border border-[#c5a059]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
-                <div className="text-center pb-6 border-b border-[#25282c] mb-6">
-                  <span className="text-[10px] uppercase tracking-widest text-[#c5a059] font-medium block">
+              <div className="bg-[#121417] border border-[#D4AF37]/40 rounded-lg p-8 sm:p-12 relative overflow-hidden">
+                <div className="text-center pb-6 border-b border-[#273352] mb-6">
+                  <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-medium block">
                     CHEFLOGIC CULINARY INTELLIGENCE · CHAPTER 1 & 2
                   </span>
                 </div>
@@ -654,19 +654,19 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 bg-[#0c0d0e] border border-amber-500/30 rounded">
+                    <div className="p-3 bg-[#101524] border border-amber-500/30 rounded">
                       <strong className="text-amber-400 block">1. STARS (High Margin, High Velocity)</strong>
                       <span className="text-[#a7a29a] text-[11px]">Protect recipe standards rigorously. Keep prime focal menu placement.</span>
                     </div>
-                    <div className="p-3 bg-[#0c0d0e] border border-[#2d3137] rounded">
+                    <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                       <strong className="text-sky-400 block">2. PLOWHORSES (Low Margin, High Velocity)</strong>
                       <span className="text-[#a7a29a] text-[11px]">High guest demand, margin-diluting. Re-negotiate bulk protein costs or reduce trim.</span>
                     </div>
-                    <div className="p-3 bg-[#0c0d0e] border border-[#2d3137] rounded">
+                    <div className="p-3 bg-[#101524] border border-[#273352] rounded">
                       <strong className="text-purple-400 block">3. PUZZLES (High Margin, Low Velocity)</strong>
                       <span className="text-[#a7a29a] text-[11px]">High culinary profit, under-ordered. Reposition at the top of category.</span>
                     </div>
-                    <div className="p-3 bg-[#0c0d0e] border border-rose-500/30 rounded">
+                    <div className="p-3 bg-[#101524] border border-rose-500/30 rounded">
                       <strong className="text-rose-400 block">4. DOGS (Low Margin, Low Velocity)</strong>
                       <span className="text-[#a7a29a] text-[11px]">Drain on cooler shelf space. Eliminate immediately or recycle into market specials.</span>
                     </div>
@@ -702,7 +702,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                   </ul>
                 </div>
 
-                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#25282c] pt-4">
+                <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#273352] pt-4">
                   Page 2 of 2 · Published by ChefLogic Systems Inc. · Platform Portal: https://cheflogic.ai.studio/
                 </div>
               </div>
@@ -712,17 +712,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
         )}
 
         {/* Instructions for the Owner */}
-        <div className="mt-10 p-5 bg-[#141618] border border-[#25282c] rounded-lg text-xs text-[#88837a] flex items-start gap-3">
-          <ShieldCheck className="w-5 h-5 text-[#c5a059] shrink-0 mt-0.5" />
+        <div className="mt-10 p-5 bg-[#1A2238] border border-[#273352] rounded-lg text-xs text-[#88837a] flex items-start gap-3">
+          <ShieldCheck className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
           <div className="space-y-1">
             <span className="text-[#ede8df] font-semibold block">
               How to access this Owner Dashboard in the future:
             </span>
             <p>
-              1. Type <strong className="text-[#c5a059] font-mono">#admin</strong> in your browser address bar anytime (e.g. <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/#admin</span> or your current app URL + <span className="font-mono text-[#ede8df]">#admin</span>).
+              1. Type <strong className="text-[#D4AF37] font-mono">#admin</strong> in your browser address bar anytime (e.g. <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/#admin</span> or your current app URL + <span className="font-mono text-[#ede8df]">#admin</span>).
             </p>
             <p>
-              2. Or click the discrete <strong className="text-[#c5a059]">"Owner Admin Console"</strong> link located in the footer or on the Login screen.
+              2. Or click the discrete <strong className="text-[#D4AF37]">"Owner Admin Console"</strong> link located in the footer or on the Login screen.
             </p>
             <p>
               3. Enter your master passkey: <strong className="text-white font-mono">chefadmin2026</strong>. Regular visitors cannot see or access this dashboard.

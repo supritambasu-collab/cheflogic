@@ -7,11 +7,11 @@ interface CopyrightPageProps {
 
 export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }) => {
   return (
-    <div className="py-16 sm:py-24 bg-[#0c0d0e]">
+    <div className="py-16 sm:py-24 bg-[#101524]">
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Breadcrumb / Editorial Kicker */}
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#c5a059] mb-4">
+        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <Copyright className="w-4 h-4" />
           <span>Intellectual Property</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
@@ -41,8 +41,8 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
             </p>
           </div>
 
-          <div className="p-6 bg-[#141618] border border-[#25282c] rounded-lg">
-            <h3 className="text-base font-serif-culinary text-[#c5a059] mb-2 font-medium flex items-center gap-2">
+          <div className="p-6 bg-[#1A2238] border border-[#273352] rounded-lg">
+            <h3 className="text-base font-serif-culinary text-[#D4AF37] mb-2 font-medium flex items-center gap-2">
               <FileCheck className="w-4 h-4" />
               <span>2. Recipe IP Safe Harbor: Chefs Always Retain 100% Rights</span>
             </h3>
@@ -70,7 +70,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
             <p className="mb-2">
               If you believe in good faith that any materials accessible on or from https://cheflogic.ai.studio/ infringe your copyright, you may submit a formal notification pursuant to the Digital Millennium Copyright Act (17 U.S.C. § 512(c)(3)) to our designated Copyright Agent:
             </p>
-            <div className="p-4 bg-[#0c0d0e] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
+            <div className="p-4 bg-[#101524] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
               <div>Attn: Copyright Agent / Legal Directorate</div>
               <div>ChefLogic Systems Inc.</div>
               <div>580 Howard Street, Suite 400, San Francisco, CA 94105</div>
@@ -96,7 +96,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
           </span>
           <button
             onClick={onOpenTrialModal}
-            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#0c0d0e] bg-[#c5a059] hover:bg-[#d6b26d] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
+            className="py-3 px-6 text-xs font-semibold uppercase tracking-wider text-[#101524] bg-[#D4AF37] hover:bg-[#E5C358] rounded transition-all cursor-pointer inline-flex items-center gap-2 whitespace-nowrap"
           >
             <span>Activate 3-Month Trial</span>
             <ArrowRight className="w-4 h-4" />
