@@ -53,7 +53,7 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
             Stop guessing which dishes drive profit. Engineer your menu with precision.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#cbd5e1] leading-relaxed">
-            ChefLogic at <strong className="text-white font-mono">https://cheflogic.ai.studio/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
+            ChefLogix at <strong className="text-white font-mono">https://cheflogic.ai.studio/</strong> monitors ticket volumes from your POS alongside dynamic ingredient cost fluctuations, categorizing every plate into the 4 standard hospitality quadrants.
           </p>
         </div>
 
@@ -145,10 +145,10 @@ export const MenuEngineeringMatrix: React.FC<MenuEngineeringMatrixProps> = ({ on
               </div>
             </div>
 
-            {/* ChefLogic Prescriptive Recommendation */}
+            {/* ChefLogix Prescriptive Recommendation */}
             <div className="mt-5 p-4 bg-[#0F382C] border border-[#1a5c48] rounded shadow-sm">
               <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold block mb-1.5">
-                ChefLogic Prescriptive Directive:
+                ChefLogix Prescriptive Directive:
               </span>
               <p className="text-xs text-[#cbd5e1] leading-relaxed">
                 {selectedItem.recommendedAction}

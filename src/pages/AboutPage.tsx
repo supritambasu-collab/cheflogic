@@ -25,7 +25,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-[#a7a29a] font-normal leading-relaxed max-w-3xl">
-          ChefLogic was born on the line during a chaotic Saturday night dinner service in 2022. We watched brilliant chefs throw out thousands of dollars in pristine fish and organic herbs on Sunday morning, simply because restaurant software treated food like screws in a hardware store.
+          ChefLogix was born on the line during a chaotic Saturday night dinner service in 2022. We watched brilliant chefs throw out thousands of dollars in pristine fish and organic herbs on Sunday morning, simply because restaurant software treated food like screws in a hardware store.
         </p>
 
         {/* Feature Image: Culinary Team Story */}
@@ -44,7 +44,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#101524] via-transparent to-transparent" />
             <div className="absolute bottom-4 left-6 right-6 text-xs text-[#a7a29a]">
-              ChefLogic test kitchen & culinary data laboratory · San Francisco & Lyon
+              ChefLogix test kitchen & culinary data laboratory · San Francisco & Lyon
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
               We asked a foundational question: What if inventory wasn't a static graveyard of past costs, but an active, intelligent creative assistant for the chef?
             </p>
             <p className="text-[#a7a29a]">
-              Our platform continuously monitors what enters the walk-in, calculates exact portion yields, and pairs surplus ingredients into high-margin menu specials before spoilage occurs. If your distributor delivers an unexpected surplus of halibut or chanterelles, ChefLogic formulates tonight's signature course with complete food cost percentages calculated to the tenth of a cent.
+              Our platform continuously monitors what enters the walk-in, calculates exact portion yields, and pairs surplus ingredients into high-margin menu specials before spoilage occurs. If your distributor delivers an unexpected surplus of halibut or chanterelles, ChefLogix formulates tonight's signature course with complete food cost percentages calculated to the tenth of a cent.
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
           {/* Chapter 3: Our Principles */}
           <div className="pt-6">
             <h2 className="text-2xl sm:text-3xl font-serif-culinary text-[#ede8df] mb-4">
-              03. The ChefLogic Manifesto
+              03. The ChefLogix Manifesto
             </h2>
             <ul className="space-y-4 text-sm text-[#a7a29a]">
               <li className="flex items-start gap-3">
@@ -130,7 +130,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenTrialModal }) => {
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2 shrink-0" />
                 <div>
-                  <strong className="text-[#ede8df]">Recipe Sovereignty:</strong> Your recipes belong solely to your culinary team. ChefLogic never shares proprietary ratios, secret sauces, or internal cost cards with third parties.
+                  <strong className="text-[#ede8df]">Recipe Sovereignty:</strong> Your recipes belong solely to your culinary team. ChefLogix never shares proprietary ratios, secret sauces, or internal cost cards with third parties.
                 </div>
               </li>
               <li className="flex items-start gap-3">

@@ -7,8 +7,8 @@ export function triggerPlaybookPdfDownload(): void {
     console.error('PDF generation error, falling back to static file:', err);
     // Secondary fallback without target="_blank"
     const link = document.createElement('a');
-    link.href = '/ChefLogic_2026_Culinary_Margin_Playbook.pdf';
-    link.download = 'ChefLogic_2026_Culinary_Margin_Playbook.pdf';
+    link.href = '/ChefLogix_2026_Culinary_Margin_Playbook.pdf';
+    link.download = 'ChefLogix_2026_Culinary_Margin_Playbook.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,7 +55,7 @@ export function generateFull14PagePlaybookPdf(): void {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
-    doc.text(`Page ${pageNum} of 14 · Published by ChefLogic Systems Inc. · https://cheflogic.ai.studio/`, 105, 276, { align: 'center' });
+    doc.text(`Page ${pageNum} of 14 · Published by ChefLogix Systems Inc. · https://cheflogic.ai.studio/`, 105, 276, { align: 'center' });
   }
 
   // ================= PAGE 1: LUXURY COVER =================
@@ -221,10 +221,10 @@ export function generateFull14PagePlaybookPdf(): void {
     'make financial carelessness lethal. The greatest chefs of our generation are not merely artists—they are',
     'disciplined menu engineers who master yield factors and prevent perishable assets from rotting in walk-in coolers.',
     '',
-    'This handbook provides the exact formulas, templates, and procedures engineered inside ChefLogic to protect',
+    'This handbook provides the exact formulas, templates, and procedures engineered inside ChefLogix to protect',
     'your bottom line while honoring the dignity of culinary craft.',
     '',
-    '— The ChefLogic Culinary Engineering Council'
+    '— The ChefLogix Culinary Engineering Council'
   ];
   doc.text(foreword, 26, 172);
 
@@ -311,7 +311,7 @@ export function generateFull14PagePlaybookPdf(): void {
   const tableRows = [
     { tier: 'Crisis Mode', pct: '34.5%', cogs: '$690,000', delta: '-$130,000 (Danger)' },
     { tier: 'Industry Average', pct: '31.5%', cogs: '$630,000', delta: 'Baseline ($0)' },
-    { tier: 'ChefLogic Target', pct: '26.8%', cogs: '$536,000', delta: '+$94,000 EBITDA' },
+    { tier: 'ChefLogix Target', pct: '26.8%', cogs: '$536,000', delta: '+$94,000 EBITDA' },
     { tier: 'Top 5% Fine Dining', pct: '24.2%', cogs: '$484,000', delta: '+$146,000 EBITDA' }
   ];
 
@@ -422,7 +422,7 @@ export function generateFull14PagePlaybookPdf(): void {
   doc.setFontSize(8.5);
   doc.setTextColor(213, 207, 196);
   doc.text(
-    'A kitchen with too many Plowhorses feels busy every Saturday but has no money in the bank on Monday. Here is the exact 4-phase transformation protocol utilized by ChefLogic consultants:',
+    'A kitchen with too many Plowhorses feels busy every Saturday but has no money in the bank on Monday. Here is the exact 4-phase transformation protocol utilized by ChefLogix consultants:',
     20,
     42,
     { maxWidth: 170 }
@@ -499,7 +499,7 @@ export function generateFull14PagePlaybookPdf(): void {
   doc.setFontSize(8.5);
   doc.setTextColor(213, 207, 196);
   doc.text(
-    'Walk-in cooler mismanagement is the primary culprit behind restaurant food waste. The ChefLogic 5-step operational protocol stops waste before ingredients cross critical spoilage thresholds:',
+    'Walk-in cooler mismanagement is the primary culprit behind restaurant food waste. The ChefLogix 5-step operational protocol stops waste before ingredients cross critical spoilage thresholds:',
     20,
     42,
     { maxWidth: 170 }
@@ -718,7 +718,7 @@ export function generateFull14PagePlaybookPdf(): void {
     },
     {
       title: 'B. INSTANT UNIT-PRICE VOLATILITY DETECTION',
-      body: 'If butter jumps from $3.20/lb to $3.85/lb, ChefLogic triggers an immediate flag: "Warning: Pastry plate costs increased by 3.2%."'
+      body: 'If butter jumps from $3.20/lb to $3.85/lb, ChefLogix triggers an immediate flag: "Warning: Pastry plate costs increased by 3.2%."'
     },
     {
       title: 'C. CROSS-SUPPLIER BID COMPARISON',
@@ -929,7 +929,7 @@ export function generateFull14PagePlaybookPdf(): void {
   doc.setFontSize(8.5);
   doc.setTextColor(213, 207, 196);
   doc.text(
-    'Demonstrated financial returns from independent restaurant operators following the implementation of ChefLogic inventory costing and menu matrix optimization:',
+    'Demonstrated financial returns from independent restaurant operators following the implementation of ChefLogix inventory costing and menu matrix optimization:',
     20,
     42,
     { maxWidth: 170 }
@@ -940,21 +940,21 @@ export function generateFull14PagePlaybookPdf(): void {
       name: 'CASE STUDY 1: BISTRO VERNET (SAN FRANCISCO, CA)',
       scale: '68 Seats · $1.8M Annual Revenue · Contemporary French',
       before: 'Starting Food Cost: 33.2%  ·  Monthly Waste Loss: $4,200',
-      after: 'ChefLogic Result: 27.4% Food Cost (5.8% drop)  ·  +$104,400 Annual EBITDA',
+      after: 'ChefLogix Result: 27.4% Food Cost (5.8% drop)  ·  +$104,400 Annual EBITDA',
       quote: '"We eliminated our Sunday fish dump completely. The automatic menu pairing algorithm pays for our annual kitchen technology budget in the first 14 days of each month."'
     },
     {
       name: 'CASE STUDY 2: AURELIA HOSPITALITY (MIAMI, FL)',
       scale: '4 Multi-Unit Operations · $6.5M Combined Revenue · Coastal Dining',
       before: 'Starting Food Cost: 31.8%  ·  Dispersed Purveyor Invoicing',
-      after: 'ChefLogic Result: 26.9% Food Cost (4.9% drop)  ·  +$318,500 Annual EBITDA',
+      after: 'ChefLogix Result: 26.9% Food Cost (4.9% drop)  ·  +$318,500 Annual EBITDA',
       quote: '"The invoice OCR flagged $18,400 in distributor overcharges and freight errors across our locations in the first 90 days alone."'
     },
     {
       name: 'CASE STUDY 3: BRASSERIE MONTAIGNE (NEW YORK, NY)',
       scale: '120 Seats · $3.4M Annual Revenue · Classic European',
       before: 'Starting Food Cost: 34.0%  ·  High Butcher Trim Loss',
-      after: 'ChefLogic Result: 28.1% Food Cost (5.9% drop)  ·  +$200,600 Annual EBITDA',
+      after: 'ChefLogix Result: 28.1% Food Cost (5.9% drop)  ·  +$200,600 Annual EBITDA',
       quote: '"The Menu Engineering Matrix gave us hard math on which dishes were secretly draining margin. We re-engineered two plowhorses and gained $3,200 more net profit every week."'
     }
   ];
@@ -1016,7 +1016,7 @@ export function generateFull14PagePlaybookPdf(): void {
       title: 'MONTH 1 (DAYS 1 - 30): THE INVENTORY & COSTING CLEANSE',
       items: [
         'Week 1: Conduct a complete physical walk-in cooler inventory audit; eliminate all expired stock.',
-        'Week 2: Upload all purveyor food invoices into ChefLogic automated optical invoice scanning.',
+        'Week 2: Upload all purveyor food invoices into ChefLogix automated optical invoice scanning.',
         'Week 3: Build standardized digital recipe cards for top 20 volume menu items.',
         'Week 4: Establish dock receiving scale check procedures for all incoming meat and seafood deliveries.'
       ]
@@ -1079,7 +1079,7 @@ export function generateFull14PagePlaybookPdf(): void {
   doc.setFontSize(8.5);
   doc.setTextColor(213, 207, 196);
   doc.text(
-    'As a recipient of this Executive Handbook, your restaurant brigade has been pre-authorized for a 3-Month Complimentary Enterprise Access License to the ChefLogic culinary platform:',
+    'As a recipient of this Executive Handbook, your restaurant brigade has been pre-authorized for a 3-Month Complimentary Enterprise Access License to the ChefLogix culinary platform:',
     20,
     42,
     { maxWidth: 170 }
@@ -1172,14 +1172,14 @@ export function generateFull14PagePlaybookPdf(): void {
   doc.text('Email: concierge@cheflogic.ai  ·  Direct Phone: +1-800-243-3564', 26, 238);
   doc.text('Platform Portal URL: https://cheflogic.ai.studio/', 26, 245);
   doc.setTextColor(MUTED[0], MUTED[1], MUTED[2]);
-  doc.text('ChefLogic Systems Inc. · San Francisco · Lyon · New York. All rights reserved.', 26, 252);
+  doc.text('ChefLogix Systems Inc. · San Francisco · Lyon · New York. All rights reserved.', 26, 252);
 
   // Trigger direct browser download
   const pdfBlob = doc.output('blob');
   const blobUrl = URL.createObjectURL(pdfBlob);
   const downloadLink = document.createElement('a');
   downloadLink.href = blobUrl;
-  downloadLink.download = 'ChefLogic_2026_Culinary_Margin_Playbook.pdf';
+  downloadLink.download = 'ChefLogix_2026_Culinary_Margin_Playbook.pdf';
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);

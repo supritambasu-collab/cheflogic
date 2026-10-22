@@ -21,7 +21,7 @@ import {
   X,
   HelpCircle
 } from 'lucide-react';
-import { ChefLogicLogo } from '../components/ChefLogicLogo';
+import { ChefLogixLogo } from '../components/ChefLogixLogo';
 import { 
   getCurrentUser, 
   registerNewUser, 
@@ -312,9 +312,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
           <button
             onClick={() => onNavigate('home')}
             className="cursor-pointer mb-3 transition-opacity hover:opacity-90 inline-block"
-            aria-label="ChefLogic Home"
+            aria-label="ChefLogix Home"
           >
-            <ChefLogicLogo size="lg" showSubtitle />
+            <ChefLogixLogo size="lg" showSubtitle />
           </button>
           
           <h1 className="text-2xl sm:text-3xl font-serif-culinary text-[#ede8df] mt-2">
@@ -1033,7 +1033,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onOpenTrialMod
             onClick={() => onNavigate('home')}
             className="hover:text-[#a7a29a] transition-colors cursor-pointer"
           >
-            ← Back to ChefLogic Overview
+            ← Back to ChefLogix Overview
           </button>
           <span>·</span>
           <button

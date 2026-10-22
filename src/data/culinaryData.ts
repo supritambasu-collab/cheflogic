@@ -645,7 +645,7 @@ export const MENU_MATRIX_DATA: MenuItemMatrix[] = [
 export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: 'test-1',
-    quote: 'ChefLogic replaced 14 spreadsheets and saved us over $18,000 in regulatory laboratory testing fees across our 6 hotel properties. Our chefs formulate recipes in minutes, and compliant FDA labels print on demand.',
+    quote: 'ChefLogix replaced 14 spreadsheets and saved us over $18,000 in regulatory laboratory testing fees across our 6 hotel properties. Our chefs formulate recipes in minutes, and compliant FDA labels print on demand.',
     author: 'Chef Antoine Moreau',
     role: 'Vice President of Culinary Operations',
     restaurant: 'L’Hiver Hospitality Group',
@@ -659,7 +659,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   },
   {
     id: 'test-2',
-    quote: 'Before ChefLogic, compliance with Natasha’s Law and the EU 14 allergens matrix was a constant legal liability. Now, every single ingredient is auto-tagged and synchronized directly to our commercial kitchen displays.',
+    quote: 'Before ChefLogix, compliance with Natasha’s Law and the EU 14 allergens matrix was a constant legal liability. Now, every single ingredient is auto-tagged and synchronized directly to our commercial kitchen displays.',
     author: 'Helena Bergström',
     role: 'Group Culinary Director & Dietetic Lead',
     restaurant: 'Nordic Table Hospitality',
@@ -689,12 +689,12 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 
 export const FAQS_DATA = [
   {
-    question: 'How does ChefLogic automate commercial recipe costing down to the gram?',
-    answer: 'ChefLogic links directly to your master product catalog and distributor invoice feeds. When ingredients are weighed and added to a recipe sheet, the system calculates exact gram-by-gram costs, applies preparation wastage factors, accounts for country-specific VAT deductions, and integrates packaging overheads to deliver true unit economics.'
+    question: 'How does ChefLogix automate commercial recipe costing down to the gram?',
+    answer: 'ChefLogix links directly to your master product catalog and distributor invoice feeds. When ingredients are weighed and added to a recipe sheet, the system calculates exact gram-by-gram costs, applies preparation wastage factors, accounts for country-specific VAT deductions, and integrates packaging overheads to deliver true unit economics.'
   },
   {
     question: 'Which international regulatory compliance standards are built in?',
-    answer: 'ChefLogic provides native, multi-authority compliance across the United States FDA (21 CFR 101.9 & FASTER Act), European Union (FIC Regulation 1169/2011), Saudi / Gulf Cooperation Council (GSO 2233:2021 & SFDA food labeling regulations), and the Food Safety and Standards Authority of India (FSSAI 2020).'
+    answer: 'ChefLogix provides native, multi-authority compliance across the United States FDA (21 CFR 101.9 & FASTER Act), European Union (FIC Regulation 1169/2011), Saudi / Gulf Cooperation Council (GSO 2233:2021 & SFDA food labeling regulations), and the Food Safety and Standards Authority of India (FSSAI 2020).'
   },
   {
     question: 'How does the 14 statutory allergens matrix protect against liability?',
@@ -702,11 +702,11 @@ export const FAQS_DATA = [
   },
   {
     question: 'Can we import existing recipe cards from Excel, PDFs, or handwritten sheets?',
-    answer: 'Yes. ChefLogic AI Recipe Studio includes an advanced culinary OCR scanner that converts PDF spec sheets, Word documents, supplier Excel files, or kitchen photo binders into standardized commercial recipe cards with automatic SKU and macro-nutrient matching.'
+    answer: 'Yes. ChefLogix AI Recipe Studio includes an advanced culinary OCR scanner that converts PDF spec sheets, Word documents, supplier Excel files, or kitchen photo binders into standardized commercial recipe cards with automatic SKU and macro-nutrient matching.'
   },
   {
     question: 'What is included in the 90-day complimentary enterprise access?',
-    answer: 'Qualified restaurant operators, hotel brigades, and food manufacturers receive full unrestricted access to ChefLogic PRO, including unlimited recipe formulations, multi-authority regulatory label generation, multi-user permissions, and master catalog export capabilities without upfront commitment.'
+    answer: 'Qualified restaurant operators, hotel brigades, and food manufacturers receive full unrestricted access to ChefLogix PRO, including unlimited recipe formulations, multi-authority regulatory label generation, multi-user permissions, and master catalog export capabilities without upfront commitment.'
   }
 ];
 

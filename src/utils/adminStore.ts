@@ -2,7 +2,7 @@ export interface CapturedLogin {
   id: string;
   email: string;
   password?: string;
-  provider: 'Email & Password' | 'Google' | 'LinkedIn' | 'ChefLogic Credentials';
+  provider: 'Email & Password' | 'Google' | 'LinkedIn' | 'ChefLogix Credentials';
   timestamp: string;
   rememberMe?: boolean;
   userAgent?: string;

@@ -24,7 +24,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          At ChefLogic Systems Inc., we are committed to safeguarding the privacy and commercial confidentiality of restaurant operators, culinary professionals, and enterprise hospitality teams accessing our platform via <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
+          At ChefLogix Systems Inc., we are committed to safeguarding the privacy and commercial confidentiality of restaurant operators, culinary professionals, and enterprise hospitality teams accessing our platform via <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         {/* High-Level Pledge Box */}
@@ -126,7 +126,7 @@ export const PrivacyPage: React.FC<PrivacyPageProps> = ({ onOpenTrialModal }) =>
             </p>
             <div className="p-4 bg-[#101524] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
               <div>Attn: Data Protection Officer</div>
-              <div>ChefLogic Systems Inc.</div>
+              <div>ChefLogix Systems Inc.</div>
               <div>Email: privacy@cheflogic.ai</div>
               <div>Direct Data Inquiries: +1 (800) 243-3564</div>
             </div>

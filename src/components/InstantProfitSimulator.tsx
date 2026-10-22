@@ -522,9 +522,9 @@ export const InstantProfitSimulator: React.FC<InstantProfitSimulatorProps> = ({
             </div>
           </div>
 
-          {/* ChefLogic Prescriptive Advice */}
+          {/* ChefLogix Prescriptive Advice */}
           <div className="p-3 bg-[#101524] border border-[#273352] rounded-lg text-xs text-[#cbd5e1] leading-relaxed mb-6">
-            <span className="text-[#D4AF37] font-semibold block mb-0.5">ChefLogic Recommendation:</span>
+            <span className="text-[#D4AF37] font-semibold block mb-0.5">ChefLogix Recommendation:</span>
             {status.advice}
           </div>
 

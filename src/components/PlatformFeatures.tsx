@@ -11,7 +11,7 @@ export const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ onOpenTrialM
       number: '01',
       title: 'Commercial Recipe Formulation & Costing',
       tagline: 'End spreadsheet chaos with gram-level precision',
-      description: 'ChefLogic tracks every gram and ingredient spec down to thousandths of a dollar. Auto-calculates preparation wastage factors, country-specific VAT deductions, packaging overheads, and target gross margins before dishes hit the line.',
+      description: 'ChefLogix tracks every gram and ingredient spec down to thousandths of a dollar. Auto-calculates preparation wastage factors, country-specific VAT deductions, packaging overheads, and target gross margins before dishes hit the line.',
       benefits: [
         'Automatic food cost % threshold enforcement (< 26%)',
         'Batch yield scaling from single covers to 10,000 banquet servings',
@@ -22,7 +22,7 @@ export const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ onOpenTrialM
       number: '02',
       title: 'Multi-Authority Food Regulatory Matrix',
       tagline: 'Instant legal compliance across FDA, EU, GCC, and FSSAI',
-      description: 'Eliminate $1,500 laboratory testing fees and 3-week waiting periods. ChefLogic synthesizes certified nutritional declarations with standard rounding rules for the US FDA (21 CFR 101.9), European Union (FIC 1169/2011), Saudi / Gulf GCC (GSO 2233), and India FSSAI.',
+      description: 'Eliminate $1,500 laboratory testing fees and 3-week waiting periods. ChefLogix synthesizes certified nutritional declarations with standard rounding rules for the US FDA (21 CFR 101.9), European Union (FIC 1169/2011), Saudi / Gulf GCC (GSO 2233), and India FSSAI.',
       benefits: [
         'Official Nutrition Facts panel layout ready for label printing',
         'Bilingual Arabic/English calorie declarations for Gulf & SFDA markets',
@@ -44,7 +44,7 @@ export const PlatformFeatures: React.FC<PlatformFeaturesProps> = ({ onOpenTrialM
       number: '04',
       title: 'AI Recipe Studio & Bulk Master Catalog',
       tagline: '2,633 audited ingredients + instant AI document ingestion',
-      description: 'Import legacy recipe PDFs, Word files, photos of handwritten spec sheets, or distributor spreadsheets with AI OCR. ChefLogic normalizes ingredient names, matches SKUs to our pre-costed USDA & EU master catalog, and generates clean digital spec cards.',
+      description: 'Import legacy recipe PDFs, Word files, photos of handwritten spec sheets, or distributor spreadsheets with AI OCR. ChefLogix normalizes ingredient names, matches SKUs to our pre-costed USDA & EU master catalog, and generates clean digital spec cards.',
       benefits: [
         'AI OCR scanner converts paper kitchen binders into digital sheets in seconds',
         'Pre-indexed master catalog with 2,600+ costed and nutritional ingredients',

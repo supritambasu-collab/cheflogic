@@ -29,7 +29,7 @@ import {
   FileText,
   BookOpen
 } from 'lucide-react';
-import { ChefLogicLogo } from '../components/ChefLogicLogo';
+import { ChefLogixLogo } from '../components/ChefLogixLogo';
 import { triggerPlaybookPdfDownload } from '../utils/generatePdf';
 
 interface AdminDashboardProps {
@@ -204,7 +204,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
         {/* Top Header Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#273352] gap-4 mb-8">
           <div className="flex items-center gap-4">
-            <ChefLogicLogo size="md" showSubtitle />
+            <ChefLogixLogo size="md" showSubtitle />
             <div className="h-8 w-px bg-[#273352] hidden sm:block" />
             <div>
               <span className="text-[11px] uppercase tracking-wider text-emerald-400 font-mono flex items-center gap-1.5">
@@ -576,8 +576,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </button>
 
                 <a
-                  href="/ChefLogic_2026_Culinary_Margin_Playbook.pdf"
-                  download="ChefLogic_2026_Culinary_Margin_Playbook.pdf"
+                  href="/ChefLogix_2026_Culinary_Margin_Playbook.pdf"
+                  download="ChefLogix_2026_Culinary_Margin_Playbook.pdf"
                   className="px-4 py-3 text-xs font-medium text-[#ede8df] bg-[#1a1d20] hover:bg-[#273352] border border-[#32363c] rounded transition-all flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-[#88837a]" />
@@ -611,7 +611,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                     EXECUTIVE SUMMARY: THE 28% FOOD COST CEILING
                   </h6>
                   <p className="text-xs text-[#d5cfc4] leading-relaxed">
-                    In high-volume restaurant operations, food cost variance between 33% and 27% represents the entire difference between commercial insolvency and sustainable hospitality profitability. Across 340+ fine dining and bistro kitchens tracked by ChefLogic, 41% of avoidable food waste stems from surplus walk-in inventory that passes peak freshness prior to formulation into revenue-generating specials.
+                    In high-volume restaurant operations, food cost variance between 33% and 27% represents the entire difference between commercial insolvency and sustainable hospitality profitability. Across 340+ fine dining and bistro kitchens tracked by ChefLogix, 41% of avoidable food waste stems from surplus walk-in inventory that passes peak freshness prior to formulation into revenue-generating specials.
                   </p>
                 </div>
 
@@ -632,7 +632,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </div>
 
                 <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#273352] pt-4">
-                  Page 1 of 2 · Published by ChefLogic Systems Inc. · https://cheflogic.ai.studio/
+                  Page 1 of 2 · Published by ChefLogix Systems Inc. · https://cheflogic.ai.studio/
                 </div>
               </div>
 
@@ -703,7 +703,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
                 </div>
 
                 <div className="mt-8 text-center text-[10px] text-[#716d66] border-t border-[#273352] pt-4">
-                  Page 2 of 2 · Published by ChefLogic Systems Inc. · Platform Portal: https://cheflogic.ai.studio/
+                  Page 2 of 2 · Published by ChefLogix Systems Inc. · Platform Portal: https://cheflogic.ai.studio/
                 </div>
               </div>
 

@@ -19,7 +19,7 @@ export const PricingTrial: React.FC<PricingTrialProps> = ({ onOpenTrialModal }) 
             Every plan includes an unrestricted 3-month free trial.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#cbd5e1] leading-relaxed">
-            Experience the real financial impact of ChefLogic in your kitchen for 90 full days before committing. No credit card required to begin.
+            Experience the real financial impact of ChefLogix in your kitchen for 90 full days before committing. No credit card required to begin.
           </p>
         </div>
 

@@ -18,7 +18,7 @@ export const SocialProof: React.FC = () => {
             Tested on the front line of high-volume service.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#cbd5e1] leading-relaxed">
-            From Michelin-starred tasting menus to high-pace urban brasseries, culinary leaders use ChefLogic to elevate quality and secure margins.
+            From Michelin-starred tasting menus to high-pace urban brasseries, culinary leaders use ChefLogix to elevate quality and secure margins.
           </p>
         </div>
 

@@ -25,7 +25,7 @@ export const FaqSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#cbd5e1] leading-relaxed">
-            Everything you need to know about the ChefLogic system, our 3-month free trial, and deploying on <strong className="text-white font-mono">cheflogic.ai.studio</strong>.
+            Everything you need to know about the ChefLogix system, our 3-month free trial, and deploying on <strong className="text-white font-mono">cheflogic.ai.studio</strong>.
           </p>
         </div>
 

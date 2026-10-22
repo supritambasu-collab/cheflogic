@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageView } from '../types';
-import { ChefLogicLogo } from './ChefLogicLogo';
+import { ChefLogixLogo } from './ChefLogixLogo';
 import { getCurrentUser, UserAccount } from '../utils/authStore';
 
 interface HeaderProps {
@@ -26,9 +26,9 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, onOpenT
         <button
           onClick={() => onNavigate('home')}
           className="cursor-pointer text-left transition-opacity hover:opacity-90"
-          aria-label="ChefLogic Home"
+          aria-label="ChefLogix Home"
         >
-          <ChefLogicLogo size="sm" />
+          <ChefLogixLogo size="sm" />
         </button>
 
         {/* Zone 2: Clean text navigation links */}

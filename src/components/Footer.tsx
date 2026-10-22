@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageView } from '../types';
 import { ArrowUpRight, Lock } from 'lucide-react';
-import { ChefLogicLogo } from './ChefLogicLogo';
+import { ChefLogixLogo } from './ChefLogixLogo';
 
 interface FooterProps {
   onNavigate: (view: PageView) => void;
@@ -19,9 +19,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
             <button
               onClick={() => onNavigate('home')}
               className="cursor-pointer text-left block mb-4 transition-opacity hover:opacity-90"
-              aria-label="ChefLogic Home"
+              aria-label="ChefLogix Home"
             >
-              <ChefLogicLogo size="md" showSubtitle />
+              <ChefLogixLogo size="md" showSubtitle />
             </button>
             <p className="text-xs text-[#cbd5e1] leading-relaxed max-w-sm">
               The commercial recipe costing and multi-authority food regulatory platform that empowers culinary leaders, hotel brigades, and food brands to formulate dishes with gram-level precision, guarantee FDA/EU/GCC/FSSAI compliance, and engineer high-margin menus.
@@ -162,7 +162,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenTrialModal }) 
         {/* Bottom Bar: Quiet Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b]">
           <div>
-            © {new Date().getFullYear()} ChefLogic Systems Inc. All rights reserved.
+            © {new Date().getFullYear()} ChefLogix Systems Inc. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <button onClick={() => onNavigate('terms')} className="hover:text-white cursor-pointer">

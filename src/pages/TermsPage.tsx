@@ -24,7 +24,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          Please read this Master User Agreement (“Agreement”) carefully prior to accessing or using the ChefLogic culinary platform, hosted at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>. By activating an account or enrolling in the 3-Month Free Trial, you agree to be bound by these commercial terms.
+          Please read this Master User Agreement (“Agreement”) carefully prior to accessing or using the ChefLogix culinary platform, hosted at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>. By activating an account or enrolling in the 3-Month Free Trial, you agree to be bound by these commercial terms.
         </p>
 
         {/* Highlighted Trial Box */}
@@ -36,7 +36,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
             </h3>
           </div>
           <p className="text-xs text-[#d5cfc4] leading-relaxed">
-            All qualifying restaurant operators are granted full, unrestricted access to the ChefLogic platform for ninety (90) calendar days from account creation without mandatory advance payment details. At the expiration of the trial term, you will have the elective option to subscribe to an ongoing monthly license. If you elect not to subscribe, your account will smoothly transition to archived mode and your proprietary recipe data may be exported in full at zero charge.
+            All qualifying restaurant operators are granted full, unrestricted access to the ChefLogix platform for ninety (90) calendar days from account creation without mandatory advance payment details. At the expiration of the trial term, you will have the elective option to subscribe to an ongoing monthly license. If you elect not to subscribe, your account will smoothly transition to archived mode and your proprietary recipe data may be exported in full at zero charge.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               1. Platform Services & License Grant
             </h3>
             <p className="mb-2">
-              ChefLogic Systems Inc. (“ChefLogic”, “we”, “us”) grants your culinary organization a non-exclusive, non-transferable, revocable commercial license to access the web application at <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/</span> solely for internal hospitality inventory tracking, recipe formulation, supplier invoice analysis, and menu engineering.
+              ChefLogix Systems Inc. (“ChefLogix”, “we”, “us”) grants your culinary organization a non-exclusive, non-transferable, revocable commercial license to access the web application at <span className="font-mono text-[#ede8df]">https://cheflogic.ai.studio/</span> solely for internal hospitality inventory tracking, recipe formulation, supplier invoice analysis, and menu engineering.
             </p>
             <p>
               You agree not to reverse engineer, decompile, scrape, or resell the underlying algorithmic weighting mechanisms, portion matrices, or platform APIs.
@@ -60,10 +60,10 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               2. Absolute Sovereignty Over Culinary Intellectual Property
             </h3>
             <p className="mb-2">
-              <strong>Your Recipes Belong to You:</strong> We recognize that proprietary recipes, curing times, secret ratios, and signature techniques represent the core commercial value of your culinary team. All culinary recipes, ingredient lists, prep procedures, and pricing strategies entered into ChefLogic remain the sole, unencumbered intellectual property of the restaurant subscriber.
+              <strong>Your Recipes Belong to You:</strong> We recognize that proprietary recipes, curing times, secret ratios, and signature techniques represent the core commercial value of your culinary team. All culinary recipes, ingredient lists, prep procedures, and pricing strategies entered into ChefLogix remain the sole, unencumbered intellectual property of the restaurant subscriber.
             </p>
             <p>
-              ChefLogic does not claim ownership, nor do we disclose, syndicate, or license your individual kitchen formulations to any competitor or third-party food supplier.
+              ChefLogix does not claim ownership, nor do we disclose, syndicate, or license your individual kitchen formulations to any competitor or third-party food supplier.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               3. Food Safety, Allergen & Operational Responsibility
             </h3>
             <p className="mb-2">
-              ChefLogic provides mathematical models, cost estimations, and automated pairing suggestions based on data input by the subscriber and public culinary references. 
+              ChefLogix provides mathematical models, cost estimations, and automated pairing suggestions based on data input by the subscriber and public culinary references. 
             </p>
             <p>
               <strong>Disclaimer:</strong> The platform is an analytical tool and does not substitute for certified food safety management (ServSafe, HACCP). The executive chef and restaurant management remain exclusively responsible for verifying critical control temperatures, cross-contamination prevention, food allergen disclaimers, local health department ordinances, and consumption safety.
@@ -84,7 +84,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               4. Third-Party POS & Supplier Data Feeds
             </h3>
             <p className="mb-2">
-              By authorizing integrations with point-of-sale systems (such as Toast, Square, Micros) or optical scanning of distributor invoices (Sysco, US Foods, Baldor), you warrant that you possess requisite authorization to transmit such transaction data to ChefLogic.
+              By authorizing integrations with point-of-sale systems (such as Toast, Square, Micros) or optical scanning of distributor invoices (Sysco, US Foods, Baldor), you warrant that you possess requisite authorization to transmit such transaction data to ChefLogix.
             </p>
             <p>
               We process such data strictly to calculate plate costs, sales velocity, and inventory depletions pursuant to our Privacy Policy.
@@ -96,7 +96,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               5. Service Level Agreement & Data Backups
             </h3>
             <p className="mb-2">
-              ChefLogic maintains a target uptime of 99.9% for our cloud infrastructure. In the rare event of unscheduled service interruptions, our engineering team acts with emergency priority to restore service.
+              ChefLogix maintains a target uptime of 99.9% for our cloud infrastructure. In the rare event of unscheduled service interruptions, our engineering team acts with emergency priority to restore service.
             </p>
             <p>
               All kitchen inventory and recipe databases are backed up continuously across geographically redundant cloud regions.
@@ -108,7 +108,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ onOpenTrialModal }) => {
               6. Limitation of Liability
             </h3>
             <p>
-              To the maximum extent permitted by applicable law, ChefLogic shall not be liable for any indirect, incidental, punitive, or consequential damages, including loss of profits, inventory spoilage arising from external mechanical refrigeration failures, or dining room operational interruptions.
+              To the maximum extent permitted by applicable law, ChefLogix shall not be liable for any indirect, incidental, punitive, or consequential damages, including loss of profits, inventory spoilage arising from external mechanical refrigeration failures, or dining room operational interruptions.
             </p>
           </div>
 

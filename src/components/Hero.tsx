@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal, onLoginClick }) =>
 
           {/* Subtitle - The Concrete Problem & High-Value Solution */}
           <p className="mt-4 sm:mt-5 text-base sm:text-xl text-[#cbd5e1] font-normal leading-relaxed max-w-3xl">
-            Food costs silently consume 30% to 40% of restaurant revenue. ChefLogic calculates exact dish cost down to the gram, protects your kitchen against wholesale supplier spikes, and auto-detects 14 statutory allergens in 10 seconds.
+            Food costs silently consume 30% to 40% of restaurant revenue. ChefLogix calculates exact dish cost down to the gram, protects your kitchen against wholesale supplier spikes, and auto-detects 14 statutory allergens in 10 seconds.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal, onLoginClick }) =>
           />
         </div>
 
-        {/* 4 Core Pillars: How ChefLogic Solves Critical Industry Bottlenecks */}
+        {/* 4 Core Pillars: How ChefLogix Solves Critical Industry Bottlenecks */}
         <div className="mt-14 pt-10 border-t border-[#273352] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-4 bg-[#1A2238] border border-[#273352] hover:border-[#D4AF37]/50 transition-all rounded-lg shadow-sm">
             <div className="w-8 h-8 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center mb-3">

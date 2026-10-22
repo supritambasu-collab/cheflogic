@@ -52,7 +52,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
         <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#D4AF37] mb-4">
           <span>Concierge & Support</span>
           <span aria-hidden="true" className="text-[#4e4941]">·</span>
-          <span>ChefLogic Operations Desk</span>
+          <span>ChefLogix Operations Desk</span>
         </div>
 
         {/* Page Title */}
@@ -108,7 +108,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenTrialModal }) =>
                 Immediate Platform Access
               </span>
               <p className="text-xs text-[#a7a29a] leading-relaxed mb-4">
-                You do not need to wait for a scheduled sales call to explore ChefLogic. The live workspace is available right now:
+                You do not need to wait for a scheduled sales call to explore ChefLogix. The live workspace is available right now:
               </p>
               <a
                 href="https://cheflogic.ai.studio/"

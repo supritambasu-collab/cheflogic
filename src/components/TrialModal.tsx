@@ -69,7 +69,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <p className="text-sm text-[#cbd5e1] mt-3 leading-relaxed">
-          Welcome to the ChefLogic culinary workspace. Your kitchen is granted 90 days of complete, unrestricted access to the intelligence engine at{' '}
+          Welcome to the ChefLogix culinary workspace. Your kitchen is granted 90 days of complete, unrestricted access to the intelligence engine at{' '}
           <strong className="text-white font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 

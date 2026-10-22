@@ -185,7 +185,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenTrialModal }
                 onClick={onOpenTrialModal}
                 className="w-full py-4 text-xs font-bold uppercase tracking-wider text-[#1A2238] bg-[#D4AF37] hover:bg-[#E5C358] active:scale-[0.99] rounded transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl shadow-[#D4AF37]/20"
               >
-                <span>Deploy ChefLogic on 90-Day VIP Access</span>
+                <span>Deploy ChefLogix on 90-Day VIP Access</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

@@ -56,7 +56,7 @@ export default function App() {
             <div className="flex items-center gap-2 mx-auto sm:mx-0">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>
-                <strong className="text-white font-medium">ChefLogic Enterprise:</strong>{' '}
+                <strong className="text-white font-medium">ChefLogix Enterprise:</strong>{' '}
                 <span className="text-[#D4AF37] font-semibold">Commercial Recipe Costing & Multi-Authority Regulatory Matrix.</span>{' '}
                 <span className="text-[#94a3b8] hidden lg:inline">FDA 21 CFR 101.9 · EU 1169/2011 · GCC GSO 2233 · FSSAI Certified.</span>
               </span>

@@ -248,7 +248,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-serif-culinary text-lg text-white font-medium">ChefLogic PRO</span>
+              <span className="font-serif-culinary text-lg text-white font-medium">ChefLogix PRO</span>
               <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-[#0F382C] text-[#D4AF37] border border-[#1a5c48]">
                 Live Cloud Sync
               </span>
@@ -971,7 +971,7 @@ export const InteractiveKitchenEngine: React.FC<InteractiveKitchenEngineProps> =
           <div className="mt-8 p-5 bg-gradient-to-r from-[#0F382C] via-[#1A2238] to-[#101524] border border-[#D4AF37]/40 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
             <div>
               <h4 className="text-sm font-semibold text-white mb-0.5">
-                Ready to deploy ChefLogic across your commercial restaurant or food business?
+                Ready to deploy ChefLogix across your commercial restaurant or food business?
               </h4>
               <p className="text-xs text-[#cbd5e1]">
                 Get 90 days of full enterprise access with unlimited recipe sheets, master catalog sync, and multi-user permissions.

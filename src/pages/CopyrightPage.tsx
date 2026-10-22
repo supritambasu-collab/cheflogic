@@ -24,7 +24,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-[#a7a29a] leading-relaxed">
-          This document delineates the ownership rights, trademark protection, and copyright policies governing the ChefLogic digital ecosystem and web portal at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
+          This document delineates the ownership rights, trademark protection, and copyright policies governing the ChefLogix digital ecosystem and web portal at <strong className="text-[#ede8df] font-mono">https://cheflogic.ai.studio/</strong>.
         </p>
 
         <div className="space-y-10 mt-12 text-xs sm:text-sm text-[#a7a29a] leading-relaxed">
@@ -34,10 +34,10 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               1. Platform Copyright & Proprietary Code
             </h3>
             <p className="mb-2">
-              All software architecture, user interface graphics, proprietary database schemas, algorithm workflows, and editorial documentation comprising ChefLogic (including the frontend website and the web app hosted at https://cheflogic.ai.studio/) are protected by copyright law and international treaties.
+              All software architecture, user interface graphics, proprietary database schemas, algorithm workflows, and editorial documentation comprising ChefLogix (including the frontend website and the web app hosted at https://cheflogic.ai.studio/) are protected by copyright law and international treaties.
             </p>
             <p>
-              © {new Date().getFullYear()} ChefLogic Systems Inc. All rights reserved. Unauthorized reproduction, scraping, reverse engineering, or redistribution of the software is strictly prohibited.
+              © {new Date().getFullYear()} ChefLogix Systems Inc. All rights reserved. Unauthorized reproduction, scraping, reverse engineering, or redistribution of the software is strictly prohibited.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               <span>2. Recipe IP Safe Harbor: Chefs Always Retain 100% Rights</span>
             </h3>
             <p className="text-xs text-[#d5cfc4] leading-relaxed">
-              We uphold the sacred tradition of culinary creativity. All culinary formulas, secret marinade proportions, signature plating guidelines, and operational prep guides entered by restaurant users into ChefLogic remain the exclusive, inalienable property of the chef and restaurant entity. ChefLogic makes no claim of ownership or copyright over user-generated culinary recipes.
+              We uphold the sacred tradition of culinary creativity. All culinary formulas, secret marinade proportions, signature plating guidelines, and operational prep guides entered by restaurant users into ChefLogix remain the exclusive, inalienable property of the chef and restaurant entity. ChefLogix makes no claim of ownership or copyright over user-generated culinary recipes.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               3. Registered Trademarks
             </h3>
             <p className="mb-2">
-              “ChefLogic”, the ChefLogic wordmark, the ChefLogic emblem, and “The Modern Kitchen Briefing” are trademarks or registered trademarks of ChefLogic Systems Inc. in the United States and other jurisdictions.
+              “ChefLogix”, the ChefLogix wordmark, the ChefLogix emblem, and “The Modern Kitchen Briefing” are trademarks or registered trademarks of ChefLogix Systems Inc. in the United States and other jurisdictions.
             </p>
             <p>
               Third-party POS trademarks (including Toast, Square, Micros Simphony, Lightspeed, Aloha) and distributor names (Sysco, US Foods, Baldor) referenced on this site belong to their respective owners and are utilized strictly for factual compatibility reference.
@@ -72,7 +72,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
             </p>
             <div className="p-4 bg-[#101524] border border-[#202327] rounded text-xs font-mono text-[#d5cfc4] space-y-1">
               <div>Attn: Copyright Agent / Legal Directorate</div>
-              <div>ChefLogic Systems Inc.</div>
+              <div>ChefLogix Systems Inc.</div>
               <div>580 Howard Street, Suite 400, San Francisco, CA 94105</div>
               <div>Email: dmca@cheflogic.ai</div>
             </div>
@@ -83,7 +83,7 @@ export const CopyrightPage: React.FC<CopyrightPageProps> = ({ onOpenTrialModal }
               5. Permitted Editorial Quotations & Press Usage
             </h3>
             <p>
-              Culinary journals, hospitality analysts, and journalists are permitted to reference ChefLogic statistics, research reports, and industry food waste indices provided that clear attribution is rendered to <strong>ChefLogic (https://cheflogic.ai.studio/)</strong>.
+              Culinary journals, hospitality analysts, and journalists are permitted to reference ChefLogix statistics, research reports, and industry food waste indices provided that clear attribution is rendered to <strong>ChefLogix (https://cheflogic.ai.studio/)</strong>.
             </p>
           </div>
 
